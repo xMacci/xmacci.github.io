@@ -1,7 +1,8 @@
 import { gsap } from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
-
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin.js';
+import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin.js';
 export default class Scroller {
   constructor(element) {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -94,12 +95,12 @@ export default class Scroller {
   initPin() {
     const pinTargets = this.element.querySelectorAll('[data-pin-items]');
 
-    pinTargets.forEach((target) => {
-      const words = target.querySelectorAll('.caractere-mots');
+    for (let i = 0; i < pinTargets.length; i++) {
+      const target = pinTargets[i];
+      const words = target.querySelectorAll('[data-pin-word]');
 
-      if (!words.length) return;
+      if (!words.length) continue;
 
-      // État initial : tous les mots sont baissés et invisibles
       gsap.set(words, { opacity: 0, y: 40 });
 
       const tl = gsap.timeline({
@@ -107,14 +108,16 @@ export default class Scroller {
           trigger: target,
           pin: true,
           start: 'top top',
-          end: '+=250%', // Longueur du scroll pendant le blocage
-          scrub: 1, // Fluidité au scroll
+          end: '+=250%',
+          scrub: 1,
           anticipatePin: 1,
+          markers: true,
         },
       });
 
-      words.forEach((word, index) => {
-        // 1. Le mot apparaît en montant légèrement vers le centre
+      for (let j = 0; j < words.length; j++) {
+        const word = words[j];
+
         tl.to(word, {
           opacity: 1,
           y: 0,
@@ -122,8 +125,7 @@ export default class Scroller {
           ease: 'power2.out',
         });
 
-        // 2. Si ce n'est pas le dernier mot, il disparaît vers le haut
-        if (index < words.length - 1) {
+        if (j < words.length - 1) {
           tl.to(
             word,
             {
@@ -132,13 +134,29 @@ export default class Scroller {
               duration: 0.8,
               ease: 'power2.in',
             },
-            '+=0.6', // Temps de pause où le mot reste fixe à l'écran
+            '+=0.6',
           );
         }
-      });
-    });
+      }
+    }
   }
-
+  initScramble() {
+    const drawnItems = this.element.querySelectorAll('.textScramble');
+    for (let index = 0; index < drawnItems.length; index++) {
+      const single = drawnItems[index];
+      console.log(single);
+      this.scrambleRepeat = 0;
+      if ('scrambleRepeat' in single.dataset) {
+        this.scrambleRepeat = single.dataset.scrambleRepeat;
+      }
+      gsap.to(single, {
+        scrollTrigger: single,
+        duration: 1,
+        scrambleText: single.innerText,
+        repeat: this.scrambleRepeat,
+      });
+    }
+  }
   setOptions() {
     if (this.element.querySelector('[data-skew]')) {
       this.options.hasSkew = true;
