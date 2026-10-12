@@ -1,12 +1,34 @@
-{% include '_partials/_header.html' %}
-<div id="smooth-wrapper" data-component="Scroller">
-    <div id="smooth-content">
-        <div class="separateur__header"></div>
-        <section class="hero" data-component="Words">
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>M.Sosa Silva Portfolio</title>
+
+        <link rel="stylesheet" href="styles/main.css" />
+
+        <script src="scripts/main.js" defer></script>
+    </head>
+
+    <body data-component="Scrolly" data-no-repeat>
+        <video class="video" src="/assets/videos/videobg.mp4" autoplay muted loop></video>
+
+        <svg class="noise" style="display: none">
+            <filter id="blackNoise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
+                <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.32 0"
+                />
+            </filter>
+        </svg>
+        <div class="noise-overlay"></div>
+        <section class="hero hero--hub" data-component="Hero">
             <div class="wrapper">
-                <div class="hero__media">
-                    <img src="assets/images/herotemp.png" alt="hero" data-scale data-scale-force="0.01" />
-                </div>
+                <!-- Titre principal -->
                 <div class="hero__content">
                     <div class="hero__title">
                         <h1>Marcos</h1>
@@ -18,343 +40,42 @@
                         <h1>Sosa</h1>
                         <h1 class="Silva">Silva</h1>
                     </div>
-                    <div class="hero__subtitle" data-component="Words" data-duration="4500" data-anim-duration="0.6" data-y-offset="40">
-                        <h2 class="hero__subtitle-item" data-rotate-item>Designer Ui</h2>
-                        <h2 class="hero__subtitle-item" data-rotate-item>Développeur Web</h2>
-                    </div>
-                    <div class="hero__sous-titre">
-                        <p class="small">Défilez vers le bas</p>
-                    </div>
                 </div>
-            </div>
-        </section>
-        <div class="separateur"></div>
-        <section class="hero__under">
-            <div class="wrapper">
-                <p data-component="TextAnim" data-stagger="0.005" data-duration="0.1" data-delay="0.05">
-                    Je suis une personne qui aime
-                    <span class="highlight" data-text-scramble data-duration="2">le design</span>
-                    et qui peut aussi se débrouiller dans
-                    <span class="highlight" data-text-scramble data-duration="2">l'intégration web.</span>
-                    Je suis particulièrement motivée par l'apprentissage continu et le travail d'équipe. Je m'adapte très rapidement à de nouveaux
-                    environnements et outils.
+                <!-- Description -->
+                <p class="hero__text" data-gsap data-delay="0.2">
+                    <span class="text-highlight">Designer UI/UX</span>
+                    et
+                    <span class="text-highlight">développeur web junior</span>
+                    , je conçois des interfaces sur Figma et les intègre en HTML/CSS/JS. Je recherche un
+                    <span class="text-highlight">stage pour</span>
+                    <span class="text-highlight">apprendre</span>
+                    à vos côtés et
+                    <span class="text-highlight">contribuer</span>
+                    à vos projets
                 </p>
-            </div>
-        </section>
-        <div class="separateur"></div>
 
-        <section class="section__competences">
-            <div class="wrapper">
-                <h2>Mes Compétences</h2>
-                <div class="competences__container">
-                    <ul class="competences__list">
-                        <li>Design web</li>
-                        <li>Design UI/UX</li>
-                        <li>Design graphique</li>
-                        <li>Intégration web</li>
-                        <li>Intégration wordpress</li>
-                        <li>Création vidéo</li>
-                    </ul>
-
-                    <div class="competences__medias">
-                        <img src="assets/images/competences.png" alt="competences" data-skew data-lag="0.5" />
-                        <img src="assets/images/competences2.png" alt="competences" data-skew data-lag="0.9" />
-                    </div>
+                <!-- Boutons d'action -->
+                <div class="hero__actions" data-gsap data-delay="0.3">
+                    <a href="#projets" class="btn btn-hub">MES PROJETS</a>
+                    <a href="#apropos" class="btn btn-hub">À PROPOS</a>
+                    <a href="#cv" class="btn btn-hub">MON CV</a>
                 </div>
-            </div>
-        </section>
-        <div class="separateur__competences"></div>
-        <div class="separateur__competences"></div>
-        <section class="sections__logiciel">
-            <div class="wrapper">
-                <ul>
-                    <li>
-                        <svg class="icon icon--sm">
-                            <use href="#icon-figma"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon icon--sm">
-                            <use href="#icon-javascript"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon icon--sm">
-                            <use href="#icon-css"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon icon--sm">
-                            <use href="#icon-php"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon icon--sm">
-                            <use href="#icon-github"></use>
-                        </svg>
-                    </li>
 
-                    <li>
-                        <svg class="icon icon--sm">
-                            <use href="#icon-illustrator"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon icon--sm">
-                            <use href="#icon-photoshop"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon icon--sm">
-                            <use href="#icon-aftereffects"></use>
-                        </svg>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <div class="separateur"></div>
-        <section class="projets" data-component="Projets">
-            <div class="wrapper">
-                <h2>Mes Projets</h2>
-
-                <div class="projets__container">
-                    <!-- Pin dots-->
-                    <ul class="projet-pagination">
-                        <li class="dot active"></li>
-                        <li class="dot"></li>
-                        <li class="dot"></li>
-                        <!-- <li class="dot"></li>
-                        <li class="dot"></li> -->
-                    </ul>
-
-                    <!-- Project Card -->
-                    <article class="projet-card">
-                        <div class="projet-card__header__container">
-                            <div class="projet-card__header">
-                                <h1>Boxotel</h1>
-
-                                <div class="line">
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                </div>
-
-                                <div class="projet-card__meta">
-                                    <h3>Projet étudiant</h3>
-                                    <span class="accent">*</span>
-                                    <h3>Design UX/UI Web</h3>
-                                </div>
-
-                                <h3>Maquette Figma</h3>
-                            </div>
-                        </div>
-
-                        <a class="projet-card__body" href="projet.html">
-                            <div class="projet-card__image-container">
-                                <!-- Image Noir & Blanc (Visible par défaut) -->
-                                <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
-
-                                <!-- Image Couleur (Cachée par défaut) -->
-                                <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
-
-                                <div class="badge-voir-projet">
-                                    <img src="assets/images/voirplus.png" alt="Voir le projet" />
-                                </div>
-                            </div>
+                <!-- Liens et Réseaux -->
+                <nav class="nav__footer" data-gsap data-delay="0.4">
+                    <div class="footer__socials">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg class="icon icon--lg"><use href="#icon-github"></use></svg>
                         </a>
-                    </article>
-                    <!-- Project Card -->
-                    <article class="projet-card">
-                        <div class="projet-card__header__container">
-                            <div class="projet-card__header">
-                                <h1>
-                                    Baie
-                                    <br />
-                                    Saint-Catherine
-                                </h1>
-
-                                <div class="line">
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                </div>
-
-                                <div class="projet-card__meta">
-                                    <h3>Projet étudiant</h3>
-                                    <span class="accent">*</span>
-                                    <h3>Production Web</h3>
-                                </div>
-
-                                <h3>CSS JS HTML</h3>
-                            </div>
-                        </div>
-
-                        <a class="projet-card__body" href="projet.html">
-                            <div class="projet-card__image-container">
-                                <!-- Image Noir & Blanc (Visible par défaut) -->
-                                <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
-
-                                <!-- Image Couleur (Cachée par défaut) -->
-                                <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
-
-                                <div class="badge-voir-projet">
-                                    <img src="assets/images/voirplus.png" alt="Voir le projet" />
-                                </div>
-                            </div>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg class="icon icon--lg"><use href="#icon-linkedIn"></use></svg>
                         </a>
-                    </article>
-                    <!-- Project Card -->
-                    <article class="projet-card">
-                        <div class="projet-card__header__container">
-                            <div class="projet-card__header">
-                                <h1>Boxotel</h1>
-
-                                <div class="line">
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                    <span class="line__inner"></span>
-                                </div>
-
-                                <div class="projet-card__meta">
-                                    <h3>Projet étudiant</h3>
-                                    <span class="accent">*</span>
-                                    <h3>Design UX/UI Web</h3>
-                                </div>
-
-                                <h3>Maquette Figma</h3>
-                            </div>
-                        </div>
-
-                        <a class="projet-card__body" href="projet.html">
-                            <div class="projet-card__image-container">
-                                <!-- Image Noir & Blanc (Visible par défaut) -->
-                                <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
-
-                                <!-- Image Couleur (Cachée par défaut) -->
-                                <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
-
-                                <div class="badge-voir-projet">
-                                    <img src="assets/images/voirplus.png" alt="Voir le projet" />
-                                </div>
-                            </div>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <svg class="icon icon--lg"><use href="#icon-youtube"></use></svg>
                         </a>
-                    </article>
-                </div>
+                    </div>
+                </nav>
             </div>
         </section>
-        <div class="separateur"></div>
-        <section class="caractere" data-component="Theme" data-pin-items>
-            <div class="wrapper">
-                <div class="caractere-container">
-                    <h2>Ce que je suis</h2>
-                    <div class="caractere-mots-wrapper">
-                        <div class="caractere-mots mot-1" data-pin-word>RÉCEPTIF</div>
-                        <div class="caractere-mots mot-2" data-pin-word>PERSÉVÉRANT</div>
-                        <div class="caractere-mots mot-3" data-pin-word>SOCIABLE</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="videos-youtube">
-            <div class="wrapper">
-                <h2>Vidéo de présentation</h2>
-
-                <div class="video-youtube" data-component="YouTube" data-video-id="vAticypJw4Y">
-                    <div class="video__media js-video">
-                        <img class="js-poster" src="assets/images/covervideo.png" alt="Vidéo de présentation" />
-                        <img class="logo--yt" src="assets/images/play.svg" alt="logo__play" />
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="separateur"></div>
-        <section class="interets">
-            <div class="wrapper">
-                <h2>Ce que j’aime</h2>
-            </div>
-
-            <div class="interets__container">
-                <!-- Ligne 1 : MUSIQUE (vers la gauche) -->
-                <div class="marquee marquee--left">
-                    <div class="marquee__track">
-                        <span class="filled green">MUSIQUE</span>
-                        <span class="outline green">MUSIQUE</span>
-                        <span class="filled green">MUSIQUE</span>
-                        <span class="outline green">MUSIQUE</span>
-                    </div>
-                    <div class="marquee__track" aria-hidden="true">
-                        <span class="filled green">MUSIQUE</span>
-                        <span class="outline green">MUSIQUE</span>
-                        <span class="filled green">MUSIQUE</span>
-                        <span class="outline green">MUSIQUE</span>
-                    </div>
-                </div>
-
-                <!-- Ligne 2 : JEUX VIDÉOS (vers la droite) -->
-                <div class="marquee marquee--right">
-                    <div class="marquee__track">
-                        <span class="filled dark">JEUXVIDÉOS</span>
-                        <span class="outline dark">JEUXVIDÉOS</span>
-                        <span class="filled dark">JEUXVIDÉOS</span>
-                        <span class="outline dark">JEUXVIDÉOS</span>
-                    </div>
-                    <div class="marquee__track" aria-hidden="true">
-                        <span class="filled dark">JEUXVIDÉOS</span>
-                        <span class="outline dark">JEUXVIDÉOS</span>
-                        <span class="filled dark">JEUXVIDÉOS</span>
-                        <span class="outline dark">JEUXVIDÉOS</span>
-                    </div>
-                </div>
-
-                <!-- Ligne 3 : CINÉMA (vers la gauche) -->
-                <div class="marquee marquee--left">
-                    <div class="marquee__track">
-                        <span class="filled green">CINÉMA</span>
-                        <span class="outline green">CINÉMA</span>
-                        <span class="filled green">CINÉMA</span>
-                        <span class="outline green">CINÉMA</span>
-                    </div>
-                    <div class="marquee__track" aria-hidden="true">
-                        <span class="filled green">CINÉMA</span>
-                        <span class="outline green">CINÉMA</span>
-                        <span class="filled green">CINÉMA</span>
-                        <span class="outline green">CINÉMA</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="separateur"></div>
-        <section class="recherche" data-component="Words" data-duration="1500" data-anim-duration="0.5" data-y-offset="80">
-            <div class="wrapper">
-                <h2>Ce que je recherche</h2>
-
-                <div class="recherche__content">
-                    <div class="recherche__text">
-                        <span class="recherche__item" data-rotate-item>
-                            Je veux apprendre
-                            <br />
-                            avec vous
-                        </span>
-                        <span class="recherche__item" data-rotate-item>
-                            Je veux m’adapter
-                            <br />
-                            à vous
-                        </span>
-                        <span class="recherche__item" data-rotate-item>
-                            Je veux découvrir
-                            <br />
-                            avec vous
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="separateur"></div>
-
-        {% include '_partials/_footer.html' %}
-    </div>
-</div>
+    </body>
+</html>
