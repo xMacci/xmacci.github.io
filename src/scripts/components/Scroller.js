@@ -157,6 +157,31 @@ export default class Scroller {
       });
     }
   }
+  initHoriz() {
+    const sectionsHoriz = this.element.querySelectorAll('.js-horiz');
+
+    for (let i = 0; i < sectionsHoriz.length; i++) {
+      const sectionHoriz = sectionsHoriz[i];
+      const panels = sectionHoriz.querySelectorAll('.js-panel');
+      const nbPanels = panels.length;
+      const buffer = 200;
+
+      if (nbPanels === 0) continue;
+
+      gsap.to(panels, {
+        xPercent: -100 * (nbPanels - 1),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionHoriz,
+          pin: true,
+          scrub: 1,
+          snap: 1 / (nbPanels - 1),
+          end: () => `+=${sectionHoriz.offsetWidth * (nbPanels - 1) + buffer}`,
+          anticipatePin: 1,
+        },
+      });
+    }
+  }
   setOptions() {
     if (this.element.querySelector('[data-skew]')) {
       this.options.hasSkew = true;
@@ -169,6 +194,10 @@ export default class Scroller {
     if (this.element.querySelector('[data-pin-items]')) {
       this.options.hasPinItems = true;
       this.initPin();
+    }
+    if (this.element.querySelector('[data-horiz]')) {
+      this.options.hasHoriz = true;
+      this.initHoriz();
     }
   }
 }

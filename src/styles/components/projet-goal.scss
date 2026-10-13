@@ -1,0 +1,16 @@
+.project-goal {
+    &__title {
+        color: var(--color-white);
+    }
+
+    &__text {
+        line-height: 1.5;
+        color: var(--color-white);
+        margin: 0;
+
+        .text-highlight {
+            color: var(--color-primary, #82ec1e);
+            font-weight: 700;
+        }
+    }
+}
