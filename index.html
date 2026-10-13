@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M.Sosa Silva Portfolio</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body data-component="Scrolly" data-no-repeat>
+    <video class="video" src="/assets/videos/videobg.mp4" autoplay muted loop></video>
+
+    <svg class="noise" style="display: none">
+        <filter id="blackNoise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.32 0" />
+        </filter>
+    </svg>
+    <div class="noise-overlay"></div>
+    <section class="hero hero--hub" data-component="Hero">
+        <div class="wrapper">
+            <!-- Titre principal -->
+            <div class="hero__content">
+                <div class="hero__title">
+                    <h1>Marcos</h1>
+                    <h1>Sosa</h1>
+                    <h1>Silva</h1>
+                </div>
+                <div class="title__under">
+                    <h1>Marcos</h1>
+                    <h1>Sosa</h1>
+                    <h1 class="Silva">Silva</h1>
+                </div>
+            </div>
+            <!-- Description -->
+            <p class="hero__text" data-gsap data-delay="0.2">
+                <span class="text-highlight">Designer UI/UX</span>
+                et
+                <span class="text-highlight">développeur web junior</span>
+                , je conçois des interfaces sur Figma et les intègre en HTML/CSS/JS. Je recherche un
+                <span class="text-highlight">stage pour</span>
+                <span class="text-highlight">apprendre</span>
+                à vos côtés et
+                <span class="text-highlight">contribuer</span>
+                à vos projets.
+            </p>
+
+            <!-- Boutons d'action -->
+            <div class="hero__actions" data-gsap data-delay="0.3">
+                <a href="#projets" class="btn btn-hub">MES PROJETS</a>
+                <a href="a-propos.html" class="btn btn-hub">À PROPOS</a>
+                <a href="#cv" class="btn btn-hub">MON CV</a>
+            </div>
+
+            <!-- Liens et Réseaux -->
+            <nav class="nav__footer" data-gsap data-delay="0.4">
+                <div class="footer__socials">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg class="icon icon--lg">
+                            <use href="#icon-github"></use>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg class="icon icon--lg">
+                            <use href="#icon-linkedIn"></use>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <svg class="icon icon--lg">
+                            <use href="#icon-youtube"></use>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M.Sosa Silva Portfolio</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body data-component="Scrolly" data-no-repeat>
+    <video class="video" src="/assets/videos/videobg.mp4" autoplay muted loop></video>
+    <svg class="noise" style="display: none;">
+        <filter id="blackNoise">
+            <!-- Size: 0.7 -->
+            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
+
+            <!-- Density: 58% + Couleur: Noire -->
+            <feColorMatrix type="matrix" values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.32 0" />
+        </filter>
+    </svg>
+    <div class="noise-overlay"></div>
+
+
+    <header class="header" data-component="Header" data-auto-hide data-threshold="0.1">
+        <div class="wrapper">
+
+            <a href="index.html" class="logo">
+
+                Mass
+            </a>
+
+            <nav class="nav-menu nav-primary">
+
+                <ul class="links">
+                    <li>
+                        <a class="link" href="">Hub</a>
+                    </li>
+                    <li>
+                        <a class="link" href="">À propos</a>
+                    </li>
+                    <li>
+                        <a class="link" href="">Mes projets</a>
+                    </li>
+                    <li>
+                        <a class="link" href="">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <button class="header__toggle js-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="line">
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div id="smooth-wrapper" data-component="Scroller">
+        <div id="smooth-content">
+            <div class="separateur__header"></div>
+            <section class="hero" data-component="Words">
+                <div class="wrapper">
+                    <div class="hero__media">
+                        <img src="assets/images/herotemp.png" alt="hero" data-scale data-scale-force="0.01" />
+                    </div>
+                    <div class="hero__content">
+                        <div class="hero__title">
+                            <h1>Marcos</h1>
+                            <h1>Sosa</h1>
+                            <h1>Silva</h1>
+                        </div>
+                        <div class="title__under">
+                            <h1>Marcos</h1>
+                            <h1>Sosa</h1>
+                            <h1 class="Silva">Silva</h1>
+                        </div>
+                        <div class="hero__subtitle" data-component="Words" data-duration="4500" data-anim-duration="0.6" data-y-offset="40">
+                            <h2 class="hero__subtitle-item" data-rotate-item>Designer Ui</h2>
+                            <h2 class="hero__subtitle-item" data-rotate-item>Développeur Web</h2>
+                        </div>
+                        <div class="hero__sous-titre">
+                            <p class="small">Défilez vers le bas</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="separateur"></div>
+            <section class="hero__under">
+                <div class="wrapper">
+                    <p data-component="TextAnim" data-stagger="0.005" data-duration="0.1" data-delay="0.05">
+                        Je suis une personne qui aime
+                        <span class="highlight" data-text-scramble data-duration="2">le design</span>
+                        et qui peut aussi se débrouiller dans
+                        <span class="highlight" data-text-scramble data-duration="2">l'intégration web.</span>
+                        Je suis particulièrement motivée par l'apprentissage continu et le travail d'équipe. Je m'adapte très rapidement à de nouveaux
+                        environnements et outils.
+                    </p>
+                </div>
+            </section>
+            <div class="separateur"></div>
+
+            <section class="section__competences">
+                <div class="wrapper">
+                    <h2>Mes Compétences</h2>
+                    <div class="competences__container">
+                        <ul class="competences__list">
+                            <li>Design web</li>
+                            <li>Design UI/UX</li>
+                            <li>Design graphique</li>
+                            <li>Intégration web</li>
+                            <li>Intégration wordpress</li>
+                            <li>Création vidéo</li>
+                        </ul>
+
+                        <div class="competences__medias">
+                            <img src="assets/images/competences.png" alt="competences" data-skew data-lag="0.5" />
+                            <img src="assets/images/competences2.png" alt="competences" data-skew data-lag="0.9" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="separateur__competences"></div>
+            <div class="separateur__competences"></div>
+            <section class="sections__logiciel">
+                <div class="wrapper">
+                    <ul>
+                        <li>
+                            <svg class="icon icon--sm">
+                                <use href="#icon-figma"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="icon icon--sm">
+                                <use href="#icon-javascript"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="icon icon--sm">
+                                <use href="#icon-css"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="icon icon--sm">
+                                <use href="#icon-php"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="icon icon--sm">
+                                <use href="#icon-github"></use>
+                            </svg>
+                        </li>
+
+                        <li>
+                            <svg class="icon icon--sm">
+                                <use href="#icon-illustrator"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="icon icon--sm">
+                                <use href="#icon-photoshop"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="icon icon--sm">
+                                <use href="#icon-aftereffects"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="separateur"></div>
+            <section class="projets" data-component="Projets">
+                <div class="wrapper">
+                    <h2>Mes Projets</h2>
+
+                    <div class="projets__container">
+                        <!-- Pin dots-->
+                        <ul class="projet-pagination">
+                            <li class="dot active"></li>
+                            <li class="dot"></li>
+                            <li class="dot"></li>
+                            <!-- <li class="dot"></li>
+                        <li class="dot"></li> -->
+                        </ul>
+
+                        <!-- Project Card -->
+                        <article class="projet-card">
+                            <div class="projet-card__header__container">
+                                <div class="projet-card__header">
+                                    <h1>Boxotel</h1>
+
+                                    <div class="line">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+
+                                    <div class="projet-card__meta">
+                                        <h3>Projet étudiant</h3>
+                                        <span class="accent">*</span>
+                                        <h3>Design UX/UI Web</h3>
+                                    </div>
+
+                                    <h3>Maquette Figma</h3>
+                                </div>
+                            </div>
+
+                            <a class="projet-card__body" href="single-projet.html">
+                                <div class="projet-card__image-container">
+                                    <!-- Image Noir & Blanc (Visible par défaut) -->
+                                    <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
+
+                                    <!-- Image Couleur (Cachée par défaut) -->
+                                    <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
+
+                                    <div class="badge-voir-projet">
+                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <!-- Project Card -->
+                        <article class="projet-card">
+                            <div class="projet-card__header__container">
+                                <div class="projet-card__header">
+                                    <h1>
+                                        Baie
+                                        <br />
+                                        Saint-Catherine
+                                    </h1>
+
+                                    <div class="line">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+
+                                    <div class="projet-card__meta">
+                                        <h3>Projet étudiant</h3>
+                                        <span class="accent">*</span>
+                                        <h3>Production Web</h3>
+                                    </div>
+
+                                    <h3>CSS JS HTML</h3>
+                                </div>
+                            </div>
+
+                            <a class="projet-card__body" href="single-projet.html">
+                                <div class="projet-card__image-container">
+                                    <!-- Image Noir & Blanc (Visible par défaut) -->
+                                    <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
+
+                                    <!-- Image Couleur (Cachée par défaut) -->
+                                    <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
+
+                                    <div class="badge-voir-projet">
+                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <!-- Project Card -->
+                        <article class="projet-card">
+                            <div class="projet-card__header__container">
+                                <div class="projet-card__header">
+                                    <h1>Boxotel</h1>
+
+                                    <div class="line">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+
+                                    <div class="projet-card__meta">
+                                        <h3>Projet étudiant</h3>
+                                        <span class="accent">*</span>
+                                        <h3>Design UX/UI Web</h3>
+                                    </div>
+
+                                    <h3>Maquette Figma</h3>
+                                </div>
+                            </div>
+
+                            <a class="projet-card__body" href="single-projet.html">
+                                <div class="projet-card__image-container">
+                                    <!-- Image Noir & Blanc (Visible par défaut) -->
+                                    <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
+
+                                    <!-- Image Couleur (Cachée par défaut) -->
+                                    <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
+
+                                    <div class="badge-voir-projet">
+                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <div class="separateur"></div>
+            <section class="caractere" data-component="Theme" data-pin-items>
+                <div class="wrapper">
+                    <div class="caractere-container">
+                        <h2>Ce que je suis</h2>
+                        <div class="caractere-mots-wrapper">
+                            <div class="caractere-mots mot-1" data-pin-word>RÉCEPTIF</div>
+                            <div class="caractere-mots mot-2" data-pin-word>PERSÉVÉRANT</div>
+                            <div class="caractere-mots mot-3" data-pin-word>SOCIABLE</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="videos-youtube">
+                <div class="wrapper">
+                    <h2>Vidéo de présentation</h2>
+
+                    <div class="video-youtube" data-component="YouTube" data-video-id="vAticypJw4Y">
+                        <div class="video__media js-video">
+                            <img class="js-poster" src="assets/images/covervideo.png" alt="Vidéo de présentation" />
+                            <img class="logo--yt" src="assets/images/play.svg" alt="logo__play" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="separateur"></div>
+            <section class="interets">
+                <div class="wrapper">
+                    <h2>Ce que j’aime</h2>
+                </div>
+
+                <div class="interets__container">
+                    <!-- Ligne 1 : MUSIQUE (vers la gauche) -->
+                    <div class="marquee marquee--left">
+                        <div class="marquee__track">
+                            <span class="filled green">MUSIQUE</span>
+                            <span class="outline green">MUSIQUE</span>
+                            <span class="filled green">MUSIQUE</span>
+                            <span class="outline green">MUSIQUE</span>
+                        </div>
+                        <div class="marquee__track" aria-hidden="true">
+                            <span class="filled green">MUSIQUE</span>
+                            <span class="outline green">MUSIQUE</span>
+                            <span class="filled green">MUSIQUE</span>
+                            <span class="outline green">MUSIQUE</span>
+                        </div>
+                    </div>
+
+                    <!-- Ligne 2 : JEUX VIDÉOS (vers la droite) -->
+                    <div class="marquee marquee--right">
+                        <div class="marquee__track">
+                            <span class="filled dark">JEUXVIDÉOS</span>
+                            <span class="outline dark">JEUXVIDÉOS</span>
+                            <span class="filled dark">JEUXVIDÉOS</span>
+                            <span class="outline dark">JEUXVIDÉOS</span>
+                        </div>
+                        <div class="marquee__track" aria-hidden="true">
+                            <span class="filled dark">JEUXVIDÉOS</span>
+                            <span class="outline dark">JEUXVIDÉOS</span>
+                            <span class="filled dark">JEUXVIDÉOS</span>
+                            <span class="outline dark">JEUXVIDÉOS</span>
+                        </div>
+                    </div>
+
+                    <!-- Ligne 3 : CINÉMA (vers la gauche) -->
+                    <div class="marquee marquee--left">
+                        <div class="marquee__track">
+                            <span class="filled green">CINÉMA</span>
+                            <span class="outline green">CINÉMA</span>
+                            <span class="filled green">CINÉMA</span>
+                            <span class="outline green">CINÉMA</span>
+                        </div>
+                        <div class="marquee__track" aria-hidden="true">
+                            <span class="filled green">CINÉMA</span>
+                            <span class="outline green">CINÉMA</span>
+                            <span class="filled green">CINÉMA</span>
+                            <span class="outline green">CINÉMA</span>
+                        </div>
+                        <div class="marquee__track" aria-hidden="true">
+                            <span class="filled green">CINÉMA</span>
+                            <span class="outline green">CINÉMA</span>
+                            <span class="filled green">CINÉMA</span>
+                            <span class="outline green">CINÉMA</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="separateur"></div>
+            <section class="recherche" data-component="Words" data-duration="1500" data-anim-duration="0.5" data-y-offset="80">
+                <div class="wrapper">
+                    <h2>Ce que je recherche</h2>
+
+                    <div class="recherche__content">
+                        <div class="recherche__text">
+                            <span class="recherche__item" data-rotate-item>
+                                Je veux apprendre
+                                <br />
+                                avec vous
+                            </span>
+                            <span class="recherche__item" data-rotate-item>
+                                Je veux m’adapter
+                                <br />
+                                à vous
+                            </span>
+                            <span class="recherche__item" data-rotate-item>
+                                Je veux découvrir
+                                <br />
+                                avec vous
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="separateur"></div>
+
+            <footer class="footer">
+                <div class="wrapper">
+                    <section class="contact">
+
+                        <div class="contact__container">
+
+                            <!-- Titre en escalier (Gauche) -->
+                            <h2 class="contact__title">
+                                <span class="contact__word contact__word--1">ON</span>
+                                <span class="contact__word contact__word--2">SE</span>
+                                <span class="contact__word contact__word--3">PARLE?</span>
+                            </h2>
+
+                            <form class="contact__form" data-component="Form" autocomplete="off">
+                                <div class="form__body">
+
+                                    <div class="contact__field">
+                                        <input type="text" name="fullname" placeholder="Nom" required />
+                                        <p class="error-msg"><span class="accent">*</span> Rentrez votre nom</p>
+                                    </div>
+
+                                    <div class="contact__field">
+                                        <input type="email" name="email" placeholder="Courriel" required />
+                                        <p class="error-msg"> <span class="accent">*</span> Le courriel n'est pas valide</p>
+                                    </div>
+
+                                    <div class="contact__field">
+                                        <textarea name="comment" placeholder="Message" rows="2" required></textarea>
+                                        <p class="error-msg"> <span class="accent">*</span> Veuillez inscrire votre message</p>
+                                    </div>
+
+                                    <button type="submit" class="btn spacing-btn">ENVOYER</button>
+                                </div>
+
+                                <div class="form__confirmation">
+                                    <h2 class="contact__thanks">MERCI !</h2>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="line">
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                        </div>
+
+
+                    </section>
+                    <nav class="nav__footer">
+                        <ul class="links footer__links">
+                            <li><a href="#" class="link">Utilisation IA</a></li>
+                            <li><a href="#" class="link">CV</a></li>
+                            <li><a href="#" class="link">Mes projets</a></li>
+                        </ul>
+
+                        <div class="footer__socials">
+                            <svg class="icon icon--lg">
+                                <use href="#icon-github"></use>
+                            </svg>
+                            <svg class="icon icon--lg">
+                                <use href="#icon-linkedIn"></use>
+                            </svg>
+                            <svg class="icon icon--lg">
+                                <use href="#icon-youtube"></use>
+                            </svg>
+                        </div>
+                    </nav>
+                    <div class="footer__copyright">
+                        <span>2026 © Marcos Sosa Silva</span>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+</div>
+</div>
