@@ -270,10 +270,11 @@
     }
 }
 .hero--hub {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     h1 {
         margin: 0;
     }
@@ -291,51 +292,40 @@
         padding-top: 0;
         display: grid;
         place-items: center;
-        position: relative;
         margin: 0;
 
         .hero__title,
         .title__under {
-            grid-area: 1 / 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: auto;
+            position: absolute;
+            top: 0 !important;
+            left: 23% !important;
+            z-index: 1;
+            @media screen and (max-width: $breakpoint-md) {
+                left: 12% !important;
+            }
+            @media screen and (max-width: $breakpoint-sm) {
+                left: 10% !important;
+                grid-template-columns:
+                    1fr,
+                    1fr 1fr;
+            }
         }
 
         .hero__title {
-            position: relative;
             z-index: 2;
-        }
-
-        .title__under {
-            position: relative;
-            top: 0 !important;
-            left: 0 !important;
-            z-index: 1;
-
-            @media screen and (max-width: 1200px),
-                screen and (max-width: 1100px),
-                screen and (max-width: 1000px),
-                screen and (max-width: 900px),
-                screen and (max-width: 750px),
-                screen and (max-width: 700px),
-                screen and (max-width: 650px),
-                screen and (max-width: 580px),
-                screen and (max-width: 520px),
-                screen and (max-width: 420px) {
-                display: flex !important;
-                grid-template-columns: none !important;
-                top: 0 !important;
-                left: 0 !important;
-            }
         }
     }
 
     .hero__text {
         color: var(--color-white);
         width: 75%;
-        padding-bottom: var(--spacing-lg);
+        padding-top: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
+        @media screen and (max-width: $breakpoint-md) {
+            padding-top: 150px;
+            width: 100%;
+            padding-bottom: var(--spacing-md);
+        }
         .text-highlight {
             color: var(--color-primary);
             font-weight: 700;
@@ -348,9 +338,17 @@
         justify-content: center;
 
         padding-bottom: var(--spacing-xl);
-        .btn-hub,
-        .btn {
-            padding: 0.85rem 1.75rem;
+        @media screen and (max-width: $breakpoint-sm) {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding-bottom: var(--spacing-lg);
+            gap: var(--spacing-md);
+        }
+        .btn-hub {
+            padding: 20px var(--spacing-md);
+            @media screen and (max-width: $breakpoint-sm) {
+                padding: 10px 15px;
+            }
         }
     }
 
@@ -361,5 +359,34 @@
         gap: 1.25rem;
         width: 100%;
         padding-top: 0;
+    }
+}
+.hero {
+    min-height: 85vh;
+    width: 100%;
+    position: relative;
+    /* ... vos styles actuels .hero ... */
+
+    /* ==========================================================================
+       Surcharge pour la page Projet (single-page.html)
+       ========================================================================== */
+    &--projet {
+        .wrapper {
+            position: relative;
+        }
+        .hero__media {
+            position: absolute;
+            height: 85vh;
+            img {
+                width: 100%;
+                height: 90vh;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .hero__content {
+            width: 48%;
+        }
     }
 }
