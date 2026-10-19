@@ -111,7 +111,6 @@ export default class Scroller {
           end: '+=250%',
           scrub: 1,
           anticipatePin: 1,
-          markers: true,
         },
       });
 
