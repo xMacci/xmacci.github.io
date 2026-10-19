@@ -25,12 +25,12 @@ export default class Balatro {
       color2: '#84cc16',
       color3: '#090909',
       contrast: 5,
-      swirl: 0.35,
+      swirl: 0.4,
       speed: 0.35,
       rotationSpeed: -0.15,
       scale: 1.6,
       detail: 7,
-      opacity: 0.65,
+      opacity: 0.8,
     };
 
     this.startTime = performance.now();
