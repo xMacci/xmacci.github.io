@@ -8,9 +8,9 @@ import Header from './components/Header.js';
 import Tabs from './components/Tabs.js';
 import TextAnim from './components/TextAnim.js';
 import Projets from './components/Projets.js';
-
 import Words from './components/Words.js';
 import Theme from './components/theme.js';
+import Pointer from './components/Pointer.js';
 export default class ComponentFactory {
   constructor() {
     this.componentInstances = [];
@@ -27,6 +27,7 @@ export default class ComponentFactory {
       Projets,
       Theme,
       Words,
+      Pointer,
     };
     this.init();
   }
