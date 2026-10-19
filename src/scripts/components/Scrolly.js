@@ -14,7 +14,7 @@ export default class Scrolly {
     this.setOptions();
     const observer = new IntersectionObserver(
       this.watch.bind(this),
-      this.options
+      this.options,
     );
     const items = this.element.querySelectorAll('[data-scrolly]');
     for (let i = 0; i < items.length; i++) {
