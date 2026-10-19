@@ -11,9 +11,12 @@
     </head>
 
     <body data-component="Scrolly" data-no-repeat>
-        <div class="cursor"></div>
+        <div class="cursor">
+            <img class="cursor-img" src="./assets/images/cursor/cursor.png" alt="Cursor" />
+            <img class="pointer-img" src="./assets/images/cursor/pointer.png" alt="Pointer" />
+        </div>
         <video class="video" src="assets/videos/videobg.mp4" autoplay muted loop></video>
-
+        <canvas id="balatro" aria-hidden="true"></canvas>
         <svg class="noise" style="display: none">
             <filter id="blackNoise">
                 <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
@@ -27,7 +30,7 @@
             </filter>
         </svg>
         <div class="noise-overlay"></div>
-        <section class="hero hero--hub" data-component="Hero">
+        <section class="hero hero--hub">
             <div class="wrapper">
                 <!-- Titre principal -->
                 <div class="hero__content">

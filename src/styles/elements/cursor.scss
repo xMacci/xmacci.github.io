@@ -1,0 +1,61 @@
+@media (pointer: fine) {
+    body,
+    a,
+    button,
+    .dot,
+    [role='button'] {
+        cursor: none !important;
+    }
+}
+
+.cursor {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 50px; /* Ajuste la taille souhaitée */
+    height: 50px;
+    pointer-events: none !important; /* Laisse passer les clics et le scroll */
+    z-index: 999999 !important; /* Force le passage AU-DESSUS de tout le contenu */
+
+    /* Superposition stricte des deux pointeurs */
+    img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain;
+        pointer-events: none !important;
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    /* 1. Curseur normal (visible par défaut) */
+    .cursor-img {
+        opacity: 1;
+        transform: scale(0.6);
+    }
+
+    /* 2. Pointer de survol (masqué par défaut) */
+    .pointer-img {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    /* --- ÉTAT SURVOL --- */
+    &.cursor-hover {
+        .cursor-img {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        .pointer-img {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @media (pointer: coarse) {
+        display: none !important;
+    }
+}

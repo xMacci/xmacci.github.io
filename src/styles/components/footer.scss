@@ -36,7 +36,6 @@
             transition:
                 fill 0.3s ease,
                 transform 0.3s ease;
-            cursor: pointer;
 
             &:hover {
                 fill: var(--color-primary, #80c200);

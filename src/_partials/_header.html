@@ -11,7 +11,11 @@
     </head>
 
     <body data-component="Scrolly" data-no-repeat>
-        <video class="video" src="/assets/videos/videobg.mp4" autoplay muted loop></video>
+        <div class="cursor" data-component="CustomCursor">
+            <img class="cursor-img" src="./assets/images/cursor/cursor.png" alt="Cursor">
+            <img class="pointer-img" src="./assets/images/cursor/pointer.png" alt="Pointer">
+        </div>
+        <video class="video" src="assets/videos/videobg.mp4" autoplay muted loop></video>
         <svg class="noise" style="display: none;">
             <filter id="blackNoise">
             <!-- Size: 0.7 -->
