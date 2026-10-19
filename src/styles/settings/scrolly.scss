@@ -1,0 +1,149 @@
+/* ==========================================================================
+   scrolly / component
+   ========================================================================== */
+.has-js {
+    [data-scrolly='fromLeft'] {
+        opacity: 0;
+        transform: translateX(-90px);
+        transition: all 0.5s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    [data-scrolly='fromRight'] {
+        opacity: 0;
+        transform: translateX(90px);
+        transition: all 0.5s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    [data-scrolly='fromTop'] {
+        opacity: 0;
+        transform: translateY(-90px);
+        transition: all 0.5s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    [data-scrolly='fromBottom'] {
+        opacity: 0;
+        transform: translateY(90px);
+        transition: all 0.5s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    [data-scrolly='zoomIn'] {
+        opacity: 0;
+        scale: 0.5;
+        transition: all 0.5s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+    [data-scrolly='bounceIn'] {
+        animation: none;
+        &.is-active {
+            animation: bounce2 1s ease 1;
+            @keyframes bounce2 {
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateY(0);
+                }
+                40% {
+                    transform: translateY(-30px);
+                }
+                60% {
+                    transform: translateY(-15px);
+                }
+            }
+        }
+    }
+    [data-scrolly='fadeIn'] {
+        opacity: 0;
+        transition: opacity 0.6s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+        }
+    }
+
+    /* Réduction progressive (Démarre plus grand et rétrécit à 1) */
+    [data-scrolly='zoomOut'] {
+        opacity: 0;
+        transform: scale(1.3);
+        transition: all 0.5s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Effet de flou dynamique (Blur) */
+    [data-scrolly='blurIn'] {
+        opacity: 0;
+        filter: blur(12px);
+        transition:
+            opacity 0.6s $ease-in-out-sine,
+            filter 0.6s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            filter: blur(0px);
+        }
+    }
+
+    /* 4. Rotation légère avec montée */
+    [data-scrolly='rotateIn'] {
+        opacity: 0;
+        transform: translateY(40px) rotate(-10deg);
+        transition: all 0.5s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0px) rotate(0deg);
+        }
+    }
+
+    /* Effet Flip 3D (Bascule vers l'avant) */
+    [data-scrolly='flipIn'] {
+        opacity: 0;
+        transform: perspective(600px) rotateX(-60deg);
+        transform-origin: top center;
+        transition: all 0.6s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            transform: perspective(600px) rotateX(0deg);
+        }
+    }
+
+    /* Effet Pop / Rebond élastique */
+    [data-scrolly='popIn'] {
+        opacity: 0;
+        transform: scale(0.4);
+        transition:
+            opacity 0.3s $ease-in-out-sine,
+            transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        &.is-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Déformation en biseau (Skew) */
+    [data-scrolly='skewIn'] {
+        opacity: 0;
+        transform: translateY(50px) skewY(6deg);
+        transition: all 0.5s $ease-in-out-sine;
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0px) skewY(0deg);
+        }
+    }
+}

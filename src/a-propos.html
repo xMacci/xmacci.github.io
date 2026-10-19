@@ -49,7 +49,7 @@
             <div class="wrapper">
                 <h2>Mes Compétences</h2>
                 <div class="competences__container">
-                    <ul class="competences__list">
+                    <ul class="competences__list" data-scrolly="fromLeft">
                         <li>Design web</li>
                         <li>Design UI/UX</li>
                         <li>Design graphique</li>
@@ -58,7 +58,7 @@
                         <li>Création vidéo</li>
                     </ul>
 
-                    <div class="competences__medias">
+                    <div class="competences__medias" data-scrolly="fromRight">
                         <img src="assets/images/competences.png" alt="competences" data-skew data-lag="0.5" />
                         <img src="assets/images/competences2.png" alt="competences" data-skew data-lag="0.9" />
                     </div>
@@ -67,7 +67,7 @@
         </section>
         <div class="separateur__competences"></div>
         <div class="separateur__competences"></div>
-        <section class="sections__logiciel">
+        <section class="sections__logiciel" data-scrolly="fromBottom">
             <div class="wrapper">
                 <ul>
                     <li>
@@ -323,7 +323,7 @@
             </div>
         </section>
         <div class="separateur"></div>
-        <section class="caractere" data-component="Theme" data-pin-items>
+        <section class="caractere" data-component="Theme" data-pin-items data-scrolly="fadeIn">
             <div class="wrapper">
                 <div class="caractere-container">
                     <h2>Ce que je suis</h2>
@@ -339,7 +339,7 @@
             <div class="wrapper">
                 <h2>Vidéo de présentation</h2>
 
-                <div class="video-youtube" data-component="YouTube" data-video-id="vAticypJw4Y">
+                <div class="video-youtube" data-scrolly="zoomOut" data-component="YouTube" data-video-id="vAticypJw4Y">
                     <div class="video__media js-video">
                         <img class="js-poster" src="assets/images/covervideo.png" alt="Vidéo de présentation" />
                         <img class="logo--yt" src="assets/images/play.svg" alt="logo__play" />
@@ -355,7 +355,7 @@
 
             <div class="interets__container">
                 <!-- Ligne 1 : MUSIQUE (vers la gauche) -->
-                <div class="marquee marquee--left">
+                <div class="marquee marquee--left" data-scrolly="fromLeft">
                     <div class="marquee__track">
                         <span class="filled green">MUSIQUE</span>
                         <span class="outline green">MUSIQUE</span>
@@ -371,8 +371,8 @@
                 </div>
 
                 <!-- Ligne 2 : JEUX VIDÉOS (vers la droite) -->
-                <div class="marquee marquee--right">
-                    <div class="marquee__track">
+                <div class="marquee marquee--right" data-scrolly="fromRight">
+                    <div class="marquee__track" data-scrolly="fromLeft">
                         <span class="filled dark">JEUXVIDÉOS</span>
                         <span class="outline dark">JEUXVIDÉOS</span>
                         <span class="filled dark">JEUXVIDÉOS</span>
@@ -387,7 +387,7 @@
                 </div>
 
                 <!-- Ligne 3 : CINÉMA (vers la gauche) -->
-                <div class="marquee marquee--left">
+                <div class="marquee marquee--left" data-scrolly="fromLeft">
                     <div class="marquee__track">
                         <span class="filled green">CINÉMA</span>
                         <span class="outline green">CINÉMA</span>
@@ -410,7 +410,7 @@
             </div>
         </section>
         <div class="separateur"></div>
-        <section class="recherche" data-component="Words" data-duration="1500" data-anim-duration="0.5" data-y-offset="80">
+        <section class="recherche" data-component="Words" data-duration="1500" data-anim-duration="0.5" data-y-offset="80" data-scrolly="blurIn">
             <div class="wrapper">
                 <h2>Ce que je recherche</h2>
 

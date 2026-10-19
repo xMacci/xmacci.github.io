@@ -3,30 +3,22 @@
     scrollbar-color: #84cc16 #1e1e1e;
 }
 
-/* =========================================================
-   2. WEBKIT (Chrome, Safari, Edge, Opera)
-   ========================================================= */
-
-/* Largeur / Hauteur de la barre de scroll */
 ::-webkit-scrollbar {
-    width: 50px; /* Pour le scroll vertical */
-    height: 50px; /* Pour le scroll horizontal */
+    width: 50px;
+    height: 50px;
 }
 
-/* Le fond de la barre (le rail) */
 ::-webkit-scrollbar-track {
     background: #1e1e1e;
     border-radius: 2px;
 }
 
-/* Le curseur (la poignée que l'on glisse) */
 ::-webkit-scrollbar-thumb {
     background: #84cc16;
     border-radius: 5px;
-    border: 1px solid #2a2a2a; /* Ajoute un espace autour du curseur */
+    border: 1px solid #2a2a2a;
 }
 
-/* Couleur du curseur au survol */
 ::-webkit-scrollbar-thumb:hover {
     background: #84cc16;
 }
