@@ -3,10 +3,16 @@
 .projets {
     position: relative;
     width: 100%;
+    perspective: 1200px;
 
     .projets__container {
         position: relative;
         width: 100%;
+        height: 100vh;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            height: auto;
+        }
     }
 
     /* --- PAGINATION DOTS --- */
@@ -40,6 +46,10 @@
                 transform: scale(1.25);
             }
         }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            display: none;
+        }
     }
 
     /* --- PROJET CARD --- */
@@ -48,10 +58,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 100vh;
         width: 100%;
         box-sizing: border-box;
+        background-color: var(--color-black);
+        will-change: transform, opacity, filter;
 
         .projet-card__header__container {
             position: absolute;
@@ -69,6 +83,16 @@
             h1,
             h3 {
                 margin: 0;
+            }
+        }
+
+        .line {
+            display: flex;
+            gap: 6px;
+
+            .line__inner {
+                transform-origin: left center;
+                will-change: transform;
             }
         }
 
@@ -145,6 +169,7 @@
             }
         }
 
+        /* --- BREAKPOINT TABLETTE --- */
         @media screen and (max-width: $breakpoint-md) {
             height: auto;
             min-height: auto;
@@ -166,6 +191,7 @@
             .projet-card__image-container {
                 width: 100%;
                 height: 50vh;
+
                 .badge-voir-projet {
                     left: 0;
                     bottom: 0;
@@ -175,11 +201,23 @@
             }
         }
 
+        /* --- BREAKPOINT MOBILE --- */
         @media screen and (max-width: $breakpoint-sm) {
-            padding: var(--spacing-sm) 0;
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            height: auto !important;
+            min-height: auto;
+            padding: var(--spacing-md) 1.25rem;
+            justify-content: flex-start;
 
             .projet-card__header__container {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                align-self: flex-start;
                 margin-bottom: var(--spacing-xs);
+                width: 100%;
             }
 
             .projet-card__meta {
@@ -189,11 +227,13 @@
 
             .projet-card__body {
                 flex-direction: column;
+                padding-top: 0;
             }
 
             .projet-card__image-container {
                 width: 100%;
                 height: 50vh;
+
                 .badge-voir-projet {
                     width: 20vw;
                     height: 20vh;
@@ -204,10 +244,11 @@
         }
 
         @media screen and (max-width: $breakpoint-xs) {
-            padding: var(--spacing-xs) 0;
+            padding: var(--spacing-sm) 1rem;
 
             .projet-card__image-container {
-                height: 30vh;
+                height: 35vh;
+
                 .badge-voir-projet {
                     width: 20vw;
                     height: 20vh;

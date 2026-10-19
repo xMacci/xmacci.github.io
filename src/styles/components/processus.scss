@@ -1,39 +1,63 @@
 .analysis-process {
+    width: 100%;
+    overflow: hidden;
+
     .wrapper {
         position: relative;
-        overflow: hidden;
+        width: 100%;
     }
+
     .horiz {
         display: flex;
         align-items: center;
+        width: 100%;
     }
 
     &__main-title {
         color: var(--color-white, #ffffff);
+        padding: 0 5vw;
+        box-sizing: border-box;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            padding: 0 1.25rem;
+        }
     }
 
     &__track {
         display: flex;
-        gap: var(--spacing-lg);
+        gap: 0;
+        width: max-content;
     }
 
     &__panel {
-        flex: 0 0 auto;
+        flex: 0 0 100vw;
+        width: 100vw;
+        min-width: 100vw;
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-lg);
-        width: 100%;
-        height: 100vh;
-        padding-top: var(--spacing-lg);
+        justify-content: flex-start;
+        padding: 80px 5vw 2rem 5vw;
+        gap: 1.25rem;
+        box-sizing: border-box;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            height: auto;
+            min-height: 100vh;
+            padding: 5rem 1.25rem 3rem 1.25rem;
+            gap: 1rem;
+        }
     }
 
     &__step {
         display: flex;
         align-items: baseline;
         gap: var(--spacing-md);
+        width: 100%;
 
         .step-num {
             color: var(--color-primary, #82ec1e);
+            flex-shrink: 0;
         }
     }
 
@@ -41,29 +65,37 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
-        width: auto;
-        height: auto;
+        width: 100%;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
     }
 
     &__media {
         border-radius: 4px;
         overflow: hidden;
         background: #151515;
-        height: 100%;
+        width: 100%;
+
         img {
             width: 100%;
-            height: 65vh;
+            height: auto;
+            aspect-ratio: 4 / 3; /* Passage à 4/3 : image plus haute et toujours 100% fluide sans hauteur fixe */
             display: block;
             object-fit: cover;
         }
     }
 
-    /* Description sous les images de l'étape */
     &__desc {
         font-size: var(--font-size-p2);
         line-height: 1.6;
         color: var(--color-white);
         margin: 0;
+        width: 100%;
+        word-break: break-word;
+        overflow-wrap: break-word;
 
         .text-highlight {
             color: var(--color-primary);

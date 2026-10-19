@@ -3,13 +3,16 @@
     padding: 100px 0;
     position: relative;
     --line-height: 6px;
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: var(--spacing-lg) 0;
+    }
     .contact__container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 100px;
         align-items: center;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: $breakpoint-sm) {
             grid-template-columns: 1fr;
             gap: 50px;
         }

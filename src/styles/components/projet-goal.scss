@@ -7,10 +7,126 @@
         line-height: 1.5;
         color: var(--color-white);
         margin: 0;
-
+        padding-bottom: var(--spacing-lg);
         .text-highlight {
             color: var(--color-primary, #82ec1e);
             font-weight: 700;
+        }
+    }
+
+    .projet_goal_medias {
+        padding: var(--spacing-xl) 0;
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* DESKTOP : Ordinateur au centre */
+        .mockup-laptop {
+            position: relative;
+            width: 50%;
+
+            height: auto;
+            display: block;
+            z-index: 1;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+        }
+
+        /* DESKTOP : Téléphone en bas à droite */
+        .mockup-phone {
+            position: absolute;
+            right: 10%;
+            bottom: 0%;
+            width: 30%;
+
+            height: auto;
+            z-index: 2;
+            transform: rotate(-4deg);
+            filter: drop-shadow(-15px 20px 30px rgba(0, 0, 0, 0.85));
+            transition: transform 0.3s ease;
+        }
+        @media screen and (max-width: $breakpoint-md) {
+            .mockup-laptop {
+                position: relative;
+                width: 50%;
+
+                height: auto;
+                display: block;
+                z-index: 1;
+                filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+            }
+
+            /* DESKTOP : Téléphone en bas à droite */
+            .mockup-phone {
+                position: absolute;
+                right: 10%;
+                bottom: 20%;
+                width: 30%;
+
+                height: auto;
+                z-index: 2;
+                transform: rotate(-4deg);
+                filter: drop-shadow(-15px 20px 30px rgba(0, 0, 0, 0.85));
+                transition: transform 0.3s ease;
+            }
+        }
+        /* 📱 MOBILE : Ordinateur rapproché du téléphone */
+        @media screen and (max-width: $breakpoint-sm) {
+            padding: 0 0;
+            height: 45vh;
+            /* Téléphone au centre */
+            .mockup-phone {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                width: auto;
+                height: inherit;
+
+                z-index: 1;
+                transform: rotate(0deg);
+            }
+
+            /* Ordinateur rapproché du téléphone (superposé sur le bas-droit) */
+            .mockup-laptop {
+                position: absolute;
+                right: 15%;
+                bottom: 15%;
+                width: 30%;
+
+                margin: 0;
+                z-index: 2;
+                transform: rotate(-4deg);
+                filter: drop-shadow(-10px 15px 25px rgba(0, 0, 0, 0.9));
+            }
+        }
+        @media screen and (max-width: $breakpoint-xs) {
+            padding: 0 0;
+            /* Téléphone au centre */
+            .mockup-phone {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                width: 100%;
+                height: auto;
+
+                z-index: 1;
+                transform: rotate(0deg);
+            }
+
+            /* Ordinateur rapproché du téléphone (superposé sur le bas-droit) */
+            .mockup-laptop {
+                position: absolute;
+                right: 15%;
+                bottom: 30%;
+                width: 30%;
+
+                margin: 0;
+                z-index: 2;
+                transform: rotate(-4deg);
+                filter: drop-shadow(-10px 15px 25px rgba(0, 0, 0, 0.9));
+            }
         }
     }
 }

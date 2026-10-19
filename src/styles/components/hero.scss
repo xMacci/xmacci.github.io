@@ -361,32 +361,60 @@
         padding-top: 0;
     }
 }
-.hero {
-    min-height: 85vh;
-    width: 100%;
-    position: relative;
-    /* ... vos styles actuels .hero ... */
+.hero--projet {
+    .wrapper {
+        position: relative;
 
-    /* ==========================================================================
-       Surcharge pour la page Projet (single-page.html)
-       ========================================================================== */
-    &--projet {
-        .wrapper {
+        @media screen and (max-width: $breakpoint-md) {
+            flex-direction: column-reverse;
+            height: auto;
+            gap: var(--spacing-lg);
+        }
+    }
+
+    .hero__content {
+        width: 48%;
+
+        @media screen and (max-width: $breakpoint-md) {
+            width: 100%;
+            padding: 40px 0 0 0;
+        }
+    }
+
+    .title__under {
+        @media screen and (max-width: $breakpoint-md) {
+            top: 15%;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            top: 40px;
+            left: 0;
+        }
+
+        @media screen and (max-width: $breakpoint-xs) {
+            top: 35px;
+        }
+    }
+
+    .hero__media {
+        position: absolute;
+        height: 85vh;
+
+        img {
+            width: 100%;
+            height: 90vh;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
             position: relative;
-        }
-        .hero__media {
-            position: absolute;
-            height: 85vh;
-            img {
-                width: 100%;
-                height: 90vh;
-                object-fit: cover;
-                display: block;
-            }
-        }
+            width: 100%;
+            height: 45vh;
 
-        .hero__content {
-            width: 48%;
+            img {
+                height: 100%;
+            }
         }
     }
 }

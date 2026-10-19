@@ -6,6 +6,8 @@
     h2 {
         color: transparent !important;
         -webkit-text-stroke: 2px var(--color-black);
+        font-size: var(--font-size-spanB);
+        line-height: 50px;
     }
 
     .recherche__content {

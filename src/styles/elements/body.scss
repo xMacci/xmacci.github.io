@@ -60,10 +60,7 @@ body {
     pointer-events: none;
     filter: url(#blackNoise);
 }
-.highlight {
-    color: var(--color-primary);
-    font-weight: 800;
-}
+
 #smooth-wrapper {
     position: fixed;
     top: 0;
