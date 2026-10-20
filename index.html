@@ -28,22 +28,20 @@
         </filter>
     </svg>
     <div class="noise-overlay"></div>
-    <section class="hero hero--hub">
+    <section class="hero hero--hub" data-component="GsapAnimate">
         <div class="wrapper">
-            <!-- Titre principal -->
             <div class="hero__content">
                 <div class="hero__title">
-                    <h1>Marcos Sosa Silva</h1>
+                    <h1 data-gsap="fromBottom" data-delay="0.1">Marcos Sosa Silva</h1>
                     <h1 class="title__under">
                         <span>Marcos</span>
-
                         <span>Sosa</span>
                         <span>Silva</span>
                     </h1>
                 </div>
             </div>
-            <!-- Description -->
-            <p class="hero__text" data-gsap data-delay="0.2">
+
+            <p class="hero__text" data-gsap="fromLeft" data-delay="0.25">
                 <span class="text-highlight">Designer UI/UX</span>
                 et
                 <span class="text-highlight">développeur web junior,</span>
@@ -55,15 +53,13 @@
                 à vos projets.
             </p>
 
-            <!-- Boutons d'action -->
-            <div class="hero__actions" data-gsap data-delay="0.3">
+            <div class="hero__actions" data-gsap="fromRight" data-delay="0.4">
                 <a href="a-propos.html" class="btn btn-hub">À PROPOS</a>
                 <a href="./a-propos.html#projets" class="btn btn-hub">MES PROJETS</a>
                 <a href="#cv" class="btn btn-hub">MON CV</a>
             </div>
 
-            <!-- Liens et Réseaux -->
-            <nav class="nav__footer" data-gsap data-delay="0.4">
+            <nav class="nav__footer" data-gsap="zoomIn" data-delay="0.55">
                 <div class="footer__socials">
                     <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <svg class="icon icon--lg">
@@ -80,9 +76,9 @@
                             <use href="#icon-youtube"></use>
                         </svg>
                     </a>
-                    <a href="https://ca.pinterest.com/marcossosasilva002/" target="_blank">
+                    <a href="https://ca.pinterest.com/marcossosasilva002/" target="_blank" aria-label="Pinterest">
                         <svg class="icon icon--lg">
-                            <use href="#icon-pinterest" target="_blank"></use>
+                            <use href="#icon-pinterest"></use>
                         </svg>
                     </a>
                 </div>

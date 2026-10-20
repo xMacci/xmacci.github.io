@@ -85,6 +85,11 @@
 /* ==========================================================================
    scrolly / component
    ========================================================================== */
+.has-js [data-gsap] {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+}
 .has-js [data-scrolly=fromLeft] {
   opacity: 0;
   transform: translateX(-90px);
@@ -154,9 +159,6 @@
 .has-js [data-scrolly=fadeIn].is-active {
   opacity: 1;
 }
-.has-js {
-  /* Réduction progressive (Démarre plus grand et rétrécit à 1) */
-}
 .has-js [data-scrolly=zoomOut] {
   opacity: 0;
   transform: scale(1.3);
@@ -165,9 +167,6 @@
 .has-js [data-scrolly=zoomOut].is-active {
   opacity: 1;
   transform: scale(1);
-}
-.has-js {
-  /* Effet de flou dynamique (Blur) */
 }
 .has-js [data-scrolly=blurIn] {
   opacity: 0;
@@ -178,9 +177,6 @@
   opacity: 1;
   filter: blur(0px);
 }
-.has-js {
-  /* 4. Rotation légère avec montée */
-}
 .has-js [data-scrolly=rotateIn] {
   opacity: 0;
   transform: translateY(40px) rotate(-10deg);
@@ -189,9 +185,6 @@
 .has-js [data-scrolly=rotateIn].is-active {
   opacity: 1;
   transform: translateY(0px) rotate(0deg);
-}
-.has-js {
-  /* Effet Flip 3D (Bascule vers l'avant) */
 }
 .has-js [data-scrolly=flipIn] {
   opacity: 0;
@@ -203,9 +196,6 @@
   opacity: 1;
   transform: perspective(600px) rotateX(0deg);
 }
-.has-js {
-  /* Effet Pop / Rebond élastique */
-}
 .has-js [data-scrolly=popIn] {
   opacity: 0;
   transform: scale(0.4);
@@ -214,9 +204,6 @@
 .has-js [data-scrolly=popIn].is-active {
   opacity: 1;
   transform: scale(1);
-}
-.has-js {
-  /* Déformation en biseau (Skew) */
 }
 .has-js [data-scrolly=skewIn] {
   opacity: 0;
@@ -1205,7 +1192,7 @@ a.logo {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
 }
 .hero--hub h1 {
@@ -1365,7 +1352,7 @@ a.logo {
 }
 @media screen and (max-width: 768px) {
   .hero--hub .hero__text {
-    padding-top: 0px;
+    padding-top: var(--spacing-md);
     width: 100%;
     padding-bottom: var(--spacing-md);
   }
@@ -1383,17 +1370,23 @@ a.logo {
 @media screen and (max-width: 768px) {
   .hero--hub .hero__actions {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     padding-bottom: var(--spacing-md);
     gap: var(--spacing-md);
   }
+  .hero--hub .hero__actions a:nth-child(3) {
+    align-self: center;
+    text-align: center;
+    grid-column: 1/-1;
+    justify-self: center;
+  }
 }
 .hero--hub .hero__actions .btn-hub {
-  padding: 20px var(--spacing-md);
+  padding: 10px var(--spacing-md);
 }
 @media screen and (max-width: 768px) {
   .hero--hub .hero__actions .btn-hub {
-    padding: 10px 15px;
+    padding: 5px 20px;
   }
 }
 .hero--hub .footer__socials {
@@ -1422,6 +1415,32 @@ a.logo {
   .hero--projet .hero__content {
     width: 100%;
     padding: 40px 0 0 0;
+  }
+}
+@media screen and (max-width: 635px) {
+  .hero--projet .hero__content .title__under {
+    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    transform: scale(1);
+    padding-left: 0;
+    left: 0;
+    top: 0;
+  }
+  .hero--projet .hero__content .title__under > span:nth-child(2) {
+    padding-left: 50px;
+  }
+}
+.hero--projet .hero__content .btn-hero {
+  padding-top: var(--spacing-xl);
+}
+.hero--projet .hero__content .hero__sous-titre {
+  top: 350px;
+}
+@media screen and (max-width: 1025px) {
+  .hero--projet .hero__content .hero__sous-titre {
+    display: none;
   }
 }
 .hero--projet .hero__media {
