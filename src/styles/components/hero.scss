@@ -395,26 +395,11 @@
     }
 
     .hero__content {
-        width: 48%;
+        width: 100%;
 
         @media screen and (max-width: $breakpoint-md) {
             width: 100%;
             padding: 40px 0 0 0;
-        }
-    }
-
-    .title__under {
-        @media screen and (max-width: $breakpoint-md) {
-            top: 15%;
-        }
-
-        @media screen and (max-width: $breakpoint-sm) {
-            top: 40px;
-            left: 0;
-        }
-
-        @media screen and (max-width: $breakpoint-xs) {
-            top: 35px;
         }
     }
 
