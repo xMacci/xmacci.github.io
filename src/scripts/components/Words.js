@@ -2,78 +2,68 @@ import { gsap } from 'gsap';
 
 export default class Words {
   constructor(element) {
-    this.element = element;
+    this.element =
+      typeof element === 'string' ? document.querySelector(element) : element;
+    if (!this.element) return;
 
-    // Valeurs par défaut
-    this.options = {
-      duration: 3000,
-      animDuration: 0.5,
-      delay: 0.2,
-      yOffset: 30,
-    };
+    // Évite la double initialisation si le composant a déjà été instancié
+    if (this.element.dataset.initialized) return;
+    this.element.dataset.initialized = 'true';
 
-    this.setOptions();
+    this.items = this.element.querySelectorAll('[data-rotate-item]');
+    if (!this.items.length) return;
 
-    // Sélection de tous les éléments à faire tourner dans la composante
-    this.spans = Array.from(
-      this.element.querySelectorAll('[data-rotate-item]'),
-    );
+    this.duration = parseInt(this.element.dataset.duration, 10) || 4500;
+    this.animDuration = parseFloat(this.element.dataset.animDuration) || 0.6;
+    this.yOffset = parseInt(this.element.dataset.yOffset, 10) || 40;
+
     this.currentIndex = 0;
-
     this.init();
   }
 
-  setOptions() {
-    if (this.element.dataset.duration) {
-      this.options.duration = parseFloat(this.element.dataset.duration);
-    }
-    if (this.element.dataset.animDuration) {
-      this.options.animDuration = parseFloat(this.element.dataset.animDuration);
-    }
-    if (this.element.dataset.delay) {
-      this.options.delay = parseFloat(this.element.dataset.delay);
-    }
-    if (this.element.dataset.yOffset) {
-      this.options.yOffset = parseFloat(this.element.dataset.yOffset);
-    }
-  }
-
   init() {
-    if (!this.spans.length) return;
+    gsap.set(this.items, {
+      opacity: 0,
+      y: this.yOffset,
+      visibility: 'visible',
+    });
+    gsap.set(this.items[0], { opacity: 1, y: 0 });
 
-    // Masque tous les mots sauf le premier
-    gsap.set(this.spans, { opacity: 0, y: this.options.yOffset });
-    gsap.set(this.spans[0], { opacity: 1, y: 0 });
-
-    this.startLoop();
+    // 2. Lancement de la boucle de rotation
+    this.startRotation();
   }
 
-  startLoop() {
-    setInterval(() => {
-      const currentText = this.spans[this.currentIndex];
-      this.currentIndex = (this.currentIndex + 1) % this.spans.length;
-      const nextText = this.spans[this.currentIndex];
+  startRotation() {
+    if (this.interval) clearInterval(this.interval);
 
-      // Animation de sortie vers le haut
-      gsap.to(currentText, {
-        opacity: 0,
-        y: -this.options.yOffset,
-        duration: this.options.animDuration,
-        ease: 'power2.in',
-      });
+    this.interval = setInterval(() => {
+      this.rotate();
+    }, this.duration);
+  }
 
-      // Animation d'entrée depuis le bas
-      gsap.fromTo(
-        nextText,
-        { opacity: 0, y: this.options.yOffset },
-        {
-          opacity: 1,
-          y: 0,
-          duration: this.options.animDuration,
-          delay: this.options.delay,
-          ease: 'power2.out',
-        },
-      );
-    }, this.options.duration);
+  rotate() {
+    const currentItem = this.items[this.currentIndex];
+    this.currentIndex = (this.currentIndex + 1) % this.items.length;
+    const nextItem = this.items[this.currentIndex];
+
+    // Animation de sortie vers le haut
+    gsap.to(currentItem, {
+      y: -this.yOffset,
+      opacity: 0,
+      duration: this.animDuration,
+      ease: 'power2.inOut',
+    });
+
+    // Animation d'entrée depuis le bas
+    gsap.fromTo(
+      nextItem,
+      { y: this.yOffset, opacity: 0, visibility: 'visible' },
+      {
+        y: 0,
+        opacity: 1,
+        duration: this.animDuration,
+        ease: 'power2.inOut',
+      },
+    );
   }
 }
