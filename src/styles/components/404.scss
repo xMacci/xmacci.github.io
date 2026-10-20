@@ -1,0 +1,14 @@
+.error-container {
+    padding-top: var(--spacing-xl);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--color-white);
+    gap: var(--spacing-lg);
+    p {
+        text-align: center;
+        width: 50%;
+    }
+}

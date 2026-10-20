@@ -30,7 +30,7 @@
     .footer__socials {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: var(--spacing-lg);
         li {
             list-style: none;
         }
