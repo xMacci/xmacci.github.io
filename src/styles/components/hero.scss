@@ -334,16 +334,19 @@
 
     .hero__text {
         color: var(--color-white);
-        width: 75%;
+        width: 80%;
         padding-top: var(--spacing-xl);
         padding-bottom: var(--spacing-xl);
         @media screen and (max-width: $breakpoint-md) {
-            padding-top: 150px;
-            width: 100%;
+            margin: 0;
+            padding-top: 80px;
+            width: 60%;
             padding-bottom: var(--spacing-md);
         }
-        @media screen and (max-width: 736px) {
-            padding-top: 50px;
+        @media screen and (max-width: $breakpoint-sm) {
+            padding-top: 0px;
+            width: 100%;
+            padding-bottom: var(--spacing-md);
         }
         .text-highlight {
             color: var(--color-primary);
@@ -360,7 +363,7 @@
         @media screen and (max-width: $breakpoint-sm) {
             display: grid;
             grid-template-columns: 1fr;
-            padding-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
             gap: var(--spacing-md);
         }
         .btn-hub {
