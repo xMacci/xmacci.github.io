@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M.Sosa Silva Portfolio</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body data-component="Scrolly">
+    <div class="cursor" data-component="CustomCursor">
+        <img class="cursor-img" src="./assets/images/cursor/cursor.png" alt="Cursor">
+        <img class="pointer-img" src="./assets/images/cursor/pointer.png" alt="Pointer">
+    </div>
+    <video class="video" src="assets/videos/videobg.mp4" autoplay muted loop></video>
+    <svg class="noise" style="display: none;">
+        <filter id="blackNoise">
+            <!-- Size: 0.7 -->
+            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
+
+            <!-- Density: 58% + Couleur: Noire -->
+            <feColorMatrix type="matrix" values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.32 0" />
+        </filter>
+    </svg>
+    <div class="noise-overlay"></div>
+
+
+    <header class="header" data-component="Header" data-auto-hide data-threshold="0.1">
+        <div class="wrapper">
+
+            <a href="index.html" class="logo">
+
+                Mass
+            </a>
+
+            <nav class="nav-menu nav-primary">
+
+                <ul class="links">
+                    <li>
+                        <a class="link" href="index.html">Hub</a>
+                    </li>
+                    <li>
+                        <a class="link" href="./a-propos.html">À propos</a>
+                    </li>
+                    <li>
+                        <a class="link" href="./a-propos.html#projets">Mes projets</a>
+                    </li>
+                    <li>
+                        <a class="link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <button class="header__toggle js-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="line">
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div id="smooth-wrapper" data-component="Scroller">
+        <div id="smooth-content">
+            <div class="separateur__header"></div>
+            <div class="hero error">
+                <div class="wrapper">
+                    <div class="error-container">
+                        <h1>404</h1>
+                        <h2>Page non trouvée</h2>
+
+                        <p>Désolé, la page que vous recherchez n'existe pas ou a été déplacée.</p>
+                        <div class="limit-btn">
+                            <a href="index.html" class="btn">Retourner à l'accueil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="wrapper">
+                    <section id="contact" class="contact">
+
+                        <div class="contact__container">
+
+                            <!-- Titre en escalier (Gauche) -->
+                            <h2 class="contact__title">
+                                <span class="contact__word contact__word--1">ON</span>
+                                <span class="contact__word contact__word--2">SE</span>
+                                <span class="contact__word contact__word--3">PARLE?</span>
+                            </h2>
+
+
+                            <form class="contact__form" data-component="Form" action="https://formsubmit.co/marcos.sosa.silva002@gmail.com" method="POST" autocomplete="off">
+                                <div class="form__body">
+
+                                    <div class="contact__field">
+                                        <input type="text" name="fullname" placeholder="Nom" required />
+                                        <p class="error-msg"><span class="accent">*</span> Rentrez votre nom</p>
+                                    </div>
+
+                                    <div class="contact__field">
+                                        <input type="email" name="email" placeholder="Courriel" required />
+                                        <p class="error-msg"> <span class="accent">*</span> Le courriel n'est pas valide</p>
+                                    </div>
+
+                                    <div class="contact__field">
+                                        <textarea name="comment" placeholder="Message" rows="2" required></textarea>
+                                        <p class="error-msg"> <span class="accent">*</span> Veuillez inscrire votre message</p>
+                                    </div>
+
+                                    <button type="submit" class="btn spacing-btn">ENVOYER</button>
+                                </div>
+
+                                <div class="form__confirmation">
+                                    <h2 class="contact__thanks">MERCI !</h2>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="line">
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                        </div>
+
+
+                    </section>
+                    <nav class="nav__footer" data-scrolly='zoomOut'>
+                        <ul class="links footer__links">
+                            <li><a href="#" class="link">Utilisation IA</a></li>
+                            <li><a href="#" class="link">CV</a></li>
+                            <li><a href="#" class="link">Mes projets</a></li>
+                        </ul>
+                        <ul class="footer__socials">
+                            <li><a href="https://github.com/xMacci" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-github">
+
+                                        </use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/marcos-sosa-silva-941729202/" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-linkedIn" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                            <li><a href="https://www.youtube.com/@macciavelico" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-youtube" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                            <li><a href="https://ca.pinterest.com/marcossosasilva002/" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-pinterest" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer__copyright">
+                        <span>2026 © Marcos Sosa Silva</span>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+</div>
+</div>

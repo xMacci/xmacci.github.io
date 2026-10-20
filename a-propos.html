@@ -11,8 +11,12 @@
     <script src="scripts/main.js" defer></script>
 </head>
 
-<body data-component="Scrolly" data-no-repeat>
-    <video class="video" src="/assets/videos/videobg.mp4" autoplay muted loop></video>
+<body data-component="Scrolly">
+    <div class="cursor" data-component="CustomCursor">
+        <img class="cursor-img" src="./assets/images/cursor/cursor.png" alt="Cursor">
+        <img class="pointer-img" src="./assets/images/cursor/pointer.png" alt="Pointer">
+    </div>
+    <video class="video" src="assets/videos/videobg.mp4" autoplay muted loop></video>
     <svg class="noise" style="display: none;">
         <filter id="blackNoise">
             <!-- Size: 0.7 -->
@@ -40,16 +44,16 @@
 
                 <ul class="links">
                     <li>
-                        <a class="link" href="">Hub</a>
+                        <a class="link" href="index.html">Hub</a>
                     </li>
                     <li>
-                        <a class="link" href="">À propos</a>
+                        <a class="link" href="./a-propos.html">À propos</a>
                     </li>
                     <li>
-                        <a class="link" href="">Mes projets</a>
+                        <a class="link" href="./a-propos.html#projets">Mes projets</a>
                     </li>
                     <li>
-                        <a class="link" href="">Contact</a>
+                        <a class="link" href="#contact">Contact</a>
                     </li>
 
                 </ul>
@@ -94,6 +98,8 @@
                         <div class="hero__subtitle" data-component="Words" data-duration="4500" data-anim-duration="0.6" data-y-offset="40">
                             <h2 class="hero__subtitle-item" data-rotate-item>Designer Ui</h2>
                             <h2 class="hero__subtitle-item" data-rotate-item>Développeur Web</h2>
+                            <h2 class="hero__subtitle-item" data-rotate-item>Designer Ui</h2>
+                            <h2 class="hero__subtitle-item" data-rotate-item>Développeur Web</h2>
                         </div>
                         <div class="hero__sous-titre">
                             <p class="small">Défilez vers le bas</p>
@@ -106,9 +112,9 @@
                 <div class="wrapper">
                     <p data-component="TextAnim" data-stagger="0.005" data-duration="0.1" data-delay="0.05">
                         Je suis une personne qui aime
-                        <span class="highlight" data-text-scramble data-duration="2">le design</span>
+                        <span class="text-highlight" data-text-scramble data-duration="2">le design</span>
                         et qui peut aussi se débrouiller dans
-                        <span class="highlight" data-text-scramble data-duration="2">l'intégration web.</span>
+                        <span class="text-highlight" data-text-scramble data-duration="2">l'intégration web.</span>
                         Je suis particulièrement motivée par l'apprentissage continu et le travail d'équipe. Je m'adapte très rapidement à de nouveaux
                         environnements et outils.
                     </p>
@@ -120,7 +126,7 @@
                 <div class="wrapper">
                     <h2>Mes Compétences</h2>
                     <div class="competences__container">
-                        <ul class="competences__list">
+                        <ul class="competences__list" data-scrolly="fromLeft">
                             <li>Design web</li>
                             <li>Design UI/UX</li>
                             <li>Design graphique</li>
@@ -129,7 +135,7 @@
                             <li>Création vidéo</li>
                         </ul>
 
-                        <div class="competences__medias">
+                        <div class="competences__medias" data-scrolly="fromRight">
                             <img src="assets/images/competences.png" alt="competences" data-skew data-lag="0.5" />
                             <img src="assets/images/competences2.png" alt="competences" data-skew data-lag="0.9" />
                         </div>
@@ -138,7 +144,7 @@
             </section>
             <div class="separateur__competences"></div>
             <div class="separateur__competences"></div>
-            <section class="sections__logiciel">
+            <section class="sections__logiciel" data-scrolly="fromBottom">
                 <div class="wrapper">
                     <ul>
                         <li>
@@ -187,7 +193,7 @@
             </section>
 
             <div class="separateur"></div>
-            <section class="projets" data-component="Projets">
+            <section id="projets" class="projets" data-component="Projets">
                 <div class="wrapper">
                     <h2>Mes Projets</h2>
 
@@ -197,10 +203,121 @@
                             <li class="dot active"></li>
                             <li class="dot"></li>
                             <li class="dot"></li>
-                            <!-- <li class="dot"></li>
-                        <li class="dot"></li> -->
+                            <li class="dot"></li>
+                            <li class="dot"></li>
                         </ul>
 
+                        <!-- Project Card -->
+                        <article class="projet-card">
+                            <div class="projet-card__header__container">
+                                <div class="projet-card__header">
+                                    <h1>Boxotel</h1>
+
+                                    <div class="line">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+
+                                    <div class="projet-card__meta">
+                                        <h3>Projet étudiant</h3>
+                                        <span class="accent">*</span>
+                                        <h3>Design UX/UI Web</h3>
+                                    </div>
+
+                                    <h3>Maquette Figma</h3>
+                                </div>
+                            </div>
+
+                            <a class="projet-card__body" href="single-projet.html">
+                                <div class="projet-card__image-container">
+                                    <!-- Image Noir & Blanc (Visible par défaut) -->
+                                    <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
+
+                                    <!-- Image Couleur (Cachée par défaut) -->
+                                    <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
+
+                                    <div class="badge-voir-projet">
+                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <!-- Project Card -->
+                        <article class="projet-card">
+                            <div class="projet-card__header__container">
+                                <div class="projet-card__header">
+                                    <h1>Boxotel</h1>
+
+                                    <div class="line">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+
+                                    <div class="projet-card__meta">
+                                        <h3>Projet étudiant</h3>
+                                        <span class="accent">*</span>
+                                        <h3>Design UX/UI Web</h3>
+                                    </div>
+
+                                    <h3>Maquette Figma</h3>
+                                </div>
+                            </div>
+
+                            <a class="projet-card__body" href="single-projet.html">
+                                <div class="projet-card__image-container">
+                                    <!-- Image Noir & Blanc (Visible par défaut) -->
+                                    <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
+
+                                    <!-- Image Couleur (Cachée par défaut) -->
+                                    <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
+
+                                    <div class="badge-voir-projet">
+                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <!-- Project Card -->
+                        <article class="projet-card">
+                            <div class="projet-card__header__container">
+                                <div class="projet-card__header">
+                                    <h1>Boxotel</h1>
+
+                                    <div class="line">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+
+                                    <div class="projet-card__meta">
+                                        <h3>Projet étudiant</h3>
+                                        <span class="accent">*</span>
+                                        <h3>Design UX/UI Web</h3>
+                                    </div>
+
+                                    <h3>Maquette Figma</h3>
+                                </div>
+                            </div>
+
+                            <a class="projet-card__body" href="single-projet.html">
+                                <div class="projet-card__image-container">
+                                    <!-- Image Noir & Blanc (Visible par défaut) -->
+                                    <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
+
+                                    <!-- Image Couleur (Cachée par défaut) -->
+                                    <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
+
+                                    <div class="badge-voir-projet">
+                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
                         <!-- Project Card -->
                         <article class="projet-card">
                             <div class="projet-card__header__container">
@@ -279,48 +396,11 @@
                                 </div>
                             </a>
                         </article>
-                        <!-- Project Card -->
-                        <article class="projet-card">
-                            <div class="projet-card__header__container">
-                                <div class="projet-card__header">
-                                    <h1>Boxotel</h1>
-
-                                    <div class="line">
-                                        <span class="line__inner"></span>
-                                        <span class="line__inner"></span>
-                                        <span class="line__inner"></span>
-                                        <span class="line__inner"></span>
-                                    </div>
-
-                                    <div class="projet-card__meta">
-                                        <h3>Projet étudiant</h3>
-                                        <span class="accent">*</span>
-                                        <h3>Design UX/UI Web</h3>
-                                    </div>
-
-                                    <h3>Maquette Figma</h3>
-                                </div>
-                            </div>
-
-                            <a class="projet-card__body" href="single-projet.html">
-                                <div class="projet-card__image-container">
-                                    <!-- Image Noir & Blanc (Visible par défaut) -->
-                                    <img src="assets/images/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
-
-                                    <!-- Image Couleur (Cachée par défaut) -->
-                                    <img src="assets/images/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
-
-                                    <div class="badge-voir-projet">
-                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
                     </div>
                 </div>
             </section>
             <div class="separateur"></div>
-            <section class="caractere" data-component="Theme" data-pin-items>
+            <section class="caractere" data-component="Theme" data-pin-items data-scrolly="fadeIn">
                 <div class="wrapper">
                     <div class="caractere-container">
                         <h2>Ce que je suis</h2>
@@ -336,7 +416,7 @@
                 <div class="wrapper">
                     <h2>Vidéo de présentation</h2>
 
-                    <div class="video-youtube" data-component="YouTube" data-video-id="vAticypJw4Y">
+                    <div class="video-youtube" data-scrolly="zoomOut" data-component="YouTube" data-video-id="vAticypJw4Y">
                         <div class="video__media js-video">
                             <img class="js-poster" src="assets/images/covervideo.png" alt="Vidéo de présentation" />
                             <img class="logo--yt" src="assets/images/play.svg" alt="logo__play" />
@@ -352,7 +432,7 @@
 
                 <div class="interets__container">
                     <!-- Ligne 1 : MUSIQUE (vers la gauche) -->
-                    <div class="marquee marquee--left">
+                    <div class="marquee marquee--left" data-scrolly="fromLeft">
                         <div class="marquee__track">
                             <span class="filled green">MUSIQUE</span>
                             <span class="outline green">MUSIQUE</span>
@@ -368,8 +448,8 @@
                     </div>
 
                     <!-- Ligne 2 : JEUX VIDÉOS (vers la droite) -->
-                    <div class="marquee marquee--right">
-                        <div class="marquee__track">
+                    <div class="marquee marquee--right" data-scrolly="fromRight">
+                        <div class="marquee__track" data-scrolly="fromLeft">
                             <span class="filled dark">JEUXVIDÉOS</span>
                             <span class="outline dark">JEUXVIDÉOS</span>
                             <span class="filled dark">JEUXVIDÉOS</span>
@@ -384,7 +464,7 @@
                     </div>
 
                     <!-- Ligne 3 : CINÉMA (vers la gauche) -->
-                    <div class="marquee marquee--left">
+                    <div class="marquee marquee--left" data-scrolly="fromLeft">
                         <div class="marquee__track">
                             <span class="filled green">CINÉMA</span>
                             <span class="outline green">CINÉMA</span>
@@ -407,7 +487,7 @@
                 </div>
             </section>
             <div class="separateur"></div>
-            <section class="recherche" data-component="Words" data-duration="1500" data-anim-duration="0.5" data-y-offset="80">
+            <section class="recherche" data-component="Words" data-duration="1500" data-anim-duration="0.5" data-y-offset="80" data-scrolly="blurIn">
                 <div class="wrapper">
                     <h2>Ce que je recherche</h2>
 
@@ -436,7 +516,7 @@
 
             <footer class="footer">
                 <div class="wrapper">
-                    <section class="contact">
+                    <section id="contact" class="contact">
 
                         <div class="contact__container">
 
@@ -447,7 +527,8 @@
                                 <span class="contact__word contact__word--3">PARLE?</span>
                             </h2>
 
-                            <form class="contact__form" data-component="Form" autocomplete="off">
+
+                            <form class="contact__form" data-component="Form" action="https://formsubmit.co/marcos.sosa.silva002@gmail.com" method="POST" autocomplete="off">
                                 <div class="form__body">
 
                                     <div class="contact__field">
@@ -483,24 +564,37 @@
 
 
                     </section>
-                    <nav class="nav__footer">
+                    <nav class="nav__footer" data-scrolly='zoomOut'>
                         <ul class="links footer__links">
                             <li><a href="#" class="link">Utilisation IA</a></li>
                             <li><a href="#" class="link">CV</a></li>
                             <li><a href="#" class="link">Mes projets</a></li>
                         </ul>
+                        <ul class="footer__socials">
+                            <li><a href="https://github.com/xMacci" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-github">
 
-                        <div class="footer__socials">
-                            <svg class="icon icon--lg">
-                                <use href="#icon-github"></use>
-                            </svg>
-                            <svg class="icon icon--lg">
-                                <use href="#icon-linkedIn"></use>
-                            </svg>
-                            <svg class="icon icon--lg">
-                                <use href="#icon-youtube"></use>
-                            </svg>
-                        </div>
+                                        </use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/marcos-sosa-silva-941729202/" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-linkedIn" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                            <li><a href="https://www.youtube.com/@macciavelico" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-youtube" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                            <li><a href="https://ca.pinterest.com/marcossosasilva002/" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-pinterest" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                        </ul>
                     </nav>
                     <div class="footer__copyright">
                         <span>2026 © Marcos Sosa Silva</span>
