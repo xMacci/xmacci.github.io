@@ -1352,7 +1352,7 @@ a.logo {
 }
 @media screen and (max-width: 768px) {
   .hero--hub .hero__text {
-    padding-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
     width: 100%;
     padding-bottom: var(--spacing-md);
   }
@@ -1386,7 +1386,7 @@ a.logo {
 }
 @media screen and (max-width: 768px) {
   .hero--hub .hero__actions .btn-hub {
-    padding: 5px 20px;
+    padding: 5px 10px;
   }
 }
 .hero--hub .footer__socials {
