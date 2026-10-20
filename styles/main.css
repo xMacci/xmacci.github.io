@@ -1351,20 +1351,23 @@ a.logo {
 }
 .hero--hub .hero__text {
   color: var(--color-white);
-  width: 75%;
+  width: 80%;
   padding-top: var(--spacing-xl);
   padding-bottom: var(--spacing-xl);
 }
 @media screen and (max-width: 1024px) {
   .hero--hub .hero__text {
-    padding-top: 150px;
-    width: 100%;
+    margin: 0;
+    padding-top: 80px;
+    width: 60%;
     padding-bottom: var(--spacing-md);
   }
 }
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 768px) {
   .hero--hub .hero__text {
-    padding-top: 50px;
+    padding-top: 0px;
+    width: 100%;
+    padding-bottom: var(--spacing-md);
   }
 }
 .hero--hub .hero__text .text-highlight {
@@ -1381,7 +1384,7 @@ a.logo {
   .hero--hub .hero__actions {
     display: grid;
     grid-template-columns: 1fr;
-    padding-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
     gap: var(--spacing-md);
   }
 }
@@ -1413,28 +1416,12 @@ a.logo {
   }
 }
 .hero--projet .hero__content {
-  width: 48%;
+  width: 100%;
 }
 @media screen and (max-width: 1024px) {
   .hero--projet .hero__content {
     width: 100%;
     padding: 40px 0 0 0;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .hero--projet .title__under {
-    top: 15%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero--projet .title__under {
-    top: 40px;
-    left: 0;
-  }
-}
-@media screen and (max-width: 480px) {
-  .hero--projet .title__under {
-    top: 35px;
   }
 }
 .hero--projet .hero__media {
