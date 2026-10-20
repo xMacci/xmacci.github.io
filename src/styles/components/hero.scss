@@ -344,7 +344,7 @@
             padding-bottom: var(--spacing-md);
         }
         @media screen and (max-width: $breakpoint-sm) {
-            padding-top: var(--spacing-md);
+            padding-top: var(--spacing-sm);
             width: 100%;
             padding-bottom: var(--spacing-md);
         }
@@ -377,7 +377,7 @@
         .btn-hub {
             padding: 10px var(--spacing-md);
             @media screen and (max-width: $breakpoint-sm) {
-                padding: 5px 20px;
+                padding: 5px 10px;
             }
         }
     }
