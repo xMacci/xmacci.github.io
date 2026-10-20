@@ -11,6 +11,8 @@ import Projets from './components/Projets.js';
 import Words from './components/Words.js';
 import Theme from './components/theme.js';
 import Pointer from './components/Pointer.js';
+import GsapAnimate from './components/GsapAnimate.js';
+
 export default class ComponentFactory {
   constructor() {
     this.componentInstances = [];
@@ -28,6 +30,7 @@ export default class ComponentFactory {
       Theme,
       Words,
       Pointer,
+      GsapAnimate,
     };
     this.init();
   }

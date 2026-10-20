@@ -2,6 +2,11 @@
    scrolly / component
    ========================================================================== */
 .has-js {
+    [data-gsap] {
+        opacity: 0;
+        visibility: hidden;
+        will-change: transform, opacity;
+    }
     [data-scrolly='fromLeft'] {
         opacity: 0;
         transform: translateX(-90px);
@@ -76,7 +81,6 @@
         }
     }
 
-    /* Réduction progressive (Démarre plus grand et rétrécit à 1) */
     [data-scrolly='zoomOut'] {
         opacity: 0;
         transform: scale(1.3);
@@ -87,7 +91,6 @@
         }
     }
 
-    /* Effet de flou dynamique (Blur) */
     [data-scrolly='blurIn'] {
         opacity: 0;
         filter: blur(12px);
@@ -100,7 +103,6 @@
         }
     }
 
-    /* 4. Rotation légère avec montée */
     [data-scrolly='rotateIn'] {
         opacity: 0;
         transform: translateY(40px) rotate(-10deg);
@@ -111,7 +113,6 @@
         }
     }
 
-    /* Effet Flip 3D (Bascule vers l'avant) */
     [data-scrolly='flipIn'] {
         opacity: 0;
         transform: perspective(600px) rotateX(-60deg);
@@ -123,7 +124,6 @@
         }
     }
 
-    /* Effet Pop / Rebond élastique */
     [data-scrolly='popIn'] {
         opacity: 0;
         transform: scale(0.4);
@@ -136,7 +136,6 @@
         }
     }
 
-    /* Déformation en biseau (Skew) */
     [data-scrolly='skewIn'] {
         opacity: 0;
         transform: translateY(50px) skewY(6deg);

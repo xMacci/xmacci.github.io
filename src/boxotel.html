@@ -2,28 +2,26 @@
 <div id="smooth-wrapper" data-component="Scroller">
     <div id="smooth-content">
         <div class="separateur__header"></div>
-        <section class="hero hero--projet" data-component="Words">
+        <section class="hero hero--projet" data-component="GsapAnimate" data-component="Words">
             <div class="wrapper">
                 <div class="hero__media">
                     <img src="assets/images/boxotel_color.png" alt="hero" data-scale data-scale-force="0.01" />
                 </div>
                 <div class="hero__content">
-                    <div class="hero__title">
-                        <h1>Baie St-Catherine</h1>
+                    <div class="hero__title" data-gsap="fromBottom" data-delay="0.1">
+                        <h1>Boxotel</h1>
                         <h1 class="title__under">
-                            <span>Baie</span>
-                            <span>St-</span>
-                            <span>Catherine</span>
+                            <span>Boxotel</span>
                         </h1>
                     </div>
                     <div class="hero__subtitle" data-component="Words" data-duration="4500" data-anim-duration="0.6" data-y-offset="40">
-                        <h2 class="hero__subtitle-item" data-rotate-item>Projet étudiant</h2>
+                        <h2 class="hero__subtitle-item" data-rotate-item data-gsap="fromLeft" data-delay="0.25">Projet étudiant</h2>
                         <h2 class="hero__subtitle-item" data-rotate-item>Design UX/UI</h2>
                     </div>
-                    <div class="btn-hero">
+                    <div class="btn-hero" data-gsap="fromRight" data-delay="0.4">
                         <a href="" class="btn">Voir le Projet</a>
                     </div>
-                    <div class="hero__sous-titre">
+                    <div class="hero__sous-titre" data-gsap="zoomIn" data-delay="0.55">
                         <p class="small">Défilez vers le bas</p>
                     </div>
                 </div>

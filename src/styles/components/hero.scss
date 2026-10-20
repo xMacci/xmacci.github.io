@@ -202,7 +202,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
     h1 {
         margin: 0;
@@ -344,7 +344,7 @@
             padding-bottom: var(--spacing-md);
         }
         @media screen and (max-width: $breakpoint-sm) {
-            padding-top: 0px;
+            padding-top: var(--spacing-md);
             width: 100%;
             padding-bottom: var(--spacing-md);
         }
@@ -362,14 +362,22 @@
         padding-bottom: var(--spacing-xl);
         @media screen and (max-width: $breakpoint-sm) {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             padding-bottom: var(--spacing-md);
             gap: var(--spacing-md);
+            a {
+                &:nth-child(3) {
+                    align-self: center;
+                    text-align: center;
+                    grid-column: 1/-1;
+                    justify-self: center;
+                }
+            }
         }
         .btn-hub {
-            padding: 20px var(--spacing-md);
+            padding: 10px var(--spacing-md);
             @media screen and (max-width: $breakpoint-sm) {
-                padding: 10px 15px;
+                padding: 5px 20px;
             }
         }
     }
@@ -400,6 +408,32 @@
         @media screen and (max-width: $breakpoint-md) {
             width: 100%;
             padding: 40px 0 0 0;
+        }
+        .title__under {
+            @media screen and (max-width: 635px) {
+                display: grid;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0px;
+                transform: scale(1);
+                padding-left: 0;
+                left: 0;
+                top: 0;
+                > span {
+                    &:nth-child(2) {
+                        padding-left: 50px;
+                    }
+                }
+            }
+        }
+        .btn-hero {
+            padding-top: var(--spacing-xl);
+        }
+        .hero__sous-titre {
+            top: 350px;
+            @media screen and (max-width: 1025px) {
+                display: none;
+            }
         }
     }
 
