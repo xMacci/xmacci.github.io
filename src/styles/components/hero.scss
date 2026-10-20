@@ -22,13 +22,15 @@
         }
     }
     .hero__subtitle {
+        display: grid;
+        grid-template-areas: 'hero-word';
+        overflow: hidden;
         position: relative;
-
-        height: 125px;
-
         .hero__subtitle-item {
-            position: absolute;
-            white-space: nowrap;
+            grid-area: hero-word;
+            margin: 0;
+            opacity: 0;
+            will-change: transform, opacity;
         }
     }
     .hero__content {
