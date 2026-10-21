@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M.Sosa Silva Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Portfolio" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body data-component="Scrolly">
+    <div class="cursor" data-component="CustomCursor">
+        <img class="cursor-img" src="./assets/images/cursor/cursor.png" alt="Cursor">
+        <img class="pointer-img" src="./assets/images/cursor/pointer.png" alt="Pointer">
+    </div>
+    <video class="video" src="assets/videos/videobg.mp4" autoplay muted loop></video>
+    <svg class="noise" style="display: none;">
+        <filter id="blackNoise">
+            <!-- Size: 0.7 -->
+            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
+
+            <!-- Density: 58% + Couleur: Noire -->
+            <feColorMatrix type="matrix" values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.32 0" />
+        </filter>
+    </svg>
+    <div class="noise-overlay"></div>
+
+
+    <header class="header" data-component="Header" data-auto-hide data-threshold="0.1">
+        <div class="wrapper">
+
+            <a href="index.html" class="logo">
+
+                Mass
+            </a>
+
+            <nav class="nav-menu nav-primary">
+
+                <ul class="links">
+                    <li>
+                        <a class="link" href="index.html">Hub</a>
+                    </li>
+                    <li>
+                        <a class="link" href="./a-propos.html">À propos</a>
+                    </li>
+                    <li>
+                        <a class="link" href="./a-propos.html#projets">Mes projets</a>
+                    </li>
+                    <li>
+                        <a class="link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <button class="header__toggle js-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="line">
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+            </div>
+
+        </div>
+
+    </header>
+    <div class="modal js-modal">
+        <button class="header__toggle close js-modal-close" aria-label="Fermer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <img class="modal-content js-modal-img" src="" alt="" />
+        <div class="caption js-modal-caption"></div>
+    </div>
+    <div id="smooth-wrapper" data-component="Scroller">
+        <div id="smooth-content">
+            <div class="separateur__header"></div>
+            <section class="declaration_ai">
+                <div class="wrapper">
+                    <h1>Déclaration Ai</h1>
+                    <p>
+                        Dans le cadre de ce projet,
+                        <span class="text-highlight">l'intelligence artificielle</span>
+                        a été utilisée de manière
+                        <span class="text-highlight">grande,</span>
+                        principalement comme
+                        <span class="text-highlight">outil d'accompagnement et de pédagogie.</span>
+                        L'IA m'a ainsi permis d'aller plus loin dans la réalisation de mes ambitions pour ce projet, tout en maintenant un effort constant de
+                        <span class="text-highlight">compréhension et d'appropriation du code.</span>
+                    </p>
+                </div>
+            </section>
+            <div class="sepateur"></div>
+
+            <section class="tabs" data-component="Tabs">
+                <div class="wrapper">
+                    <div class="tabs__header">
+                        <button class="js-tab btn" data-tab-id="tab1">Codage</button>
+                        <button class="js-tab btn" data-tab-id="tab2">Design</button>
+                        <button class="js-tab btn" data-tab-id="tab3">Création</button>
+                        <button class="js-tab btn" data-tab-id="tab4">Correction</button>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="tab__content js-tab-content" data-tab-content-id="tab1">
+                            <div class="separateur"></div>
+                            <div class="accordion" data-component="Accordion">
+                                <div class="accordion__container js-acc-header">
+                                    <div class="accordion__header bouton bouton--card">
+                                        <h3>Aide au débogage et explication d'erreurs</h3>
+                                        <div class="accordion__icon">
+                                            <svg class="icon icon--lg">
+                                                <use href="#icon-plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__content">
+                                        <span class="text-highlight"></span>
+                                        Dans le cadre de ce projet,
+                                        <span class="text-highlight">l'intelligence artificielle</span>
+                                        a été utilisée de manière modérée et ciblée, principalement comme un outil d'accompagnement et de pédagogie.
+                                    </div>
+                                </div>
+                                <div class="accordion__container js-acc-header">
+                                    <div class="accordion__header bouton bouton--card">
+                                        <h3>Résolution de blocages techniques</h3>
+                                        <div class="accordion__icon">
+                                            <svg class="icon icon--lg">
+                                                <use href="#icon-plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__content">
+                                        <span class="text-highlight">Génération ciblée de fragments de code</span>
+                                        lors de
+                                        <span class="text-highlight">blocages techniques complexes</span>
+                                        afin de
+                                        <span class="text-highlight">débloquer le développement</span>
+                                        et maintenir l'avancement du projet.
+                                    </div>
+                                </div>
+                                <div class="accordion__container js-acc-header">
+                                    <div class="accordion__header bouton bouton--card">
+                                        <h3>Adaptation aux normes du cours</h3>
+                                        <div class="accordion__icon">
+                                            <svg class="icon icon--lg">
+                                                <use href="#icon-plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__content">
+                                        <span class="text-highlight">Analyse critique et retravail</span>
+                                        des propositions générées par l'IA pour garantir leur conformité avec les
+                                        <span class="text-highlight">exigences et standards</span>
+                                        du cours.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="galerie analysis-process">
+                                <h2>Galeries</h2>
+                                <div class="horiz js-horiz" data-horiz>
+                                    <div class="analysis-process__track" data-scrolly="fromBottom">
+                                        <!-- Étape 1 -->
+                                        <article class="analysis-process__panel js-panel">
+                                            <div class="analysis-process__medias">
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_1.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_2.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="analysis-process__panel js-panel">
+                                            <div class="analysis-process__medias">
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_3.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_4.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="analysis-process__panel js-panel">
+                                            <div class="analysis-process__medias">
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_5.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab__content js-tab-content" data-tab-content-id="tab2">
+                            <div class="separateur"></div>
+                            <div class="accordion" data-component="Accordion">
+                                <div class="accordion__container js-acc-header">
+                                    <div class="accordion__header bouton bouton--card">
+                                        <h3>Aucune Ai a été utilisé</h3>
+                                        <div class="accordion__icon">
+                                            <svg class="icon icon--lg">
+                                                <use href="#icon-plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__content">
+                                        Dans le cadre de ce projet,
+                                        <span class="text-highlight">l'intelligence artificielle</span>
+                                        <span class="text-highlight">n'a pas été utilisé</span>
+                                        lors de la production du desing
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab__content js-tab-content" data-tab-content-id="tab3">
+                            <div class="separateur"></div>
+                            <div class="accordion" data-component="Accordion">
+                                <div class="accordion__container js-acc-header">
+                                    <div class="accordion__header bouton bouton--card">
+                                        <h3>Aide au débogage et explication d'erreurs</h3>
+                                        <div class="accordion__icon">
+                                            <svg class="icon icon--lg">
+                                                <use href="#icon-plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__content">
+                                        <span class="text-highlight"></span>
+                                        Dans le cadre de ce projet,
+                                        <span class="text-highlight">l'intelligence artificielle</span>
+                                        a été utilisée de manière modérée et ciblée, principalement comme un outil d'accompagnement et de pédagogie.
+                                    </div>
+                                </div>
+                                <div class="accordion__container js-acc-header">
+                                    <div class="accordion__header bouton bouton--card">
+                                        <h3>Résolution de blocages techniques</h3>
+                                        <div class="accordion__icon">
+                                            <svg class="icon icon--lg">
+                                                <use href="#icon-plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__content">
+                                        <span class="text-highlight">Génération ciblée de fragments de code</span>
+                                        lors de
+                                        <span class="text-highlight">blocages techniques complexes</span>
+                                        afin de
+                                        <span class="text-highlight">débloquer le développement</span>
+                                        et maintenir l'avancement du projet.
+                                    </div>
+                                </div>
+                                <div class="accordion__container js-acc-header">
+                                    <div class="accordion__header bouton bouton--card">
+                                        <h3>Adaptation aux normes du cours</h3>
+                                        <div class="accordion__icon">
+                                            <svg class="icon icon--lg">
+                                                <use href="#icon-plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__content">
+                                        <span class="text-highlight">Analyse critique et retravail</span>
+                                        des propositions générées par l'IA pour garantir leur conformité avec les
+                                        <span class="text-highlight">exigences et standards</span>
+                                        du cours.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="galerie analysis-process">
+                                <h2>Galeries</h2>
+                                <div class="horiz js-horiz" data-horiz>
+                                    <div class="analysis-process__track" data-scrolly="fromBottom">
+                                        <!-- Étape 1 -->
+                                        <article class="analysis-process__panel js-panel">
+                                            <div class="analysis-process__medias">
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_1.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_2.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="analysis-process__panel js-panel">
+                                            <div class="analysis-process__medias">
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_3.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_4.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="analysis-process__panel js-panel">
+                                            <div class="analysis-process__medias">
+                                                <div class="analysis-process__media">
+                                                    <img class="hover-img" src="assets/images/ai/coding/ai-coding_5.png" alt="Déclaration AI" data-component="Modales" />
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="wrapper">
+                    <section id="contact" class="contact">
+
+                        <div class="contact__container">
+
+                            <!-- Titre en escalier (Gauche) -->
+                            <h2 class="contact__title">
+                                <span class="contact__word contact__word--1">ON</span>
+                                <span class="contact__word contact__word--2">SE</span>
+                                <span class="contact__word contact__word--3">PARLE?</span>
+                            </h2>
+
+
+                            <form class="contact__form" data-component="Form" action="https://formsubmit.co/marcos.sosa.silva002@gmail.com" method="POST" autocomplete="off">
+                                <input type="hidden" name="_next" value="https://xmacci-web.github.io/Portfolio/">
+                                <div class="form__body">
+
+                                    <div class="contact__field">
+                                        <input type="text" name="fullname" placeholder="Nom" required />
+                                        <p class="error-msg"><span class="accent">*</span> Rentrez votre nom</p>
+                                    </div>
+
+                                    <div class="contact__field">
+                                        <input type="email" name="email" placeholder="Courriel" required />
+                                        <p class="error-msg"> <span class="accent">*</span> Le courriel n'est pas valide</p>
+                                    </div>
+
+                                    <div class="contact__field">
+                                        <textarea name="comment" placeholder="Message" rows="2" required></textarea>
+                                        <p class="error-msg"> <span class="accent">*</span> Veuillez inscrire votre message</p>
+                                    </div>
+
+                                    <button type="submit" class="btn spacing-btn">ENVOYER</button>
+                                </div>
+
+                                <div class="form__confirmation">
+                                    <h2 class="contact__thanks">MERCI !</h2>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="line">
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                        </div>
+
+
+                    </section>
+                    <nav class="nav__footer" data-scrolly='zoomOut'>
+                        <ul class="links footer__links">
+                            <li><a href="ai.html" class="link">Utilisation IA</a></li>
+                            <li><a href="" class="link">CV</a></li>
+                            <li><a href="./a-propos.html#projets" class="link">Mes projets</a></li>
+                        </ul>
+                        <ul class="footer__socials">
+                            <li><a href="https://github.com/xMacci" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-github">
+
+                                        </use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/marcos-sosa-silva-941729202/" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-linkedIn" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                            <li><a href="https://www.youtube.com/@macciavelico" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-youtube" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                            <li><a href="https://ca.pinterest.com/marcossosasilva002/" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-pinterest" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+
+                        </ul>
+                    </nav>
+                    <div class="footer__copyright">
+                        <span>2026 © Marcos Sosa Silva</span>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+</div>
+</div>
