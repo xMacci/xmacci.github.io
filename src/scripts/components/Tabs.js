@@ -4,7 +4,6 @@ export default class Tabs {
     this.onglets = element.querySelectorAll('.js-tab');
     this.contenus = element.querySelectorAll('.js-tab-content');
     this.selectedType = '';
-    this.defaultTab = this.element.dataset.defaultTab;
     this.options = {
       defaultTab: '',
     };
@@ -15,7 +14,7 @@ export default class Tabs {
   init() {
     this.setOptions();
 
-    // Boucle pour ajouter un clic sur les boutons des onglets
+    // Attache l'événement de clic à chaque onglet
     for (let i = 0; i < this.onglets.length; i++) {
       const onglet = this.onglets[i];
       onglet.addEventListener('click', this.selectOnglet.bind(this));
@@ -24,22 +23,23 @@ export default class Tabs {
     this.activeStartup();
   }
 
-  selectOnglet(element) {
-    const isActive = element.currentTarget.classList.contains('is-active');
+  selectOnglet(event) {
+    const target = event.currentTarget;
+    const tabId = target.dataset.tabId;
 
+    // Si l'onglet cliqué est déjà actif, on conserve sa sélection
+    if (this.selectedType === tabId) return;
+
+    this.selectedType = tabId;
+
+    // Mise à jour de la classe is-active sur les boutons
     for (let i = 0; i < this.onglets.length; i++) {
       const onglet = this.onglets[i];
-      onglet.classList.remove('is-active');
-    }
-
-    if (isActive) {
-      element.currentTarget.classList.remove('is-active');
-      this.selectedType = '';
-    }
-
-    if (!isActive) {
-      element.currentTarget.classList.add('is-active');
-      this.selectedType = element.currentTarget.dataset.tabId;
+      if (onglet.dataset.tabId === this.selectedType) {
+        onglet.classList.add('is-active');
+      } else {
+        onglet.classList.remove('is-active');
+      }
     }
 
     this.showContenu();
@@ -50,45 +50,37 @@ export default class Tabs {
 
     for (let i = 0; i < contenus.length; i++) {
       const contenu = contenus[i];
-      contenu.classList.remove('is-active');
 
-      if (this.selectedType == contenu.dataset.tabContentId) {
+      if (this.selectedType === contenu.dataset.tabContentId) {
         contenu.classList.add('is-active');
       } else {
         contenu.classList.remove('is-active');
       }
     }
+
+    // Force les scripts enfants (Galerie, animations, scroll) à recalculer leurs hauteurs/largeurs
+    window.dispatchEvent(new Event('resize'));
   }
 
   activeStartup() {
-    const ongletActive = this.element.querySelector('.js-tab');
-    const contenuActive = this.element.querySelector('.js-tab-content');
-
-    const contenus = this.element.querySelectorAll('[data-tab-content-id]');
-    const onglets = this.element.querySelectorAll('[data-tab-id]');
-
-    // Onglet actif par défaut lorsque data-default-tab n'est pas présent
-    if (!this.defaultTab) {
-      ongletActive.classList.add('is-active');
-      contenuActive.classList.add('is-active');
+    // Définit la valeur de selectedType avec defaultTab ou le premier onglet disponible
+    if (this.options.defaultTab) {
+      this.selectedType = this.options.defaultTab;
+    } else if (this.onglets.length > 0) {
+      this.selectedType = this.onglets[0].dataset.tabId;
     }
 
-    // Onglet actif selon la valeur du data-default-tab
-    for (let i = 0; i < contenus.length; i++) {
-      const contenu = contenus[i];
-
-      if (this.defaultTab == contenu.dataset.tabContentId) {
-        contenu.classList.add('is-active');
-      }
-    }
-
-    for (let i = 0; i < onglets.length; i++) {
-      const onglet = onglets[i];
-
-      if (this.defaultTab == onglet.dataset.tabId) {
+    // Active l'onglet correspondant
+    for (let i = 0; i < this.onglets.length; i++) {
+      const onglet = this.onglets[i];
+      if (onglet.dataset.tabId === this.selectedType) {
         onglet.classList.add('is-active');
+      } else {
+        onglet.classList.remove('is-active');
       }
     }
+
+    this.showContenu();
   }
 
   setOptions() {

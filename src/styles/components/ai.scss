@@ -1,0 +1,29 @@
+p {
+    color: var(--color-white);
+    padding-bottom: var(--spacing-lg);
+}
+
+.galerie {
+    margin-top: var(--spacing-xl, 40px);
+    position: relative;
+    clear: both;
+
+    h2 {
+        color: var(--color-white);
+    }
+    .analysis-process__media {
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+    }
+}
+.tab__content {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}

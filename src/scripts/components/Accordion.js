@@ -1,7 +1,7 @@
 export default class Accordion {
   constructor(element) {
     this.element = element;
-    this.container = this.element.querySelectorAll('.js-acc-header');
+    this.containers = this.element.querySelectorAll('.accordion__container');
     this.options = {
       notClosing: false,
       autoOpen: false,
@@ -11,32 +11,40 @@ export default class Accordion {
   }
 
   init() {
-    for (let i = 0; i < this.container.length; i++) {
-      const container = this.container[i];
+    for (let i = 0; i < this.containers.length; i++) {
+      const container = this.containers[i];
+
+      // Auto-open si data-auto-open est présent
       if ('autoOpen' in container.dataset) {
         container.classList.add('is-active');
       }
-      container.addEventListener('click', this.initAccordion.bind(this));
+
+      // Écoute le clic uniquement sur le header (le titre/bouton), pas sur tout le conteneur
+      const header = container.querySelector('.accordion__header') || container;
+      header.addEventListener('click', (event) =>
+        this.initAccordion(event, container),
+      );
     }
   }
 
-  initAccordion(event) {
-    const target = event.currentTarget;
-    const wasActive = target.classList.contains('is-active');
+  initAccordion(event, targetContainer) {
+    const wasActive = targetContainer.classList.contains('is-active');
 
+    // Si on n'a pas l'option notClosing, on ferme tous les autres accordéons
     if (!this.options.notClosing) {
-      for (let i = 0; i < this.container.length; i++) {
-        const container = this.container[i];
-        container.classList.remove('is-active');
+      for (let i = 0; i < this.containers.length; i++) {
+        this.containers[i].classList.remove('is-active');
       }
     }
 
+    // Bascule l'état de l'accordéon cliqué
     if (!wasActive) {
-      target.classList.add('is-active');
+      targetContainer.classList.add('is-active');
     } else if (this.options.notClosing) {
-      target.classList.remove('is-active');
+      targetContainer.classList.remove('is-active');
     }
   }
+
   setOptions() {
     if ('notClosing' in this.element.dataset) {
       this.options.notClosing = true;
