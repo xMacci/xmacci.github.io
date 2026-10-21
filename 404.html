@@ -32,8 +32,8 @@
     <div class="noise-overlay"></div>
 
 
-    <header class="header" data-component="GsapAnimate" data-component="Header" data-auto-hide data-threshold="0.1">
-        <div class="wrapper" data-gsap="fromTop" data-delay="0.25">
+    <header class="header" data-component="Header" data-auto-hide data-threshold="0.1">
+        <div class="wrapper">
 
             <a href="index.html" class="logo">
 
@@ -75,7 +75,15 @@
         </div>
 
     </header>
-
+    <div class="modal js-modal">
+        <button class="header__toggle close js-modal-close" aria-label="Fermer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <img class="modal-content js-modal-img" src="" alt="" />
+        <div class="caption js-modal-caption"></div>
+    </div>
     <div id="smooth-wrapper" data-component="Scroller">
         <div id="smooth-content">
             <div class="separateur__header"></div>
@@ -108,6 +116,7 @@
 
 
                             <form class="contact__form" data-component="Form" action="https://formsubmit.co/marcos.sosa.silva002@gmail.com" method="POST" autocomplete="off">
+                                <input type="hidden" name="_next" value="https://xmacci-web.github.io/Portfolio/">
                                 <div class="form__body">
 
                                     <div class="contact__field">
