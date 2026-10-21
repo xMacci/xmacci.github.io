@@ -8,7 +8,7 @@ export default class TextAnimScramble {
 
     // Capturation sécurisée du texte (avec fallback si le DOM n'est pas encore prêt)
     this.text = this.el.textContent.trim() || 'Défilez vers le bas';
-    this.chars = '!<>-_\\/[]{}—=+*^?#________';
+    this.chars = '!<>-_\\/[]{}—=+*^?#19356298_______';
     this.frame = 0;
     this.queue = [];
 
@@ -68,7 +68,7 @@ export default class TextAnimScramble {
   startLoop() {
     const scramble = () => {
       this.setText(this.text).then(() => {
-        gsap.delayedCall(2.5, scramble);
+        gsap.delayedCall(2, scramble);
       });
     };
     scramble();
