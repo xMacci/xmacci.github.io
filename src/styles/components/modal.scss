@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Modal Component
+   ========================================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+
+    /* Image centrale dans la modale */
+    .modal-content {
+        max-width: 100vw;
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 2px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        position: relative;
+        z-index: 10000;
+    }
+
+    /* Légende */
+    .caption {
+        margin-top: 15px;
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+        z-index: 10000;
+    }
+
+    /* Bouton fermer */
+    .close {
+        display: block !important;
+        position: absolute;
+        top: 25px;
+        right: 35px;
+        z-index: 10001;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+        span {
+            background-color: #ffffff;
+            top: calc(50% - var(--bar-height) / 2);
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+                transform: scaleX(0);
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+html.is-modal-open,
+body.is-modal-open {
+    overflow: hidden !important;
+
+    .modal {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.close {
+    span {
+        background-color: var(--color-primary) !important;
+    }
+}

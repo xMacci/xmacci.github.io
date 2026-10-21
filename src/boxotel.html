@@ -1,6 +1,22 @@
 {% include '_partials/_header.html' %}
+
 <div id="smooth-wrapper" data-component="Scroller">
     <div id="smooth-content">
+        <div class="modal">
+            <!-- The Close Button -->
+
+            <button class="header__toggle close js-modal-close">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content js-modal-img" />
+
+            <!-- Modal Caption (Image Text) -->
+            <div class="caption js-modal-caption"></div>
+        </div>
         <div class="separateur__header"></div>
         <section class="hero hero--projet" data-component="GsapAnimate" data-component="Words">
             <div class="wrapper">
@@ -75,13 +91,14 @@
 
         <section class="project-goal">
             <div class="wrapper">
-                <h2 class="project-goal__title" data-gsap>LE BUT DU PROJET</h2>
-                <p class="project-goal__text" data-gsap data-delay="0.2">
+                <h2 class="project-goal__title">LE BUT DU PROJET</h2>
+
+                <p class="project-goal__text">
                     Dans ce projet, le but était de
                     <span class="text-highlight">moderniser l'interface graphique</span>
                     et
                     <span class="text-highlight">optimiser l'expérience utilisateur</span>
-                    tout en préservant l'essence et les bases du site original.
+                    tout en préservant l'essence et les bases du site original de Boxotel.
                 </p>
             </div>
             <div class="projet_goal_medias" data-scrolly="rotateIn">
@@ -116,10 +133,10 @@
 
                             <div class="analysis-process__medias">
                                 <div class="analysis-process__media">
-                                    <img src="assets/images/boxotel_analysis_1_1.png" alt="Diagnostic UX/UI 1" />
+                                    <img class="hover-img" src="assets/images/boxotel_analysis_1_1.png" alt="Diagnostic UX/UI 1" data-component="Modales" />
                                 </div>
                                 <div class="analysis-process__media">
-                                    <img src="assets/images/boxotel_analysis_1_2.png" alt="Diagnostic UX/UI 2" />
+                                    <img class="hover-img" src="assets/images/boxotel_analysis_1_2.png" alt="Diagnostic UX/UI 2" data-component="Modales" />
                                 </div>
                             </div>
 
@@ -146,10 +163,20 @@
 
                             <div class="analysis-process__medias">
                                 <div class="analysis-process__media">
-                                    <img src="assets/images/boxotel_analysis_2_1.png" alt="Recherche d'inspiration 1" />
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/boxotel_analysis_2_1.png"
+                                        alt="Recherche d'inspiration 1"
+                                        data-component="Modales"
+                                    />
                                 </div>
                                 <div class="analysis-process__media">
-                                    <img src="assets/images/boxotel_analysis_2_2.png" alt="Recherche d'inspiration 2" />
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/boxotel_analysis_2_2.png"
+                                        alt="Recherche d'inspiration 2"
+                                        data-component="Modales"
+                                    />
                                 </div>
                             </div>
 
@@ -181,10 +208,15 @@
 
                             <div class="analysis-process__medias">
                                 <div class="analysis-process__media">
-                                    <img src="assets/images/boxotel_creatif_1_1.png" alt="Bibliothèque de composantes 1" />
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/boxotel_creatif_1_1.png"
+                                        alt="Bibliothèque de composantes 1"
+                                        data-component="Modales"
+                                    />
                                 </div>
                                 <div class="analysis-process__media">
-                                    <img src="assets/images/boxotel_creatif_1_2.png" alt="Bibliothèque de composantes 2" />
+                                    <img src="assets/images/boxotel_creatif_1_2.png" alt="Bibliothèque de composantes 2" data-component="Modales" />
                                 </div>
                             </div>
 
@@ -206,10 +238,20 @@
 
                             <div class="analysis-process__medias">
                                 <div class="analysis-process__media">
-                                    <img src="assets/images/boxotel_creatif_2_1.png" alt="Maquettes et Prototypage 1" />
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/boxotel_creatif_2_1.png"
+                                        alt="Maquettes et Prototypage 1"
+                                        data-component="Modales"
+                                    />
                                 </div>
                                 <div class="analysis-process__media">
-                                    <img src="assets/images/boxotel_creatif_2_2.png" alt="Maquettes et Prototypage 2" />
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/boxotel_creatif_2_2.png"
+                                        alt="Maquettes et Prototypage 2"
+                                        data-component="Modales"
+                                    />
                                 </div>
                             </div>
 
@@ -257,6 +299,7 @@
                 </div>
             </div>
         </section>
+
         {% include '_partials/_footer.html' %}
     </div>
 </div>

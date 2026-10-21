@@ -36,13 +36,13 @@ export default class CustomCursor {
 
     // Détection des survols
     document.addEventListener('mouseover', (e) => {
-      if (e.target.closest('a, button, .dot, [role="button"]')) {
+      if (e.target.closest('a, button, .dot, .image-hover, [role="button"]')) {
         this.cursor.classList.add('cursor-hover');
       }
     });
 
     document.addEventListener('mouseout', (e) => {
-      if (e.target.closest('a, button, .dot, [role="button"]')) {
+      if (e.target.closest('a, button, .dot,.image-hover, [role="button"]')) {
         this.cursor.classList.remove('cursor-hover');
       }
     });

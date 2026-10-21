@@ -6,6 +6,7 @@ import Accordion from './components/Accordion.js';
 import Form from './components/Form.js';
 import Header from './components/Header.js';
 import Tabs from './components/Tabs.js';
+import Modales from './components/Modales.js';
 import TextAnim from './components/TextAnim.js';
 import Projets from './components/Projets.js';
 import Words from './components/Words.js';
@@ -25,6 +26,7 @@ export default class ComponentFactory {
       Form,
       Header,
       Tabs,
+      Modales,
       TextAnim,
       Projets,
       Theme,
