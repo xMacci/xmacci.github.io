@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M.Sosa Silva Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Portfolio" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body data-component="Scrolly">
+    <div class="cursor" data-component="CustomCursor">
+        <img class="cursor-img" src="./assets/images/cursor/cursor.png" alt="Cursor">
+        <img class="pointer-img" src="./assets/images/cursor/pointer.png" alt="Pointer">
+    </div>
+    <video class="video" src="assets/videos/videobg.mp4" autoplay muted loop></video>
+    <svg class="noise" style="display: none;">
+        <filter id="blackNoise">
+            <!-- Size: 0.7 -->
+            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
+
+            <!-- Density: 58% + Couleur: Noire -->
+            <feColorMatrix type="matrix" values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.32 0" />
+        </filter>
+    </svg>
+    <div class="noise-overlay"></div>
+
+    <div class="transition-overlay" data-component="PageTransition">
+        <div class="panel panel--top"></div>
+        <div class="panel panel--bottom"></div>
+    </div>
+    <header class="header" data-component="Header" data-auto-hide data-threshold="0.1">
+        <div class="wrapper">
+
+            <a data-component="GsapAnimate" data-gsap="fadeIn" data-delay="0.6" href="index.html" class="logo">
+
+                Mass
+            </a>
+
+            <nav class="nav-menu nav-primary">
+
+                <ul class="links">
+                    <li>
+                        <a class="link" href="index.html">Hub</a>
+                    </li>
+                    <li>
+                        <a class="link" href="./a-propos.html">À propos</a>
+                    </li>
+                    <li>
+                        <a class="link" href="./a-propos.html#projets">Mes projets</a>
+                    </li>
+                    <li>
+                        <a class="link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <button class="header__toggle js-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="line" data-component="GsapAnimate" data-gsap="fromLeft" data-delay="0.8">
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+                <span class="line__inner"></span>
+            </div>
+
+        </div>
+
+    </header>
+    <div class="modal js-modal">
+        <button class="header__toggle close js-modal-close" aria-label="Fermer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <img class="modal-content js-modal-img" src="" alt="" />
+        <div class="caption js-modal-caption"></div>
+    </div>
+
+    <div id="smooth-wrapper" data-component="Scroller">
+        <div id="smooth-content">
+            <div class="modal">
+                <!-- The Close Button -->
+
+                <button class="header__toggle close js-modal-close">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content js-modal-img" />
+
+                <!-- Modal Caption (Image Text) -->
+                <div class="caption js-modal-caption"></div>
+            </div>
+            <div class="separateur__header"></div>
+            <section class="hero hero--projet" data-component="GsapAnimate">
+                <div class="wrapper">
+                    <div class="hero__media">
+                        <img src="assets/images/bsc/bsc_color.png" alt="hero" data-gsap="zoomIn" data-delay="0.8" data-scale data-scale-force="0.01" />
+                    </div>
+                    <div class="hero__content">
+                        <div class="hero__title" data-gsap="fromTop" data-delay="0.3">
+                            <h1>Baie St-Catherine</h1>
+                            <h1 class="title__under">
+                                <span>Baie St-Catherine</span>
+                            </h1>
+                        </div>
+                        <div class="hero__subtitle" data-component="Words" data-duration="4500" data-anim-duration="0.6" data-y-offset="40">
+                            <h2 class="hero__subtitle-item" data-rotate-item data-gsap="fromLeft" data-delay="0.25">Projet étudiant</h2>
+                            <h2 class="hero__subtitle-item" data-rotate-item>Design UX/UI</h2>
+                        </div>
+                        <div class="btn-hero" data-gsap="fromLeft" data-delay="0.4">
+                            <a href="https://www.figma.com/design/3o6iNMcn9bhz7vqbIlNPNQ/1021_sosa_silva_marcos_TP2?m=auto&t=2X4ynNFisS2Ylkr5-6" target="_blank" class="btn">
+                                Voir le Projet
+                            </a>
+                        </div>
+                        <div class="hero__sous-titre" data-gsap="fromBottom" data-delay="0.55">
+                            <p class="small" data-component="TextAnimScramble">Défilez vers le bas</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="separateur"></div>
+
+            <section class="project-info">
+                <div class="wrapper swiper" data-component="Carousel" data-autoplay data-loop data-split data-scrolly="fadeIn">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 : Type de projet -->
+                        <div class="swiper-slide project-info__col">
+                            <h4 class="project-info__title">Type de projet</h4>
+                            <ul class="project-info__list">
+                                <li>Design UI/UX</li>
+                                <li>Prototypage</li>
+                            </ul>
+                        </div>
+
+                        <!-- Slide 2 : Langages/logiciels -->
+                        <div class="swiper-slide project-info__col">
+                            <h4 class="project-info__title">Langages/logiciels</h4>
+                            <ul class="project-info__list">
+                                <li>Figma</li>
+                            </ul>
+                        </div>
+
+                        <!-- Slide 3 : Crédits et Assets -->
+                        <div class="swiper-slide project-info__col">
+                            <h4 class="project-info__title">Crédits et Assets</h4>
+                            <p class="project-info__text">Photographies et direction artistique de Boxotel</p>
+                        </div>
+
+                        <!-- Slide 4 : Rôle & Contribution -->
+                        <div class="swiper-slide project-info__col">
+                            <h4 class="project-info__title">Rôle & Contribution</h4>
+                            <p class="project-info__text">Idéation, conception UX/UI et prototypage</p>
+                        </div>
+
+                        <!-- Slide 5 : Utilisation AI -->
+                        <div class="swiper-slide project-info__col">
+                            <h4 class="project-info__title">Utilisation AI</h4>
+                            <p class="project-info__text text-highlight">Aucune IA générative n’a été utilisée</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="separateur"></div>
+
+            <section class="project-goal">
+                <div class="wrapper">
+                    <h2 class="project-goal__title">LE BUT DU PROJET</h2>
+
+                    <p class="project-goal__text">
+                        Dans ce projet, le but était d'
+                        <span class="text-highlight">intégrer la maquette Figma</span>
+                        sous forme de site web responsive et de
+                        <span class="text-highlight">valider mes compétences d'intégration</span>
+                        HTML, SCSS et JavaScript acquises en cours.
+                    </p>
+                </div>
+                <div class="projet_goal_medias" data-scrolly="rotateIn">
+                    <!-- Ordinateur au centre -->
+                    <img class="mockup-laptop" src="assets/images/bsc/bsc_mockup_section_haut_2.png" alt="Mockup ordinateur" data-scale data-scale-force="0.03" />
+
+                    <!-- Téléphone superposé en haut à droite -->
+                    <img class="mockup-phone" src="assets/images/bsc/bsc_mockup_section_haut_1.png" alt="Mockup téléphone" data-scale data-scale-force="0.03" data-skew data-lag="0.5" />
+                </div>
+            </section>
+            <div class="separateur"></div>
+            <!-- Processus d'Analyse -->
+            <section class="analysis-process">
+                <div class="wrapper">
+                    <h2 class="analysis-process__main-title">PROCESSUS D’ANALYSE</h2>
+                    <div class="horiz js-horiz" data-horiz>
+                        <div class="analysis-process__track" data-scrolly="fromBottom">
+                            <!-- Étape 1 -->
+                            <article class="analysis-process__panel js-panel">
+                                <div class="analysis-process__step">
+                                    <span class="step-num">1</span>
+                                    <h3>Analyse des composantes</h3>
+                                </div>
+
+                                <div class="analysis-process__medias">
+                                    <div class="analysis-process__media">
+                                        <img class="hover-img" src="assets/images/bsc/bsc_analysis_1_1.png" alt="Diagnostic UX/UI 1" data-component="Modales" />
+                                    </div>
+                                    <div class="analysis-process__media">
+                                        <img class="hover-img" src="assets/images/bsc/bsc_analysis_1_2.png" alt="Diagnostic UX/UI 2" data-component="Modales" />
+                                    </div>
+                                </div>
+
+                                <p class="analysis-process__desc">
+                                    <span class="text-highlight">Étude approfondie du système graphique</span>
+                                    pour extraire et structurer les typographies, la palette de couleurs et les styles visuels sous forme de
+                                    <span class="text-highlight">variables SCSS réutilisables</span>
+                                    .
+                                </p>
+                            </article>
+
+                            <!-- Étape 2 -->
+                            <article class="analysis-process__panel js-panel">
+                                <div class="analysis-process__step">
+                                    <span class="step-num">2</span>
+                                    <h3>Analyse des maquettes mobile et desktop</h3>
+                                </div>
+
+                                <div class="analysis-process__medias">
+                                    <div class="analysis-process__media">
+                                        <img class="hover-img" src="assets/images/bsc/bsc_analysis_2_1.png" alt="Recherche d'inspiration 1" data-component="Modales" />
+                                    </div>
+                                    <div class="analysis-process__media">
+                                        <img class="hover-img" src="assets/images/bsc/bsc_analysis_2_2.png" alt="Recherche d'inspiration 2" data-component="Modales" />
+                                    </div>
+                                </div>
+
+                                <p class="analysis-process__desc">
+                                    <span class="text-highlight">Inspection rigoureuse des maquettes</span>
+                                    pour analyser la disposition des grilles, la gestion des
+                                    <span class="text-highlight">espacements responsive</span>
+                                    et le comportement des composants d'une résolution à l'autre.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Processus Créatif -->
+            <section class="analysis-process">
+                <div class="wrapper">
+                    <h2 class="analysis-process__main-title">Processus de développement</h2>
+                    <div class="horiz js-horiz" data-horiz>
+                        <div class="analysis-process__track" data-scrolly="fromBottom">
+                            <!-- Étape 1 -->
+                            <article class="analysis-process__panel js-panel">
+                                <div class="analysis-process__step">
+                                    <span class="step-num">1</span>
+                                    <h3>Structure HTML & Architecture SCSS</h3>
+                                </div>
+
+                                <div class="analysis-process__medias">
+                                    <div class="analysis-process__media">
+                                        <img class="hover-img" src="assets/images/bsc/bsc_creatif_1_1.png" alt="Bibliothèque de composantes 1" data-component="Modales" />
+                                    </div>
+                                    <div class="analysis-process__media">
+                                        <img src="assets/images/bsc/bsc_creatif_1_2.png" alt="Bibliothèque de composantes 2" data-component="Modales" />
+                                    </div>
+                                </div>
+
+                                <p class="analysis-process__desc">
+                                    <span class="text-highlight">Conception sémantique</span>
+                                    des pages HTML et rédaction d'un
+                                    <span class="text-highlight">code SCSS modulaire</span>
+                                    , en appliquant les normes d'intégration et les meilleures pratiques enseignées en classe.
+                                </p>
+                            </article>
+
+                            <!-- Étape 2 -->
+                            <article class="analysis-process__panel js-panel">
+                                <div class="analysis-process__step">
+                                    <span class="step-num">2</span>
+                                    <h3>Création et ajout des composantes JS</h3>
+                                </div>
+
+                                <div class="analysis-process__medias">
+                                    <div class="analysis-process__media">
+                                        <img class="hover-img" src="assets/images/bsc/bsc_creatif_2_1.png" alt="Maquettes et Prototypage 1" data-component="Modales" />
+                                    </div>
+                                    <div class="analysis-process__media">
+                                        <img class="hover-img" src="assets/images/bsc/bsc_creatif_2_2.png" alt="Maquettes et Prototypage 2" data-component="Modales" />
+                                    </div>
+                                </div>
+
+                                <p class="analysis-process__desc">
+                                    <span class="text-highlight">Programmation des interactions dynamiques</span>
+                                    en JavaScript, suivie de
+                                    <span class="text-highlight">tests de validation rigoureux</span>
+                                    sur l'interface pour garantir un fonctionnement sans erreur.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resultat">
+                <div class="wrapper">
+                    <h2>Résultat finale</h2>
+                    <p>
+                        Au terme d'un investissement important, le projet a abouti à un
+                        <span class="text-highlight">site web fluide, performant et fidèle</span>
+                        aux maquettes initiales. Ce travail a permis d'assimiler pleinement les
+                        <span class="text-highlight">techniques d'intégration</span>
+                        vues en cours, tout en développant avec succès une
+                        <span class="text-highlight">composante JavaScript sur-mesure.</span>
+                    </p>
+                    <a href="https://www.figma.com/design/3o6iNMcn9bhz7vqbIlNPNQ/1021_sosa_silva_marcos_TP2?m=auto&t=2X4ynNFisS2Ylkr5-6" target="_blank" class="btn" data-component="TextAnimScramble">
+                        Voir le projet
+                    </a>
+                    <div class="projet_goal_medias" data-scrolly="rotateIn">
+                        <!-- Ordinateur au centre -->
+                        <img class="mockup-laptop" src="assets/images/bsc/bsc_mockup_section_bas_1.png" alt="Mockup ordinateur" data-scale data-scale-force="0.03" />
+
+                        <!-- Téléphone superposé en bas à droite -->
+                        <img class="mockup-phone" src="assets/images/bsc/bsc_mockup_section_bas_2.png" alt="Mockup téléphone" data-skew data-lag="0.5" />
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="wrapper">
+                    <section id="contact" class="contact">
+
+                        <div class="contact__container">
+
+                            <!-- Titre en escalier (Gauche) -->
+                            <h2 class="contact__title">
+                                <span class="contact__word contact__word--1" data-component="TextAnimScramble">ON</span>
+                                <span class="contact__word contact__word--2" data-component="TextAnimScramble">SE</span>
+                                <span class="contact__word contact__word--3" data-component="TextAnimScramble">PARLE?</span>
+                            </h2>
+
+
+                            <form class="contact__form" data-component="Form" action="https://formsubmit.co/marcos.sosa.silva002@gmail.com" method="POST" autocomplete="off">
+                                <input type="hidden" name="_next" value="https://xmacci-web.github.io/Portfolio/">
+                                <div class="form__body">
+
+                                    <div class="contact__field">
+                                        <input type="text" name="fullname" placeholder="Nom" required />
+                                        <p class="error-msg"><span class="accent">*</span> Rentrez votre nom</p>
+                                    </div>
+
+                                    <div class="contact__field">
+                                        <input type="email" name="email" placeholder="Courriel" required />
+                                        <p class="error-msg"> <span class="accent">*</span> Le courriel n'est pas valide</p>
+                                    </div>
+
+                                    <div class="contact__field">
+                                        <textarea name="comment" placeholder="Message" rows="2" required></textarea>
+                                        <p class="error-msg"> <span class="accent">*</span> Veuillez inscrire votre message</p>
+                                    </div>
+
+                                    <button type="submit" class="btn spacing-btn">ENVOYER</button>
+                                </div>
+
+                                <div class="form__confirmation">
+                                    <h2 class="contact__thanks">MERCI !</h2>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="line">
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                            <span class="line__inner"></span>
+                        </div>
+
+
+                    </section>
+                    <nav class="nav__footer" data-scrolly='zoomOut'>
+                        <ul class="links footer__links">
+                            <li><a href="ai.html" class="link">Utilisation IA</a></li>
+                            <li><a href="" class="link">CV</a></li>
+                            <li><a href="./a-propos.html#projets" class="link">Mes projets</a></li>
+                        </ul>
+                        <ul class="footer__socials">
+                            <li><a href="https://github.com/xMacci" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-github">
+
+                                        </use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/marcos-sosa-silva-941729202/" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-linkedIn" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                            <li><a href="https://www.youtube.com/@macciavelico" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-youtube" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+                            <li><a href="https://ca.pinterest.com/marcossosasilva002/" target="_blank">
+                                    <svg class="icon icon--lg">
+                                        <use href="#icon-pinterest" target="_blank"></use>
+                                    </svg>
+                                </a></li>
+
+                        </ul>
+                    </nav>
+                    <div class="footer__copyright">
+                        <span>2026 © Marcos Sosa Silva</span>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+</div>
+</div>
