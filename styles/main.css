@@ -2441,6 +2441,10 @@ a.logo {
   transform: translateY(0);
 }
 
+.btn-credit {
+  padding: 10px 20px;
+}
+
 .marquee[data-marquee] {
   width: 100%;
   overflow: hidden;
