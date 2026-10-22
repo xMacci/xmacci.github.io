@@ -1417,6 +1417,9 @@ a.logo {
     padding: 40px 0 0 0;
   }
 }
+.hero--projet .hero__content .title__under {
+  letter-spacing: 7px;
+}
 @media screen and (max-width: 635px) {
   .hero--projet .hero__content .title__under {
     display: grid;
