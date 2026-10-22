@@ -763,9 +763,11 @@ a.logo {
 .custom-cursor.is-hover .cursor-text {
   opacity: 1;
 }
-@media screen and (max-width: 768px), (pointer: coarse), (hover: none) {
-  .custom-cursor .custom-cursor {
+@media (pointer: coarse), (hover: none), screen and (max-width: 768px) {
+  .custom-cursor {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 }
 
