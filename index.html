@@ -17,9 +17,14 @@
 </head>
 
 <body data-component="Scrolly" data-no-repeat>
-    <div class="cursor">
-        <img class="cursor-img" src="./assets/images/cursor/cursor.png" alt="Cursor" />
-        <img class="pointer-img" src="./assets/images/cursor/pointer.png" alt="Pointer" />
+    <div class="preloader" data-component="Preloader">
+        <div class="preloader__text">
+            <span class="preloader__counter">0</span>
+            %
+        </div>
+    </div>
+    <div class="custom-cursor" data-component="CustomCursor">
+        <span class="cursor-text">click</span>
     </div>
     <video class="video" src="./assets/videos/videobg.mp4" autoplay muted loop></video>
     <canvas id="balatro" aria-hidden="true"></canvas>
