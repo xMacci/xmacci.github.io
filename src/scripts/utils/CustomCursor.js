@@ -1,58 +1,40 @@
 import { gsap } from 'gsap';
 
 export default class CustomCursor {
-  constructor() {
-    this.cursor = document.querySelector('.cursor');
+  constructor(element = '.custom-cursor') {
+    this.cursor =
+      typeof element === 'string' ? document.querySelector(element) : element;
     if (!this.cursor) return;
-
-    // S'exécute uniquement sur les appareils avec une souris
-    if (!window.matchMedia('(pointer: fine)').matches) return;
 
     this.init();
   }
 
   init() {
-    // Centrage du point d'ancrage et opacité initiale
-    gsap.set(this.cursor, {
-      xPercent: 0,
-      yPercent: 0,
-      opacity: 1,
-    });
-
-    const xTo = gsap.quickTo(this.cursor, 'x', {
-      duration: 0.1,
-      ease: 'power2.out',
-    });
-    const yTo = gsap.quickTo(this.cursor, 'y', {
-      duration: 0.1,
-      ease: 'power2.out',
-    });
-
-    // Suivi du pointeur
+    // Suivi de la souris avec effet d'inertie / delay
     window.addEventListener('mousemove', (e) => {
-      xTo(e.clientX);
-      yTo(e.clientY);
+      gsap.to(this.cursor, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.5, // Ajuster cette valeur pour plus ou moins de délai
+        ease: 'power2.out',
+        overwrite: 'auto',
+      });
     });
 
-    // Détection des survols
+    const hoverTargets =
+      'a, button, .dot, .hover-img, .js-video, [role="button"], .modal img, .modal-close';
+
+    // Délégation globale
     document.addEventListener('mouseover', (e) => {
-      if (e.target.closest('a, button, .dot, .image-hover, [role="button"]')) {
-        this.cursor.classList.add('cursor-hover');
+      if (e.target.closest(hoverTargets)) {
+        this.cursor.classList.add('is-hover');
       }
     });
 
     document.addEventListener('mouseout', (e) => {
-      if (e.target.closest('a, button, .dot,.image-hover, [role="button"]')) {
-        this.cursor.classList.remove('cursor-hover');
+      if (e.target.closest(hoverTargets)) {
+        this.cursor.classList.remove('is-hover');
       }
     });
-
-    // Entrée et sortie de fenêtre
-    document.addEventListener('mouseleave', () =>
-      gsap.to(this.cursor, { opacity: 0, duration: 0.2 }),
-    );
-    document.addEventListener('mouseenter', () =>
-      gsap.to(this.cursor, { opacity: 1, duration: 0.2 }),
-    );
   }
 }

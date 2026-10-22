@@ -27,8 +27,8 @@
 @import 'elements/links';
 @import 'elements/wrapper';
 @import 'elements/cursor';
-@import 'elements/balatro';
 @import 'elements/scrollbar';
+@import 'elements/preloader';
 
 // COMPONENTS
 // Composants d'interface utilisateur spécifiques.
@@ -61,7 +61,7 @@
 @import 'components/tabs';
 @import 'components/accordion';
 @import 'components/transition';
-
+@import 'components/balatro';
 // UTILITIES
 // Utilitaires et classes auxiliaires avec possibilité de remplacer tout ce qui précède, par exemple masquer les éléments de la page
 @import 'utilities/accessibility';

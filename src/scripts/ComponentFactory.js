@@ -15,6 +15,7 @@ import Pointer from './components/Pointer.js';
 import GsapAnimate from './components/GsapAnimate.js';
 import TextAnimScramble from './components/TextAnimScramble.js';
 import PageTransition from './components/PageTransition.js';
+import Preloader from './components/Preloader.js';
 export default class ComponentFactory {
   constructor() {
     this.componentInstances = [];
@@ -36,6 +37,7 @@ export default class ComponentFactory {
       GsapAnimate,
       TextAnimScramble,
       PageTransition,
+      Preloader,
     };
     this.init();
   }
