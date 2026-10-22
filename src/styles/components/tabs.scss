@@ -8,10 +8,21 @@
 
 .tabs__header {
     display: flex;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg) 0;
     gap: var(--spacing-lg);
-    overflow-x: auto;
 
+    @media screen and (max-width: $breakpoint-sm) {
+        gap: var(--spacing-md);
+        .btn {
+            padding: 20px 30px;
+        }
+    }
+    @media screen and (max-width: $breakpoint-xs) {
+        gap: 20px;
+        .btn {
+            padding: 15px 20px;
+        }
+    }
     button {
         text-transform: uppercase;
         font-size: var(--font-primary);
