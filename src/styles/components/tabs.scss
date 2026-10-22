@@ -8,10 +8,13 @@
 
 .tabs__header {
     display: flex;
-    justify-content: space-between;
-    gap: 15px;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
 
     button {
+        text-transform: uppercase;
+        font-size: var(--font-primary);
+
         &.is-active {
             color: var(--color-primary);
             position: relative;
@@ -22,7 +25,6 @@
 
 .tabs__content {
     color: var(--color-white);
-    padding: 30px;
 
     .tab__content {
         display: none;

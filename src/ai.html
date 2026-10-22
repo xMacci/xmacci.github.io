@@ -2,10 +2,10 @@
 <div id="smooth-wrapper" data-component="Scroller">
     <div id="smooth-content">
         <div class="separateur__header"></div>
-        <section class="declaration_ai">
+        <section class="declaration_ai" data-component="GsapAnimate">
             <div class="wrapper">
-                <h1>Déclaration Ai</h1>
-                <p>
+                <h1 data-gsap="fromBottom" data-delay="0.5">Déclaration Ai</h1>
+                <p data-component="TextAnim" data-stagger="0.005" data-duration="0.1" data-delay="0.05">
                     Dans le cadre de ce projet,
                     <span class="text-highlight">l'intelligence artificielle</span>
                     a été utilisée de manière
@@ -29,7 +29,6 @@
                 </div>
                 <div class="tabs__content">
                     <div class="tab__content js-tab-content" data-tab-content-id="tab1">
-                        <div class="separateur"></div>
                         <div class="accordion" data-component="Accordion">
                             <div class="accordion__container js-acc-header">
                                 <div class="accordion__header bouton bouton--card">
