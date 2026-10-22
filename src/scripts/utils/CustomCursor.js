@@ -33,7 +33,7 @@ export default class CustomCursor {
     });
 
     const hoverTargets =
-      'a, button, .dot, .image-hover, [role="button"], .modal img, .modal-close';
+      'a, button, .dot, .hover-img, .js-video, [role="button"], .modal img, .modal-close';
 
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(hoverTargets)) {
