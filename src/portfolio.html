@@ -1,0 +1,342 @@
+{% include "_partials/_header.html" with { title: "Portfolio Projet"} %}
+
+<div id="smooth-wrapper" data-component="Scroller">
+    <div id="smooth-content">
+        <div class="modal">
+            <!-- The Close Button -->
+
+            <button class="header__toggle close js-modal-close">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content js-modal-img" />
+
+            <!-- Modal Caption (Image Text) -->
+            <div class="caption js-modal-caption"></div>
+        </div>
+        <div class="separateur__header"></div>
+        <section class="hero hero--projet" data-component="GsapAnimate">
+            <div class="wrapper">
+                <div class="hero__media">
+                    <img src="assets/images/portfolio/portfolio_color.png" alt="hero" data-gsap="zoomIn" data-delay="0.8" data-scale data-scale-force="0.01" />
+                </div>
+                <div class="hero__content">
+                    <div class="hero__title" data-gsap="fromTop" data-delay="0.3">
+                        <h1>Portfolio</h1>
+                        <h1 class="title__under">
+                            <span>Portfolio</span>
+                        </h1>
+                    </div>
+                    <div class="hero__subtitle" data-component="Words" data-duration="4500" data-anim-duration="0.6" data-y-offset="40">
+                        <h2 class="hero__subtitle-item" data-rotate-item data-gsap="fromLeft" data-delay="0.25">Projet étudiant</h2>
+                        <h2 class="hero__subtitle-item" data-rotate-item>Design UX/UI</h2>
+                        <h2 class="hero__subtitle-item" data-rotate-item>Développement web</h2>
+                    </div>
+                    <div class="btn-hero" data-gsap="fromLeft" data-delay="0.4">
+                        <a
+                            href="https://www.figma.com/design/lBN2weVLo7OtDJPpgMJiQf/Portfolio-2026---Marcos-Sosa-Silva?node-id=732-2&p=f&t=VtO3tqd40vDKwhlS-0"
+                            target="_blank"
+                            class="btn"
+                        >
+                            Voir le Figma
+                        </a>
+                    </div>
+                    <div class="hero__sous-titre" data-gsap="fromBottom" data-delay="0.55">
+                        <p class="small" data-component="TextAnimScramble">Défilez vers le bas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="separateur"></div>
+
+        <section class="project-info">
+            <div class="wrapper swiper" data-component="Carousel" data-autoplay data-loop data-split data-scrolly="fadeIn">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 : Type de projet -->
+                    <div class="swiper-slide project-info__col">
+                        <h4 class="project-info__title">Type de projet</h4>
+                        <ul class="project-info__list">
+                            <li>Design UI/UX</li>
+                            <li>Développement web</li>
+                        </ul>
+                    </div>
+
+                    <!-- Slide 2 : Langages/logiciels -->
+                    <div class="swiper-slide project-info__col">
+                        <h4 class="project-info__title">Langages/logiciels</h4>
+                        <ul class="project-info__list">
+                            <li>Figma</li>
+                            <li>HTML, CSS, JS</li>
+                        </ul>
+                    </div>
+
+                    <!-- Slide 3 : Crédits et Assets -->
+                    <div class="swiper-slide project-info__col">
+                        <h4 class="project-info__title">Crédits et Assets</h4>
+                        <ul class="project-info__list">
+                            <li>Gemini</li>
+                            <li>Alexandre Donato</li>
+                        </ul>
+                    </div>
+
+                    <!-- Slide 4 : Rôle & Contribution -->
+                    <div class="swiper-slide project-info__col">
+                        <h4 class="project-info__title">Rôle & Contribution</h4>
+                        <ul class="project-info__list">
+                            <li>Idéation, conception UX/UI</li>
+                            <li>Intégration Web</li>
+                        </ul>
+                    </div>
+
+                    <!-- Slide 5 : Utilisation AI -->
+                    <div class="swiper-slide project-info__col">
+                        <h4 class="project-info__title">Utilisation AI</h4>
+                        <a class="btn btn-credit" href="ai.html">Voir plus</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="separateur"></div>
+
+        <section class="project-goal">
+            <div class="wrapper">
+                <h2 class="project-goal__title">LE BUT DU PROJET</h2>
+
+                <p class="project-goal__text">
+                    Concevoir et intégrer un
+                    <span class="text-highlight">portfolio professionnel sur-mesure</span>
+                    afin de valoriser l'ensemble de mes
+                    <span class="text-highlight">compétences en design UI et en intégration web,</span>
+                    tout en affirmant mon
+                    <span class="text-highlight">identité visuelle auprès du secteur visé.</span>
+                </p>
+            </div>
+            <div class="projet_goal_medias" data-scrolly="rotateIn">
+                <!-- Ordinateur au centre -->
+                <img
+                    class="mockup-laptop"
+                    src="assets/images/portfolio/portfolio_mockup_section_haut_2.png"
+                    alt="Mockup ordinateur"
+                    data-scale
+                    data-scale-force="0.03"
+                />
+
+                <!-- Téléphone superposé en haut à droite -->
+                <img
+                    class="mockup-phone"
+                    src="assets/images/portfolio/portfolio_mockup_section_haut_1.png"
+                    alt="Mockup téléphone"
+                    data-scale
+                    data-scale-force="0.03"
+                    data-skew
+                    data-lag="0.5"
+                />
+            </div>
+        </section>
+        <div class="separateur"></div>
+        <!-- Processus d'Analyse -->
+        <section class="analysis-process">
+            <div class="wrapper">
+                <h2 class="analysis-process__main-title">Processus de design</h2>
+                <div class="horiz js-horiz" data-horiz>
+                    <div class="analysis-process__track" data-scrolly="fromBottom">
+                        <!-- Étape 1 -->
+                        <article class="analysis-process__panel js-panel">
+                            <div class="analysis-process__step">
+                                <span class="step-num">1</span>
+                                <h3>Veille créative & Étude comparative</h3>
+                            </div>
+
+                            <div class="analysis-process__medias">
+                                <div class="analysis-process__media">
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/portfolio/portfolio_analysis_1_1.png"
+                                        alt="Diagnostic UX/UI 1"
+                                        data-component="Modales"
+                                    />
+                                </div>
+                                <div class="analysis-process__media">
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/portfolio/portfolio_analysis_1_2.png"
+                                        alt="Diagnostic UX/UI 2"
+                                        data-component="Modales"
+                                    />
+                                </div>
+                            </div>
+
+                            <p class="analysis-process__desc">
+                                <span class="text-highlight">Analyse approfondie</span>
+                                de portfolios professionnels inspirants pour identifier les
+                                <span class="text-highlight">meilleures pratiques de l'industrie</span>
+                                et définir une
+                                <span class="text-highlight">direction artistique propre et affirmée.</span>
+                            </p>
+                        </article>
+
+                        <!-- Étape 2 -->
+                        <article class="analysis-process__panel js-panel">
+                            <div class="analysis-process__step">
+                                <span class="step-num">2</span>
+                                <h3>Wireframing & Maquettage (Desktop & Mobile)</h3>
+                            </div>
+
+                            <div class="analysis-process__medias">
+                                <div class="analysis-process__media">
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/portfolio/portfolio_analysis_2_1.png"
+                                        alt="Recherche d'inspiration 1"
+                                        data-component="Modales"
+                                    />
+                                </div>
+                                <div class="analysis-process__media">
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/portfolio/portfolio_analysis_2_2.png"
+                                        alt="Recherche d'inspiration 2"
+                                        data-component="Modales"
+                                    />
+                                </div>
+                            </div>
+
+                            <p class="analysis-process__desc">
+                                <span class="text-highlight">Conception des wireframes</span>
+                                pour clarifier la
+                                <span class="text-highlight">hiérarchie de l'information,</span>
+                                suivie du
+                                <span class="text-highlight">maquettage haute fidélité</span>
+                                décliné de manière
+                                <span class="text-highlight">responsive sur ordinateur et mobile.</span>
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Processus Créatif -->
+        <section class="analysis-process">
+            <div class="wrapper">
+                <h2 class="analysis-process__main-title">Processus de développement (Code)</h2>
+                <div class="horiz js-horiz" data-horiz>
+                    <div class="analysis-process__track" data-scrolly="fromBottom">
+                        <!-- Étape 1 -->
+                        <article class="analysis-process__panel js-panel">
+                            <div class="analysis-process__step">
+                                <span class="step-num">1</span>
+                                <h3>Architecture HTML5 & SCSS</h3>
+                            </div>
+
+                            <div class="analysis-process__medias">
+                                <div class="analysis-process__media">
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/portfolio/portfolio_creatif_1_1.png"
+                                        alt="Bibliothèque de composantes 1"
+                                        data-component="Modales"
+                                    />
+                                </div>
+                                <div class="analysis-process__media">
+                                    <img src="assets/images/portfolio/portfolio_creatif_1_2.png" alt="Bibliothèque de composantes 2" data-component="Modales" />
+                                </div>
+                            </div>
+
+                            <p class="analysis-process__desc">
+                                <span class="text-highlight">Développement d'un code propre et structuré,</span>
+                                garantissant une
+                                <span class="text-highlight">fidélité absolue aux maquettes Figma</span>
+                                et le respect des
+                                <span class="text-highlight">normes d'intégration.</span>
+                            </p>
+                        </article>
+
+                        <!-- Étape 2 -->
+                        <article class="analysis-process__panel js-panel">
+                            <div class="analysis-process__step">
+                                <span class="step-num">2</span>
+                                <h3>Composants interactifs & Débogage</h3>
+                            </div>
+
+                            <div class="analysis-process__medias">
+                                <div class="analysis-process__media">
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/portfolio/portfolio_creatif_2_1.png"
+                                        alt="Maquettes et Prototypage 1"
+                                        data-component="Modales"
+                                    />
+                                </div>
+                                <div class="analysis-process__media">
+                                    <img
+                                        class="hover-img"
+                                        src="assets/images/portfolio/portfolio_creatif_2_2.png"
+                                        alt="Maquettes et Prototypage 2"
+                                        data-component="Modales"
+                                    />
+                                </div>
+                            </div>
+
+                            <p class="analysis-process__desc">
+                                <span class="text-highlight">Programmation de fonctionnalités dynamiques</span>
+                                pour dynamiser l'expérience utilisateur, suivie d'une phase de
+                                <span class="text-highlight">débogage rigoureuse</span>
+                                pour assurer la
+                                <span class="text-highlight">fluidité du site.</span>
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resultat">
+            <div class="wrapper">
+                <h2>Résultat finale</h2>
+                <p>
+                    Grâce à un
+                    <span class="text-highlight">souci du détail méticuleux</span>
+                    et un investissement de temps important, ce portfolio constitue une
+                    <span class="text-highlight">vitrine numérique aboutie,</span>
+                    reflétant avec précision mes
+                    <span class="text-highlight">savoir-faire techniques et créatifs.</span>
+                </p>
+                <a
+                    href="https://www.figma.com/design/lBN2weVLo7OtDJPpgMJiQf/Portfolio-2026---Marcos-Sosa-Silva?node-id=732-2&p=f&t=VtO3tqd40vDKwhlS-0"
+                    target="_blank"
+                    class="btn"
+                    data-component="TextAnimScramble"
+                >
+                    Voir le figma
+                </a>
+                <div class="projet_goal_medias" data-scrolly="rotateIn">
+                    <!-- Ordinateur au centre -->
+                    <img
+                        class="mockup-laptop"
+                        src="assets/images/portfolio/portfolio_mockup_section_bas_1.png"
+                        alt="Mockup ordinateur"
+                        data-scale
+                        data-scale-force="0.03"
+                    />
+
+                    <!-- Téléphone superposé en bas à droite -->
+                    <img
+                        class="mockup-phone"
+                        src="assets/images/portfolio/portfolio_mockup_section_bas_2.png"
+                        alt="Mockup téléphone"
+                        data-skew
+                        data-lag="0.5"
+                    />
+                </div>
+            </div>
+        </section>
+
+        {% include '_partials/_footer.html' %}
+    </div>
+</div>

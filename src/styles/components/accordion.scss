@@ -35,11 +35,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    box-shadow: 0 0 0px;
     border-radius: 5px;
     padding: 30px;
     transition: 0.3s ease-in-out;
-
+    border: 0px solid var(--color-primary);
+    cursor: none;
     &:hover {
         transform: scaleX(1.01);
     }

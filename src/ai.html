@@ -1,4 +1,4 @@
-{% include '_partials/_header.html' %}
+{% include "_partials/_header.html" with { title: "Déclaration AI"} %}
 <div id="smooth-wrapper" data-component="Scroller">
     <div id="smooth-content">
         <div class="separateur__header"></div>
@@ -25,13 +25,12 @@
                     <button class="js-tab btn" data-tab-id="tab1">Codage</button>
                     <button class="js-tab btn" data-tab-id="tab2">Design</button>
                     <button class="js-tab btn" data-tab-id="tab3">Création</button>
-                    <button class="js-tab btn" data-tab-id="tab4">Correction</button>
                 </div>
                 <div class="tabs__content">
                     <div class="tab__content js-tab-content" data-tab-content-id="tab1">
                         <div class="accordion" data-component="Accordion">
                             <div class="accordion__container js-acc-header">
-                                <div class="accordion__header bouton bouton--card">
+                                <div class="accordion__header btn">
                                     <h3>Aide au débogage et explication d'erreurs</h3>
                                     <div class="accordion__icon">
                                         <svg class="icon icon--lg">
@@ -47,7 +46,7 @@
                                 </div>
                             </div>
                             <div class="accordion__container js-acc-header">
-                                <div class="accordion__header bouton bouton--card">
+                                <div class="accordion__header btn">
                                     <h3>Résolution de blocages techniques</h3>
                                     <div class="accordion__icon">
                                         <svg class="icon icon--lg">
@@ -65,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="accordion__container js-acc-header">
-                                <div class="accordion__header bouton bouton--card">
+                                <div class="accordion__header btn">
                                     <h3>Adaptation aux normes du cours</h3>
                                     <div class="accordion__icon">
                                         <svg class="icon icon--lg">
@@ -146,7 +145,7 @@
                         <div class="separateur"></div>
                         <div class="accordion" data-component="Accordion">
                             <div class="accordion__container js-acc-header">
-                                <div class="accordion__header bouton bouton--card">
+                                <div class="accordion__header btn">
                                     <h3>Aucune Ai a été utilisé</h3>
                                     <div class="accordion__icon">
                                         <svg class="icon icon--lg">
@@ -167,7 +166,7 @@
                         <div class="separateur"></div>
                         <div class="accordion" data-component="Accordion">
                             <div class="accordion__container js-acc-header">
-                                <div class="accordion__header bouton bouton--card">
+                                <div class="accordion__header btn">
                                     <h3>Création du texte</h3>
                                     <div class="accordion__icon">
                                         <svg class="icon icon--lg">
@@ -183,8 +182,8 @@
                                 </div>
                             </div>
                             <div class="accordion__container js-acc-header">
-                                <div class="accordion__header bouton bouton--card">
-                                    <h3>Résolution de blocages techniques</h3>
+                                <div class="accordion__header btn">
+                                    <h3>Création des images</h3>
                                     <div class="accordion__icon">
                                         <svg class="icon icon--lg">
                                             <use href="#icon-plus"></use>
@@ -192,34 +191,15 @@
                                     </div>
                                 </div>
                                 <div class="accordion__content">
-                                    <span class="text-highlight">Génération ciblée de fragments de code</span>
-                                    lors de
-                                    <span class="text-highlight">blocages techniques complexes</span>
-                                    afin de
-                                    <span class="text-highlight">débloquer le développement</span>
-                                    et maintenir l'avancement du projet.
-                                </div>
-                            </div>
-                            <div class="accordion__container js-acc-header">
-                                <div class="accordion__header bouton bouton--card">
-                                    <h3>Adaptation aux normes du cours</h3>
-                                    <div class="accordion__icon">
-                                        <svg class="icon icon--lg">
-                                            <use href="#icon-plus"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="accordion__content">
-                                    <span class="text-highlight">Analyse critique et retravail</span>
-                                    des propositions générées par l'IA pour garantir leur conformité avec les
-                                    <span class="text-highlight">exigences et standards</span>
-                                    du cours.
+                                    <span class="text-highlight">Génération des mockups</span>
+                                    afin de pouvoir présenter mon projet
+                                    <span class="text-highlight">et sauver du temps</span>
                                 </div>
                             </div>
                         </div>
                         <div class="galerie analysis-process">
                             <h2>Galeries</h2>
-                            <div class="horiz js-horiz" data-horiz>
+                            <div class="horiz js-horiz">
                                 <div class="analysis-process__track" data-scrolly="fromBottom">
                                     <!-- Étape 1 -->
                                     <article class="analysis-process__panel js-panel">
@@ -227,7 +207,7 @@
                                             <div class="analysis-process__media">
                                                 <img
                                                     class="hover-img"
-                                                    src="assets/images/ai/coding/ai-coding_1.png"
+                                                    src="assets/images/ai/coding/ai-mockup_1.png"
                                                     alt="Déclaration AI"
                                                     data-component="Modales"
                                                 />
@@ -235,39 +215,7 @@
                                             <div class="analysis-process__media">
                                                 <img
                                                     class="hover-img"
-                                                    src="assets/images/ai/coding/ai-coding_2.png"
-                                                    alt="Déclaration AI"
-                                                    data-component="Modales"
-                                                />
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="analysis-process__panel js-panel">
-                                        <div class="analysis-process__medias">
-                                            <div class="analysis-process__media">
-                                                <img
-                                                    class="hover-img"
-                                                    src="assets/images/ai/coding/ai-coding_3.png"
-                                                    alt="Déclaration AI"
-                                                    data-component="Modales"
-                                                />
-                                            </div>
-                                            <div class="analysis-process__media">
-                                                <img
-                                                    class="hover-img"
-                                                    src="assets/images/ai/coding/ai-coding_4.png"
-                                                    alt="Déclaration AI"
-                                                    data-component="Modales"
-                                                />
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="analysis-process__panel js-panel">
-                                        <div class="analysis-process__medias">
-                                            <div class="analysis-process__media">
-                                                <img
-                                                    class="hover-img"
-                                                    src="assets/images/ai/coding/ai-coding_5.png"
+                                                    src="assets/images/ai/coding/ai-mockup_2.png"
                                                     alt="Déclaration AI"
                                                     data-component="Modales"
                                                 />

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Tabs Component
+   Tabs Component (Pure CSS Animation)
    ========================================================================== */
 
 .tabs {
@@ -10,10 +10,17 @@
     display: flex;
     padding: var(--spacing-lg);
     gap: var(--spacing-lg);
+    overflow-x: auto;
 
     button {
         text-transform: uppercase;
         font-size: var(--font-primary);
+        flex-shrink: 0;
+        cursor: pointer;
+
+        transition:
+            color 0.35s ease-in-out,
+            transform 0.35s ease-in-out;
 
         &.is-active {
             color: var(--color-primary);
@@ -31,6 +38,20 @@
 
         &.is-active {
             display: block;
+
+            animation: tabFadeIn 0.4s ease-in-out forwards;
         }
+    }
+}
+
+/* Fondu et léger glissement vers le haut */
+@keyframes tabFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
