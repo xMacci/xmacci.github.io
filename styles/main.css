@@ -3062,9 +3062,24 @@ p {
 
 .tabs__header {
   display: flex;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
   gap: var(--spacing-lg);
-  overflow-x: auto;
+}
+@media screen and (max-width: 768px) {
+  .tabs__header {
+    gap: var(--spacing-md);
+  }
+  .tabs__header .btn {
+    padding: 20px 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .tabs__header {
+    gap: 20px;
+  }
+  .tabs__header .btn {
+    padding: 15px 20px;
+  }
 }
 .tabs__header button {
   text-transform: uppercase;
@@ -3134,6 +3149,17 @@ p {
   padding: 30px;
   transition: 0.3s ease-in-out;
   border: 0px solid var(--color-primary);
+}
+.accordion__header h3 {
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  .accordion__header h3 {
+    margin-bottom: 10px;
+  }
+}
+.accordion__header {
   cursor: none;
 }
 .accordion__header:hover {
@@ -3152,7 +3178,7 @@ p {
 }
 
 .accordion__icon {
-  transform: rotate(0deg);
+  transform: rotate(0deg) scale(1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3167,6 +3193,13 @@ p {
   width: 60px;
   fill: var(--color-primary) !important;
   stroke: var(--color-primary) !important;
+}
+@media screen and (max-width: 768px) {
+  .accordion__icon .icon {
+    height: 50px;
+    width: 50px;
+    padding: 8px;
+  }
 }
 
 .transition-overlay {
