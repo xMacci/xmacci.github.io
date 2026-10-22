@@ -410,6 +410,7 @@
             padding: 40px 0 0 0;
         }
         .title__under {
+            letter-spacing: 7px;
             @media screen and (max-width: 635px) {
                 display: grid;
                 display: flex;
@@ -426,6 +427,7 @@
                 }
             }
         }
+
         .btn-hero {
             padding-top: var(--spacing-xl);
         }
