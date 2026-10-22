@@ -49,11 +49,11 @@
             opacity: 1;
         }
     }
-    @media screen and (max-width: $breakpoint-sm),
-        (pointer: coarse),
-        (hover: none) {
-        .custom-cursor {
-            display: none !important;
-        }
+    @media (pointer: coarse),
+        (hover: none),
+        screen and (max-width: $breakpoint-sm) {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
     }
 }

@@ -4,11 +4,19 @@ export default class CustomCursor {
   constructor(element = '.custom-cursor') {
     this.cursor =
       typeof element === 'string' ? document.querySelector(element) : element;
+    if (!this.cursor) return;
 
+    // Détection des écrans tactiles et mobiles
     const isTouch =
       window.matchMedia('(pointer: coarse)').matches ||
-      'ontouchstart' in window;
-    if (!this.cursor || isTouch) return;
+      'ontouchstart' in window ||
+      window.innerWidth <= 768;
+
+    if (isTouch) {
+      // Forcer la disparition du DOM pour ne pas laisser de point vert en (0,0)
+      this.cursor.style.display = 'none';
+      return;
+    }
 
     this.init();
   }
