@@ -34,7 +34,6 @@ export default class Form {
     for (let i = 0; i < this.formElements.length; i++) {
       const input = this.formElements[i];
 
-      // Ignore les boutons et éléments non validables
       if (input.willValidate && input.required && !this.validateInput(input)) {
         isValid = false;
       }
