@@ -1,7 +1,7 @@
 import { gsap } from 'gsap';
 
 export default class PageTransition {
-  constructor(element) {
+  constructor(element = '[data-component="PageTransition"]') {
     this.overlay =
       typeof element === 'string' ? document.querySelector(element) : element;
     if (!this.overlay) return;
@@ -10,61 +10,106 @@ export default class PageTransition {
   }
 
   init() {
-    // Animation d'entrée (dévoile la nouvelle page)
+    // Ouverture du rideau au chargement de la page
     this.animateIn();
 
-    // Écoute des clics sur tous les liens de la page
+    // Écoute des clics sur l'ensemble de la page
     this.bindLinks();
 
-    // Gère le retour en arrière / avant du navigateur (cache bfcache)
-    window.addEventListener('pageshow', (e) => {
-      if (e.persisted) {
-        this.animateIn();
-      }
+    // Gestion du bouton Précédent/Suivant du navigateur (Bfcache / history)
+    window.addEventListener('pageshow', (event) => {
+      this.resetOverlay();
     });
   }
 
+  /**
+   * Disparition de l'overlay : libère l'écran pour permettre la navigation
+   */
   animateIn() {
-    const top = this.overlay.querySelector('.panel--top');
-    const bottom = this.overlay.querySelector('.panel--bottom');
-
-    gsap.to(top, { yPercent: -100, duration: 0.6, ease: 'power3.inOut' });
-    gsap.to(bottom, { yPercent: 100, duration: 0.6, ease: 'power3.inOut' });
+    gsap.to(this.overlay, {
+      scaleY: 0,
+      transformOrigin: 'top',
+      duration: 0.6,
+      ease: 'power3.inOut',
+      pointerEvents: 'none',
+    });
   }
 
+  /**
+   * Apparition de l'overlay : ferme le menu mobile et redirige
+   * @param {string} url - Destination de la page
+   */
   animateOut(url) {
-    const top = this.overlay.querySelector('.panel--top');
-    const bottom = this.overlay.querySelector('.panel--bottom');
+    // 1. Ferme le menu mobile pour réactiver le scroll du body
+    document.body.classList.remove('is-menu-open', 'nav-open');
 
-    gsap
-      .timeline({
-        onComplete: () => {
-          window.location.href = url;
-        },
-      })
-      .to(top, { yPercent: 0, duration: 0.5, ease: 'power3.inOut' }, 0)
-      .to(bottom, { yPercent: 0, duration: 0.5, ease: 'power3.inOut' }, 0);
+    // 2. Joue l'animation de fermeture
+    gsap.to(this.overlay, {
+      scaleY: 1,
+      transformOrigin: 'bottom',
+      duration: 0.5,
+      ease: 'power3.inOut',
+      pointerEvents: 'all',
+      onComplete: () => {
+        window.location.href = url;
+      },
+    });
   }
 
+  /**
+   * Réinitialise l'overlay si l'utilisateur revient en arrière
+   */
+  resetOverlay() {
+    document.body.classList.remove('is-menu-open', 'nav-open');
+    gsap.to(this.overlay, {
+      scaleY: 0,
+      transformOrigin: 'top',
+      duration: 0.4,
+      ease: 'power3.inOut',
+      pointerEvents: 'none',
+    });
+  }
+
+  /**
+   * Intercepte et filtre les clics sur la page
+   */
   bindLinks() {
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a');
       if (!link) return;
 
       const href = link.getAttribute('href');
+      if (!href) return;
 
-      // Ignore les liens externes, ancres, mailto, tel et ouverture dans un nouvel onglet
+      const linkPath = link.pathname;
+      const currentPath = window.location.pathname;
+      const isSamePage = linkPath === currentPath || href.startsWith('#');
+      const hasHash = link.hash !== '' || href.includes('#');
+
+      // 1. Ancre sur la même page (ex: #projets ou a-propos.html#projets)
+      if (isSamePage && hasHash) {
+        document.body.classList.remove('is-menu-open', 'nav-open');
+        return;
+      }
+
+      // 2. Clic sur la page actuelle sans ancre (ex: clic "Accueil" déjà sur l'Accueil)
+      if (isSamePage && !hasHash) {
+        e.preventDefault();
+        document.body.classList.remove('is-menu-open', 'nav-open');
+        return;
+      }
+
+      // 3. Ignorer liens externes, mailto, tel et liens ouvrants dans un nouvel onglet
       if (
-        !href ||
-        href.startsWith('#') ||
         href.startsWith('mailto:') ||
         href.startsWith('tel:') ||
         link.target === '_blank' ||
-        href === window.location.pathname
+        link.origin !== window.location.origin
       ) {
         return;
       }
 
+      // 4. Lancement de la transition vers la nouvelle page
       e.preventDefault();
       this.animateOut(href);
     });

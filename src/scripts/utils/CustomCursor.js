@@ -4,27 +4,29 @@ export default class CustomCursor {
   constructor(element = '.custom-cursor') {
     this.cursor =
       typeof element === 'string' ? document.querySelector(element) : element;
-    if (!this.cursor) return;
+
+    const isTouch =
+      window.matchMedia('(pointer: coarse)').matches ||
+      'ontouchstart' in window;
+    if (!this.cursor || isTouch) return;
 
     this.init();
   }
 
   init() {
-    // Suivi de la souris avec effet d'inertie / delay
     window.addEventListener('mousemove', (e) => {
       gsap.to(this.cursor, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.5, // Ajuster cette valeur pour plus ou moins de délai
+        duration: 0.35,
         ease: 'power2.out',
         overwrite: 'auto',
       });
     });
 
     const hoverTargets =
-      'a, button, .dot, .hover-img, .js-video, [role="button"], .modal img, .modal-close';
+      'a, button, .dot, .image-hover, [role="button"], .modal img, .modal-close';
 
-    // Délégation globale
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(hoverTargets)) {
         this.cursor.classList.add('is-hover');
