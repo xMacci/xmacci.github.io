@@ -2776,7 +2776,7 @@ body.is-loading {
 @media screen and (max-width: 768px) {
   .analysis-process__medias {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 15px;
   }
 }
 .analysis-process__media {
@@ -2785,10 +2785,15 @@ body.is-loading {
   background: #151515;
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .analysis-process__media {
+    width: 80%;
+  }
+}
 .analysis-process__media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4/3; /* Passage à 4/3 : image plus haute et toujours 100% fluide sans hauteur fixe */
+  aspect-ratio: 4/3;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
