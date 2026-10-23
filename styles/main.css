@@ -3075,7 +3075,7 @@ p {
 }
 @media screen and (max-width: 480px) {
   .tabs__header {
-    gap: 20px;
+    gap: 10px;
   }
   .tabs__header .btn {
     padding: 15px 20px;
