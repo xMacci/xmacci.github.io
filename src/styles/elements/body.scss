@@ -13,6 +13,12 @@ body {
     font-family: var(--font-primary);
     font-size: var(--font-size-p);
     line-height: 50px;
+    p {
+        line-height: 50px !important;
+        @media screen and (max-width: $breakpoint-sm) {
+            line-height: 35px !important;
+        }
+    }
     overflow-x: hidden;
     cursor: none;
     a,

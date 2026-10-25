@@ -1,8 +1,16 @@
 .hero {
-    min-height: 85vh;
+    min-height: 90vh;
     width: 100%;
     position: relative;
-
+    --line-height: 10px;
+    .line {
+        z-index: 3;
+        position: absolute;
+        bottom: -10px;
+        .line__inner {
+            border-top: var(--line-height) solid var(--color-primary);
+        }
+    }
     h2 {
         color: var(--color-white);
         margin: 0;
@@ -129,7 +137,6 @@
         width: 50vw;
         height: 100%;
         z-index: 1;
-        overflow: hidden;
 
         img {
             width: 100%;
@@ -211,7 +218,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         text-align: center;
     }
 

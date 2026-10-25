@@ -101,15 +101,15 @@ export default class Scroller {
 
       if (!words.length) continue;
 
-      gsap.set(words, { opacity: 0, y: 40 });
+      gsap.set(words, { opacity: 0, y: 20 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: target,
           pin: true,
           start: 'top top',
-          end: '+=250%',
-          scrub: 1,
+          end: '+=70%',
+          scrub: 0.3,
           anticipatePin: 1,
         },
       });
@@ -117,25 +117,16 @@ export default class Scroller {
       for (let j = 0; j < words.length; j++) {
         const word = words[j];
 
-        tl.to(word, {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power2.out',
-        });
-
-        if (j < words.length - 1) {
-          tl.to(
-            word,
-            {
-              opacity: 0,
-              y: -40,
-              duration: 0.8,
-              ease: 'power2.in',
-            },
-            '+=0.6',
-          );
-        }
+        tl.to(
+          word,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.2,
+            ease: 'power2.out',
+          },
+          `+=0.15`,
+        );
       }
     }
   }
