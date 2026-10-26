@@ -421,14 +421,64 @@
                 </div>
             </section>
             <div class="separateur"></div>
-            <section class="caractere" data-component="Theme" data-pin-items data-scrolly="fadeIn">
+
+            <section class="interets" data-component="Theme">
                 <div class="wrapper">
-                    <div class="caractere-container">
-                        <h2>Ce que je suis</h2>
-                        <div class="caractere-mots-wrapper">
-                            <div class="caractere-mots mot-1" data-pin-word>RÉCEPTIF</div>
-                            <div class="caractere-mots mot-2" data-pin-word>PERSÉVÉRANT</div>
-                            <div class="caractere-mots mot-3" data-pin-word>SOCIABLE</div>
+                    <h2>Ce que j’aime</h2>
+                </div>
+
+                <div class="interets__container">
+                    <!-- Ligne 1 : MUSIQUE (vers la gauche) -->
+                    <div class="marquee marquee--left" data-scrolly="fromLeft">
+                        <div class="marquee__track">
+                            <span class="filled green">RÉCEPTIF</span>
+                            <span class="outline green">RÉCEPTIF</span>
+                            <span class="filled green">RÉCEPTIF</span>
+                            <span class="outline green">RÉCEPTIF</span>
+                        </div>
+                        <div class="marquee__track" aria-hidden="true">
+                            <span class="filled green">RÉCEPTIF</span>
+                            <span class="outline green">RÉCEPTIF</span>
+                            <span class="filled green">RÉCEPTIF</span>
+                            <span class="outline green">RÉCEPTIF</span>
+                        </div>
+                    </div>
+
+                    <!-- Ligne 2 : JEUX VIDÉOS (vers la droite) -->
+                    <div class="marquee marquee--right" data-scrolly="fromRight">
+                        <div class="marquee__track" data-scrolly="fromLeft">
+                            <span class="filled dark">PERSÉVÉRANT</span>
+                            <span class="outline dark">PERSÉVÉRANT</span>
+                            <span class="filled dark">PERSÉVÉRANT</span>
+                            <span class="outline dark">PERSÉVÉRANT</span>
+                        </div>
+                        <div class="marquee__track" aria-hidden="true">
+                            <span class="filled dark">PERSÉVÉRANT</span>
+                            <span class="outline dark">PERSÉVÉRANT</span>
+                            <span class="filled dark">PERSÉVÉRANT</span>
+                            <span class="outline dark">PERSÉVÉRANT</span>
+                        </div>
+                    </div>
+
+                    <!-- Ligne 3 : CINÉMA (vers la gauche) -->
+                    <div class="marquee marquee--left" data-scrolly="fromLeft">
+                        <div class="marquee__track">
+                            <span class="filled green">SOCIABLE</span>
+                            <span class="outline green">SOCIABLE</span>
+                            <span class="filled green">SOCIABLE</span>
+                            <span class="outline green">SOCIABLE</span>
+                        </div>
+                        <div class="marquee__track" aria-hidden="true">
+                            <span class="filled green">SOCIABLE</span>
+                            <span class="outline green">SOCIABLE</span>
+                            <span class="filled green">SOCIABLE</span>
+                            <span class="outline green">SOCIABLE</span>
+                        </div>
+                        <div class="marquee__track" aria-hidden="true">
+                            <span class="filled green">SOCIABLE</span>
+                            <span class="outline green">SOCIABLE</span>
+                            <span class="filled green">SOCIABLE</span>
+                            <span class="outline green">SOCIABLE</span>
                         </div>
                     </div>
                 </div>
@@ -588,7 +638,7 @@
                     </section>
                     <nav class="nav__footer" data-scrolly='zoomOut'>
                         <ul class="links footer__links">
-                            <li><a href="ai.html" class="link">Utilisation IA</a></li>
+                            <li><a href="ai.html" class="link text-highlight">Utilisation IA</a></li>
                             <li><a href="" class="link">CV</a></li>
                             <li><a href="./a-propos.html#projets" class="link">Mes projets</a></li>
                         </ul>
