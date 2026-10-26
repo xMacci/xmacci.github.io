@@ -1,3 +1,5 @@
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 export default class Tabs {
   constructor(element) {
     this.element = element;
@@ -14,7 +16,6 @@ export default class Tabs {
   init() {
     this.setOptions();
 
-    // Attache l'événement de clic à chaque onglet
     for (let i = 0; i < this.onglets.length; i++) {
       const onglet = this.onglets[i];
       onglet.addEventListener('click', this.selectOnglet.bind(this));
@@ -27,12 +28,10 @@ export default class Tabs {
     const target = event.currentTarget;
     const tabId = target.dataset.tabId;
 
-    // Si l'onglet cliqué est déjà actif, on conserve sa sélection
     if (this.selectedType === tabId) return;
 
     this.selectedType = tabId;
 
-    // Mise à jour de la classe is-active sur les boutons
     for (let i = 0; i < this.onglets.length; i++) {
       const onglet = this.onglets[i];
       if (onglet.dataset.tabId === this.selectedType) {
@@ -58,19 +57,22 @@ export default class Tabs {
       }
     }
 
-    // Force les scripts enfants (Galerie, animations, scroll) à recalculer leurs hauteurs/largeurs
     window.dispatchEvent(new Event('resize'));
+
+    setTimeout(() => {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    }, 50);
   }
 
   activeStartup() {
-    // Définit la valeur de selectedType avec defaultTab ou le premier onglet disponible
     if (this.options.defaultTab) {
       this.selectedType = this.options.defaultTab;
     } else if (this.onglets.length > 0) {
       this.selectedType = this.onglets[0].dataset.tabId;
     }
 
-    // Active l'onglet correspondant
     for (let i = 0; i < this.onglets.length; i++) {
       const onglet = this.onglets[i];
       if (onglet.dataset.tabId === this.selectedType) {
