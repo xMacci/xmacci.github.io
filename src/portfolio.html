@@ -21,15 +21,15 @@
         <section class="hero hero--projet" data-component="GsapAnimate">
             <div class="wrapper">
                 <div class="hero__media">
-                    <img src="assets/images/portfolio/portfolio_color.png" alt="hero" data-gsap="zoomIn" data-delay="0.8" data-scale data-scale-force="0.01" />
+                    <img src="assets/images/portfolio/portfolio-hero.png" alt="hero" data-gsap="zoomIn" data-delay="0.8" data-scale data-scale-force="0.01" />
                 </div>
                 <div class="hero__content">
-                    <div class="hero__title" data-gsap="fromTop" data-delay="0.3">
-                        <h1>Portfolio</h1>
-                        <h1 class="title__under">
-                            <span>Portfolio</span>
-                        </h1>
-                    </div>
+                    <h1 class="hero__title" data-gsap="fromBottom" data-delay="0.3">
+                        <span class="word-wrapper">
+                            <span class="word-main">Portfolio</span>
+                            <span class="word-under hero--portfolio" aria-hidden="true">Porfolio</span>
+                        </span>
+                    </h1>
                     <div class="hero__subtitle" data-component="Words" data-duration="4500" data-anim-duration="0.6" data-y-offset="40">
                         <h2 class="hero__subtitle-item" data-rotate-item data-gsap="fromLeft" data-delay="0.25">Projet étudiant</h2>
                         <h2 class="hero__subtitle-item" data-rotate-item>Design UX/UI</h2>
@@ -292,27 +292,20 @@
                     target="_blank"
                     class="btn"
                     data-component="TextAnimScramble"
+                    style="display: inline-block; margin-bottom: 30px"
                 >
                     Voir le figma
                 </a>
-                <div class="projet_goal_medias" data-scrolly="rotateIn">
-                    <!-- Ordinateur au centre -->
-                    <img
-                        class="mockup-laptop"
-                        src="assets/images/portfolio/portfolio_mockup_section_bas_1.png"
-                        alt="Mockup ordinateur"
-                        data-scale
-                        data-scale-force="0.03"
-                    />
-
-                    <!-- Téléphone superposé en bas à droite -->
-                    <img
-                        class="mockup-phone"
-                        src="assets/images/portfolio/portfolio_mockup_section_bas_2.png"
-                        alt="Mockup téléphone"
-                        data-skew
-                        data-lag="0.5"
-                    />
+                <div
+                    class="projet_goal_medias"
+                    data-scrolly="zoomIn"
+                    style="width: 100%; max-width: 1100px; aspect-ratio: 16 / 9; margin: 0 auto; position: relative"
+                >
+                    <iframe
+                        style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 100%"
+                        src="https://embed.figma.com/proto/lBN2weVLo7OtDJPpgMJiQf/Portfolio-2026---Marcos-Sosa-Silva?node-id=11294-1542&p=f&scaling=contain&content-scaling=fixed&page-id=9223%3A2&starting-point-node-id=11294%3A1542&show-proto-sidebar=0&embed-host=share"
+                        allowfullscreen
+                    ></iframe>
                 </div>
             </div>
         </section>
