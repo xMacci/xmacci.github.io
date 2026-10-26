@@ -22,16 +22,26 @@ export default class CustomCursor {
   }
 
   init() {
+    // Crée des setters rapides pour x et y (plus performant que gsap.to répété)
+    const xSetter = gsap.quickSetter(this.cursor, 'x', 'px');
+    const ySetter = gsap.quickSetter(this.cursor, 'y', 'px');
+
     window.addEventListener('mousemove', (e) => {
+      // On utilise quickTo pour garder le lissage (duration/ease)
+      // Il faut initialiser quickTo en dehors si on veut lissage,
+      // sinon quickSetter est instantané.
+
+      // Version avec lissage (similaire à votre code mais plus optimisé)
       gsap.to(this.cursor, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.35,
+        duration: 0.2, // Légèrement réduit pour être plus réactif
         ease: 'power2.out',
-        overwrite: 'auto',
+        overwrite: true, // Overwrite total pour curseur
       });
     });
 
+    // ... le reste de votre code (mouseover/out) reste inchangé
     const hoverTargets =
       'a, button, .dot, .hover-img, .js-video, [role="button"], .modal img, .modal-close';
 

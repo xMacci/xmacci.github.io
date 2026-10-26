@@ -35,17 +35,6 @@ body {
         .caractere h2 {
             -webkit-text-stroke-color: var(--color-black);
         }
-        .header {
-            background: linear-gradient(
-                180deg,
-                rgba(42, 42, 42, 1) 0%,
-                rgba(42, 42, 42, 0.4) 90%,
-                rgba(42, 42, 42, 0) 100%
-            );
-            .line__inner {
-                border-top: var(--line-height) solid var(--color-black);
-            }
-        }
     }
 }
 .video {

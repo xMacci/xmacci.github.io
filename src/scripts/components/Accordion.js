@@ -2,10 +2,11 @@ export default class Accordion {
   constructor(element) {
     this.element = element;
     this.containers = this.element.querySelectorAll('.accordion__container');
+
     this.options = {
-      notClosing: false,
-      autoOpen: false,
+      notClosing: true,
     };
+
     this.setOptions();
     this.init();
   }
@@ -14,12 +15,9 @@ export default class Accordion {
     for (let i = 0; i < this.containers.length; i++) {
       const container = this.containers[i];
 
-      // Auto-open si data-auto-open est présent
-      if ('autoOpen' in container.dataset) {
-        container.classList.add('is-active');
-      }
+      // Ouvre tous les accordéons par défaut
+      container.classList.add('is-active');
 
-      // Écoute le clic uniquement sur le header (le titre/bouton), pas sur tout le conteneur
       const header = container.querySelector('.accordion__header') || container;
       header.addEventListener('click', (event) =>
         this.initAccordion(event, container),
@@ -30,24 +28,23 @@ export default class Accordion {
   initAccordion(event, targetContainer) {
     const wasActive = targetContainer.classList.contains('is-active');
 
-    // Si on n'a pas l'option notClosing, on ferme tous les autres accordéons
     if (!this.options.notClosing) {
       for (let i = 0; i < this.containers.length; i++) {
         this.containers[i].classList.remove('is-active');
       }
     }
 
-    // Bascule l'état de l'accordéon cliqué
-    if (!wasActive) {
-      targetContainer.classList.add('is-active');
-    } else if (this.options.notClosing) {
+    if (wasActive) {
       targetContainer.classList.remove('is-active');
+    } else {
+      targetContainer.classList.add('is-active');
     }
   }
 
   setOptions() {
-    if ('notClosing' in this.element.dataset) {
-      this.options.notClosing = true;
+    // Si vous ajoutez data-single sur l'accordéon, il repassera en mode "un seul ouvert à la fois"
+    if ('single' in this.element.dataset) {
+      this.options.notClosing = false;
     }
   }
 }
