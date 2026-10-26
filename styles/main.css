@@ -23,7 +23,7 @@
 :root {
   --font-primary: 'JetBrains Mono', monospace;
   --font-secondary: 'Sedgwick Ave Display', cursive;
-  --font-size-h1: clamp(3.44rem, 4.27vw + 2.16rem, 6rem);
+  --font-size-h1: clamp(3rem, 5vw + 1.5rem, 6rem);
   --font-size-h2: clamp(1.5rem, 2.5vw + 0.75rem, 3rem);
   --font-size-h3: clamp(1.13rem, 1.46vw + 0.69rem, 2rem);
   --font-size-h4: clamp(1rem, 0.83vw + 0.75rem, 1.5rem);
@@ -1320,6 +1320,9 @@ body.is-loading {
 }
 .hero--projet .hero__content .hero__title .word-wrapper .hero--catherine {
   letter-spacing: 0.17em;
+}
+.hero--projet .hero__content .hero__title .word-wrapper .hero--portfolio {
+  letter-spacing: 0.25em;
 }
 @media screen and (max-width: 1024px) {
   .hero--projet .hero__content {
