@@ -41,11 +41,16 @@
         gap: 1.25rem;
         box-sizing: border-box;
 
+        // Mobile : le panneau fait exactement la hauteur de l'écran et son contenu
+        // est centré, pour que tout soit visible pendant que la section est épinglée.
         @media screen and (max-width: $breakpoint-sm) {
-            height: auto;
-            min-height: 100vh;
-            padding: 5rem 1.25rem 3rem 1.25rem;
-            gap: 1rem;
+            height: 100vh;
+            height: 100svh; // ignore la barre d'adresse mobile
+            min-height: 0;
+            justify-content: center;
+            padding: 4.5rem 1.25rem 1.5rem 1.25rem;
+            gap: 0.75rem;
+            overflow: hidden;
         }
     }
 
@@ -67,9 +72,10 @@
         gap: var(--spacing-lg);
         width: 100%;
 
+        // Mobile : images côte à côte pour laisser la place au texte
         @media screen and (max-width: $breakpoint-sm) {
-            grid-template-columns: 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
     }
 
@@ -78,9 +84,6 @@
         overflow: hidden;
         background: #151515;
         width: 100%;
-        @media screen and (max-width: $breakpoint-sm) {
-            width: 80%;
-        }
         img {
             width: 100%;
             height: auto;

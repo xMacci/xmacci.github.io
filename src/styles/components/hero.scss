@@ -61,6 +61,9 @@
         width: 100%;
         position: relative;
         z-index: 2;
+        @media screen and (max-width: $breakpoint-md) {
+            padding-top: 0;
+        }
     }
     .hero__title {
         display: flex;
