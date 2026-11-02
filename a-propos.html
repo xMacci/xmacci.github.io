@@ -11,6 +11,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Portfolio" />
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sedgwick+Ave+Display&display=swap" />
     <link rel="stylesheet" href="styles/main.css" />
 
     <script src="scripts/main.js" defer></script>
@@ -86,13 +89,14 @@
         <img class="modal-content js-modal-img" src="" alt="" />
         <div class="caption js-modal-caption"></div>
     </div>
+    <!-- Fermés dans _footer.html -->
     <div id="smooth-wrapper" data-component="Scroller">
         <div id="smooth-content">
             <div class="separateur__header"></div>
             <section class="hero" data-component="GsapAnimate" data-component="Words">
                 <div class="wrapper">
                     <div class="hero__media" data-component="GsapAnimate">
-                        <img src="assets/images/herotemp.png" alt="hero" data-gsap="zoomIn" data-delay="0.5" data-scale data-scale-force="0.01" />
+                        <img width="750" height="763" fetchpriority="high" src="assets/images/herotemp.webp" alt="Portrait de Marcos Sosa Silva" data-gsap="zoomIn" data-delay="0.5" data-scale data-scale-force="0.01" />
                     </div>
                     <div class="hero__content">
                         <div class="hero__content">
@@ -159,8 +163,8 @@
                         </ul>
 
                         <div class="competences__medias" data-scrolly="fromRight">
-                            <img src="assets/images/competences.png" alt="competences" data-skew data-lag="0.5" />
-                            <img src="assets/images/competences2.png" alt="competences" data-skew data-lag="0.9" />
+                            <img width="480" height="418" loading="lazy" decoding="async" src="assets/images/competences.webp" alt="Montage photo réalisé dans Photoshop" data-skew data-lag="0.5" />
+                            <img width="500" height="472" loading="lazy" decoding="async" src="assets/images/competences2.webp" alt="Montage vidéo réalisé dans Premiere Pro" data-skew data-lag="0.9" />
                         </div>
                     </div>
                 </div>
@@ -256,13 +260,13 @@
                             <a class="projet-card__body" href="boxotel.html">
                                 <div class="projet-card__image-container">
                                     <!-- Image Noir & Blanc (Visible par défaut) -->
-                                    <img src="assets/images/boxotel/boxotel_nb.png" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/boxotel/boxotel_nb.webp" alt="Boxotel" class="projet-card__img projet-card__img--nb" />
 
                                     <!-- Image Couleur (Cachée par défaut) -->
-                                    <img src="assets/images/boxotel/boxotel_color.png" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/boxotel/boxotel_color.webp" alt="Boxotel Couleur" class="projet-card__img projet-card__img--color" />
 
                                     <div class="badge-voir-projet">
-                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                        <img width="272" height="272" loading="lazy" decoding="async" src="assets/images/voirplus.webp" alt="Voir le projet" />
                                     </div>
                                 </div>
                             </a>
@@ -293,13 +297,13 @@
                             <a class="projet-card__body" href="ninjarush.html">
                                 <div class="projet-card__image-container">
                                     <!-- Image Noir & Blanc (Visible par défaut) -->
-                                    <img src="assets/images/ninjarush/ninjarush_nb.png" alt="NinjaRush" class="projet-card__img projet-card__img--nb" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/ninjarush/ninjarush_nb.webp" alt="NinjaRush" class="projet-card__img projet-card__img--nb" />
 
                                     <!-- Image Couleur (Cachée par défaut) -->
-                                    <img src="assets/images/ninjarush/ninjaRush_color.png" alt="NinjaRush Couleur" class="projet-card__img projet-card__img--color" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/ninjarush/ninjaRush_color.webp" alt="NinjaRush Couleur" class="projet-card__img projet-card__img--color" />
 
                                     <div class="badge-voir-projet">
-                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                        <img width="272" height="272" loading="lazy" decoding="async" src="assets/images/voirplus.webp" alt="Voir le projet" />
                                     </div>
                                 </div>
                             </a>
@@ -330,13 +334,13 @@
                             <a class="projet-card__body" href="bsc.html">
                                 <div class="projet-card__image-container">
                                     <!-- Image Noir & Blanc (Visible par défaut) -->
-                                    <img src="assets/images/bsc/bsc_nb.png" alt="Baie St-Catherine NB" class="projet-card__img projet-card__img--nb" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/bsc/bsc_nb.webp" alt="Baie St-Catherine NB" class="projet-card__img projet-card__img--nb" />
 
                                     <!-- Image Couleur (Cachée par défaut) -->
-                                    <img src="assets/images/bsc/bsc_color.png" alt="Baie St-Catherine Couleur" class="projet-card__img projet-card__img--color" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/bsc/bsc_color.webp" alt="Baie St-Catherine Couleur" class="projet-card__img projet-card__img--color" />
 
                                     <div class="badge-voir-projet">
-                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                        <img width="272" height="272" loading="lazy" decoding="async" src="assets/images/voirplus.webp" alt="Voir le projet" />
                                     </div>
                                 </div>
                             </a>
@@ -367,13 +371,13 @@
                             <a class="projet-card__body" href="nouveleau.html">
                                 <div class="projet-card__image-container">
                                     <!-- Image Noir & Blanc (Visible par défaut) -->
-                                    <img src="assets/images/nouveleau/nouveleau_nb.png" alt="NouvelEau" class="projet-card__img projet-card__img--nb" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/nouveleau/nouveleau_nb.webp" alt="NouvelEau" class="projet-card__img projet-card__img--nb" />
 
                                     <!-- Image Couleur (Cachée par défaut) -->
-                                    <img src="assets/images/nouveleau/nouveleau_color.png" alt="NouvelEau Couleur" class="projet-card__img projet-card__img--color" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/nouveleau/nouveleau_color.webp" alt="NouvelEau Couleur" class="projet-card__img projet-card__img--color" />
 
                                     <div class="badge-voir-projet">
-                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                        <img width="272" height="272" loading="lazy" decoding="async" src="assets/images/voirplus.webp" alt="Voir le projet" />
                                     </div>
                                 </div>
                             </a>
@@ -406,13 +410,13 @@
                             <a class="projet-card__body" href="portfolio.html">
                                 <div class="projet-card__image-container">
                                     <!-- Image Noir & Blanc (Visible par défaut) -->
-                                    <img src="assets/images/portfolio/portfolio_nb.png" alt="Portfolio" class="projet-card__img projet-card__img--nb" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/portfolio/portfolio_nb.webp" alt="Portfolio" class="projet-card__img projet-card__img--nb" />
 
                                     <!-- Image Couleur (Cachée par défaut) -->
-                                    <img src="assets/images/portfolio/portfolio_color.png" alt="Portfolio Couleur" class="projet-card__img projet-card__img--color" />
+                                    <img width="948" height="667" loading="lazy" decoding="async" src="assets/images/portfolio/portfolio_color.webp" alt="Portfolio Couleur" class="projet-card__img projet-card__img--color" />
 
                                     <div class="badge-voir-projet">
-                                        <img src="assets/images/voirplus.png" alt="Voir le projet" />
+                                        <img width="272" height="272" loading="lazy" decoding="async" src="assets/images/voirplus.webp" alt="Voir le projet" />
                                     </div>
                                 </div>
                             </a>
@@ -489,8 +493,8 @@
 
                     <div class="video-youtube" data-scrolly="zoomOut" data-component="YouTube" data-video-id="SfY3lW0ZMRU">
                         <div class="video__media js-video">
-                            <img class="js-poster" src="assets/images/covervideo.png" alt="Vidéo de présentation" />
-                            <img class="logo--yt" src="assets/images/play.svg" alt="logo__play" />
+                            <img width="1390" height="721" loading="lazy" decoding="async" class="js-poster" src="assets/images/covervideo.webp" alt="Vidéo de présentation" />
+                            <img class="logo--yt" src="assets/images/play.svg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -680,5 +684,3 @@
 </body>
 
 </html>
-</div>
-</div>
