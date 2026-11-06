@@ -455,63 +455,59 @@
             </section>
             <div class="separateur"></div>
 
-            <section class="interets" data-component="Theme">
+            <section class="caractere" data-component="Theme">
                 <div class="wrapper">
-                    <h2>Ce que je suis</h2>
-                </div>
-
-                <div class="interets__container">
-                    <!-- Ligne 1 : MUSIQUE (vers la gauche) -->
-                    <div class="marquee marquee--left" data-scrolly="fromLeft">
-                        <div class="marquee__track">
-                            <span class="filled green">RÉCEPTIF</span>
-                            <span class="outline green">RÉCEPTIF</span>
-                            <span class="filled green">RÉCEPTIF</span>
-                            <span class="outline green">RÉCEPTIF</span>
-                        </div>
-                        <div class="marquee__track" aria-hidden="true">
-                            <span class="filled green">RÉCEPTIF</span>
-                            <span class="outline green">RÉCEPTIF</span>
-                            <span class="filled green">RÉCEPTIF</span>
-                            <span class="outline green">RÉCEPTIF</span>
-                        </div>
-                    </div>
-
-                    <!-- Ligne 2 : JEUX VIDÉOS (vers la droite) -->
-                    <div class="marquee marquee--right" data-scrolly="fromRight">
-                        <div class="marquee__track" data-scrolly="fromLeft">
-                            <span class="filled dark">PERSÉVÉRANT</span>
-                            <span class="outline dark">PERSÉVÉRANT</span>
-                            <span class="filled dark">PERSÉVÉRANT</span>
-                            <span class="outline dark">PERSÉVÉRANT</span>
-                        </div>
-                        <div class="marquee__track" aria-hidden="true">
-                            <span class="filled dark">PERSÉVÉRANT</span>
-                            <span class="outline dark">PERSÉVÉRANT</span>
-                            <span class="filled dark">PERSÉVÉRANT</span>
-                            <span class="outline dark">PERSÉVÉRANT</span>
-                        </div>
-                    </div>
-
-                    <!-- Ligne 3 : CINÉMA (vers la gauche) -->
-                    <div class="marquee marquee--left" data-scrolly="fromLeft">
-                        <div class="marquee__track">
-                            <span class="filled green">SOCIABLE</span>
-                            <span class="outline green">SOCIABLE</span>
-                            <span class="filled green">SOCIABLE</span>
-                            <span class="outline green">SOCIABLE</span>
-                        </div>
-                        <div class="marquee__track" aria-hidden="true">
-                            <span class="filled green">SOCIABLE</span>
-                            <span class="outline green">SOCIABLE</span>
-                            <span class="filled green">SOCIABLE</span>
-                            <span class="outline green">SOCIABLE</span>
-                        </div>
-                        <div class="marquee__track" aria-hidden="true">
-                            <span class="filled green">SOCIABLE</span>
-                            <span class="outline green">SOCIABLE</span>
-                            <span class="filled green">SOCIABLE</span>
-                            <span class="outline green">SOCIABLE</span>
+                    <div class="caractere-container" data-pin-items>
+                        <h2>Ce que je suis</h2>
+                        <div class="caractere-mots-wrapper">
+                            <div class="caractere-mots mot-1" data-pin-word>
+                                <span class="caractere-mots__titre">RÉCEPTIF</span>
+                                <div class="caractere-mots__texte">
+                                    <p class="caractere-mots__desc" data-pin-desc>J’écoute les <strong data-component="TextAnimScramble" data-scramble-scroll>critiques</strong> et je m’en sers pour <strong data-component="TextAnimScramble" data-scramble-scroll>améliorer</strong> mon travail.</p>
+                                    <div class="line" aria-hidden="true">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="caractere-mots mot-2" data-pin-word>
+                                <span class="caractere-mots__titre">PERSÉVÉRANT</span>
+                                <div class="caractere-mots__texte">
+                                    <p class="caractere-mots__desc" data-pin-desc>Quand un <strong data-component="TextAnimScramble" data-scramble-scroll>problème</strong> bloque, je cherche jusqu’à trouver la <strong data-component="TextAnimScramble" data-scramble-scroll>solution</strong>.</p>
+                                    <div class="line" aria-hidden="true">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="caractere-mots mot-3" data-pin-word>
+                                <span class="caractere-mots__titre">ADAPTABLE</span>
+                                <div class="caractere-mots__texte">
+                                    <p class="caractere-mots__desc" data-pin-desc><strong data-component="TextAnimScramble" data-scramble-scroll>Nouveaux outils</strong>, nouvelles contraintes&nbsp;: je m’ajuste <strong data-component="TextAnimScramble" data-scramble-scroll>rapidement</strong>.</p>
+                                    <div class="line" aria-hidden="true">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="caractere-mots mot-4" data-pin-word>
+                                <span class="caractere-mots__titre">SOCIABLE</span>
+                                <div class="caractere-mots__texte">
+                                    <p class="caractere-mots__desc" data-pin-desc>J’aime travailler en <strong data-component="TextAnimScramble" data-scramble-scroll>équipe</strong> et partager mes <strong data-component="TextAnimScramble" data-scramble-scroll>idées</strong>.</p>
+                                    <div class="line" aria-hidden="true">
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                        <span class="line__inner"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -620,6 +616,11 @@
 
             <footer class="footer">
                 <div class="wrapper">
+                    <a class="scroll-to-top" href="#top" aria-label="Retour en haut de la page">
+                        <svg class="icon icon--xl top">
+                            <use href="#icon-arrowup"></use>
+                        </svg>
+                    </a>
                     <section id="contact" class="contact">
 
                         <div class="contact__container">

@@ -81,6 +81,10 @@
   }
 }
 
+.separateur__btn {
+  padding-top: var(--spacing-md);
+}
+
 /* ==========================================================================
    scrolly / component
    ========================================================================== */
@@ -628,6 +632,13 @@ body.theme-light .caractere h2 {
   overflow: visible;
 }
 
+p,
+li,
+blockquote,
+figcaption {
+  text-wrap: pretty;
+}
+
 /* ==========================================================================
    HEADINGS / ELEMENT
    ========================================================================== */
@@ -640,6 +651,7 @@ h6 {
   font-family: var(--font-primary);
   line-height: 1;
   font-weight: bold;
+  text-wrap: balance;
 }
 
 h1 {
@@ -724,7 +736,7 @@ a.logo {
 }
 
 /* ==========================================================================
-   Custom Cursor Component (Spray Paint Haute Visibilité)
+   Custom Cursor Component
    ========================================================================== */
 .custom-cursor {
   position: fixed;
@@ -750,38 +762,26 @@ a.logo {
   font-size: 15px;
   font-weight: 900;
   font-family: var(--font-secondary);
-  color: #000000;
+  color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0;
   pointer-events: none;
   z-index: 20;
-  /* Contraste net pour détacher le texte de la peinture */
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
   transform: scale(0.7);
   transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .custom-cursor {
-  /* 2. ÉTAT HOVER : PEINTURE DENSE AU CENTRE + SPRAY AUX BORDS */
+  /* 2. ÉTAT HOVER : cercle vert, contour seulement (sans remplissage) */
 }
 .custom-cursor.is-hover {
-  width: 130px;
-  height: 130px;
-  margin-top: -65px;
-  margin-left: -65px;
-  background-color: var(--color-primary);
-  border-radius: 0;
-  /* Ombre sous le spray pour décoller du fond du site */
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.6));
-  /* Masque SVG : Cœur 100% opaque + dispersion sur les bords */
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='white' stop-opacity='1'/%3E%3Cstop offset='35%25' stop-color='white' stop-opacity='1'/%3E%3Cstop offset='70%25' stop-color='white' stop-opacity='0.6'/%3E%3Cstop offset='100%25' stop-color='white' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cfilter id='sprayMask'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -10' result='dots'/%3E%3CfeTurbulence type='turbulence' baseFrequency='0.03' numOctaves='2' result='warp'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='warp' scale='25' xChannelSelector='R' yChannelSelector='G' result='warped'/%3E%3CfeComposite in='dots' in2='warped' operator='in'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)' filter='url(%23sprayMask)'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='white' stop-opacity='1'/%3E%3Cstop offset='35%25' stop-color='white' stop-opacity='1'/%3E%3Cstop offset='70%25' stop-color='white' stop-opacity='0.6'/%3E%3Cstop offset='100%25' stop-color='white' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cfilter id='sprayMask'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -10' result='dots'/%3E%3CfeTurbulence type='turbulence' baseFrequency='0.03' numOctaves='2' result='warp'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='warp' scale='25' xChannelSelector='R' yChannelSelector='G' result='warped'/%3E%3CfeComposite in='dots' in2='warped' operator='in'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)' filter='url(%23sprayMask)'/%3E%3C/svg%3E");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+  width: 90px;
+  height: 90px;
+  margin-top: -45px;
+  margin-left: -45px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, transparent 50%, color-mix(in srgb, var(--color-primary) 30%, transparent) 100%);
+  border: 2px solid var(--color-primary);
+  box-shadow: none;
 }
 .custom-cursor.is-hover .cursor-text {
   opacity: 1;
@@ -1925,32 +1925,23 @@ body.is-loading {
 
 .caractere {
   width: 100%;
-  height: 100vh;
 }
 .caractere .wrapper {
-  height: 100%;
   position: relative;
-  overflow: hidden;
 }
 .caractere .caractere-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center;
+  padding-block: var(--spacing-xl, 6rem);
 }
 .caractere .caractere-container .caractere-mots-wrapper {
-  display: grid;
-  place-items: center;
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 25vh;
+  margin-top: var(--spacing-xl, 6rem);
 }
 .caractere .caractere-container h2 {
-  position: absolute;
-  top: 10%;
-  left: 0;
   margin: 0;
-  text-transform: none;
   color: transparent !important;
   -webkit-text-stroke-width: 3px;
   font-size: var(--font-size-spanB);
@@ -1958,31 +1949,94 @@ body.is-loading {
   text-transform: uppercase;
 }
 .caractere .caractere-mots {
-  grid-area: 1/1;
-  position: absolute;
-  font-size: var(--font-size-spanBSpray);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 1rem);
+  max-width: 50%;
+  text-align: left;
   opacity: 0;
+}
+@media screen and (max-width: 1440px) {
+  .caractere .caractere-mots {
+    max-width: 70%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .caractere .caractere-mots {
+    max-width: 70%;
+  }
+}
+.caractere .caractere-mots .caractere-mots__titre {
+  font-size: var(--font-size-spanBSpray);
   font-family: var(--font-secondary);
   text-transform: uppercase;
   color: var(--color-primary);
-}
-.caractere .caractere-mots.mot-1 {
-  top: 30%;
-  left: 10%;
-  color: var(--color-primary);
   -webkit-text-stroke: 5px var(--color-black);
+  line-height: 1;
 }
-.caractere .caractere-mots.mot-2 {
-  top: 50%;
-  right: 10%;
-  color: var(--color-primary);
-  -webkit-text-stroke: 5px var(--color-black);
+@media screen and (max-width: 1024px) {
+  .caractere .caractere-mots .caractere-mots__titre {
+    -webkit-text-stroke-width: 3px;
+  }
 }
-.caractere .caractere-mots.mot-3 {
-  top: 70%;
-  left: 10%;
-  color: var(--color-primary);
-  -webkit-text-stroke: 5px var(--color-black);
+.caractere .caractere-mots .caractere-mots__texte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 1rem);
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+}
+.caractere .caractere-mots .line {
+  --line-height: 6px;
+  gap: 8px;
+  width: 100%;
+}
+.caractere .caractere-mots .line .line__inner {
+  width: auto;
+  border-top-color: var(--color-primary);
+  border-radius: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+.caractere .caractere-mots .line .line__inner:nth-child(1) {
+  flex: 1;
+}
+.caractere .caractere-mots .line .line__inner:nth-child(2), .caractere .caractere-mots .line .line__inner:nth-child(3) {
+  flex: 4;
+}
+.caractere .caractere-mots .line .line__inner:nth-child(4) {
+  flex: 2;
+}
+.caractere .caractere-mots .caractere-mots__desc {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: var(--color-white);
+  -webkit-text-stroke: 0;
+}
+.caractere .caractere-mots .caractere-mots__desc strong {
+  font-weight: 700;
+}
+.theme-light .caractere .caractere-mots .caractere-mots__desc {
+  color: var(--color-black);
+}
+.caractere .caractere-mots.mot-2, .caractere .caractere-mots.mot-4 {
+  align-items: flex-end;
+  text-align: right;
+}
+.caractere .caractere-mots.mot-2 .line .line__inner, .caractere .caractere-mots.mot-4 .line .line__inner {
+  transform-origin: right center;
+}
+.caractere .caractere-mots.mot-1, .caractere .caractere-mots.mot-3 {
+  align-self: flex-start;
+  margin-left: 10%;
+}
+.caractere .caractere-mots.mot-2, .caractere .caractere-mots.mot-4 {
+  align-self: flex-end;
+  margin-right: 10%;
 }
 
 .videos-youtube {
@@ -2289,16 +2343,32 @@ body.is-loading {
   margin-top: 50px;
 }
 
+.footer {
+  position: relative;
+}
+.footer .scroll-to-top {
+  position: absolute;
+  top: var(--spacing-lg, 2rem);
+  right: var(--spacing-lg, 2rem);
+  z-index: 10;
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
+.footer .scroll-to-top:hover {
+  transform: translateY(-5px);
+}
+
 .nav__footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .nav__footer {
     flex-direction: column;
     gap: 30px;
     text-align: center;
+    align-items: center;
   }
 }
 .nav__footer .footer__links {
@@ -3063,7 +3133,7 @@ p {
   padding: 30px;
   transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease-out, padding 0.4s ease;
 }
-.accordion__container.is-active .accordion__icon {
+.accordion__container.is-active .accordion__icon .icon {
   transform: rotate(45deg);
 }
 
@@ -3105,28 +3175,32 @@ p {
 }
 
 .accordion__icon {
-  transform: rotate(0deg) scale(1);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.accordion__icon .icon {
-  background-color: var(--color-black);
-  border-radius: 36px;
-  border: 5px solid var(--color-primary);
-  padding: 10px;
+  flex-shrink: 0;
+  box-sizing: border-box;
   height: 60px;
   width: 60px;
-  fill: var(--color-primary) !important;
-  stroke: var(--color-primary) !important;
+  padding: 10px;
+  background-color: var(--color-black);
+  border-radius: 18px;
+  border: 5px solid var(--color-primary);
 }
 @media screen and (max-width: 768px) {
-  .accordion__icon .icon {
+  .accordion__icon {
     height: 50px;
     width: 50px;
     padding: 8px;
   }
+}
+.accordion__icon .icon {
+  height: 100%;
+  width: 100%;
+  fill: var(--color-primary) !important;
+  stroke: var(--color-primary) !important;
+  transform: rotate(0deg);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .transition-overlay {
