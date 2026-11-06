@@ -158,11 +158,16 @@ export default class Scroller {
 
       if (nbPanels === 0) continue;
 
+      // Épingle toute la section (titre inclus) pour que le scroll horizontal démarre plus tôt
+      const pinTarget = sectionHoriz.closest('.analysis-process') || sectionHoriz;
+
       gsap.to(panels, {
         xPercent: -100 * (nbPanels - 1),
         ease: 'none',
         scrollTrigger: {
-          trigger: sectionHoriz,
+          trigger: pinTarget,
+          start: 'top top',
+          invalidateOnRefresh: true,
           pin: true,
           scrub: 1,
           snap: 1 / (nbPanels - 1),

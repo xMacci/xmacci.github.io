@@ -54,6 +54,9 @@
       ]
     ]
   },
+  "overrides": {
+    "css": "^2.2.4"
+  },
   "main": "index.js",
   "license": "MIT",
   "dependencies": {

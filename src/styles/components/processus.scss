@@ -43,8 +43,7 @@
 
         @media screen and (max-width: $breakpoint-sm) {
             height: auto;
-            min-height: 100vh;
-            padding: 5rem 1.25rem 3rem 1.25rem;
+            padding: 1.5rem 1.25rem 2rem 1.25rem;
             gap: 1rem;
         }
     }
@@ -78,15 +77,18 @@
         overflow: hidden;
         background: #151515;
         width: 100%;
-        @media screen and (max-width: $breakpoint-sm) {
-            width: 80%;
-        }
         img {
             width: 100%;
             height: auto;
             aspect-ratio: 4 / 3;
             display: block;
             object-fit: cover;
+
+            // Mobile : hauteur limitée pour que titre + images + texte tiennent dans l'écran
+            @media screen and (max-width: $breakpoint-sm) {
+                aspect-ratio: auto;
+                height: 22svh;
+            }
         }
     }
 
