@@ -22,6 +22,9 @@ h1 {
     -webkit-text-stroke-color: var(--color-white);
     word-spacing: -10px;
     letter-spacing: -2px;
+    @media screen and (max-width: $breakpoint-md) {
+        -webkit-text-stroke-width: 1px;
+    }
 }
 
 h2 {

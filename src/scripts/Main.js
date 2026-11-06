@@ -30,6 +30,25 @@ class Main {
         video.pause();
       });
     }
+
+    // Mobile / tactile : on retire la vidéo de fond et le grain (filtre SVG).
+    // - La vidéo plein écran (à 5 % d'opacité) est décodée en continu et
+    //   recomposée à chaque frame de scroll : grosse cause de lag sur mobile.
+    // - Quand le navigateur bloque l'autoplay (iOS en mode économie
+    //   d'énergie), il affiche un bouton play par-dessus la page.
+    // - Le grain plein écran (feTurbulence) est très coûteux à chaque scroll.
+    const isMobile =
+      window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 768;
+
+    if (isMobile) {
+      document.querySelectorAll('video.video').forEach((video) => {
+        video.pause();
+        video.removeAttribute('src'); // arrête aussi le téléchargement
+        video.load();
+        video.remove();
+      });
+      document.querySelectorAll('.noise-overlay').forEach((el) => el.remove());
+    }
   }
 }
 

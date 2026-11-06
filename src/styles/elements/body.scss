@@ -47,6 +47,18 @@ body {
     z-index: 99;
     opacity: 0.05;
     pointer-events: none;
+
+    // Jamais de bouton play natif sur la vidéo de fond
+    &::-webkit-media-controls,
+    &::-webkit-media-controls-start-playback-button {
+        display: none !important;
+        -webkit-appearance: none;
+    }
+
+    // Mobile : pas de vidéo de fond (performance + bouton play iOS)
+    @media screen and (max-width: $breakpoint-sm), (pointer: coarse) {
+        display: none;
+    }
 }
 .noise {
     display: none;
@@ -60,6 +72,11 @@ body {
     z-index: 15;
     pointer-events: none;
     filter: url(#blackNoise);
+
+    // Mobile : le filtre de grain plein écran fait laguer le scroll
+    @media screen and (max-width: $breakpoint-sm), (pointer: coarse) {
+        display: none;
+    }
 }
 
 #smooth-wrapper {

@@ -87,10 +87,28 @@ export default class TextAnimScramble {
 
   startLoop() {
     const scramble = () => {
+      // Hors écran : on met la boucle en pause (économise des FPS)
+      if (!this.isVisible) {
+        this.isWaiting = true;
+        return;
+      }
       this.setText(this.text).then(() => {
         gsap.delayedCall(2, scramble);
       });
     };
+
+    this.isVisible = true;
+    this.isWaiting = false;
+    const observer = new IntersectionObserver(([entry]) => {
+      this.isVisible = entry.isIntersecting;
+      // Revient à l'écran : on relance la boucle si elle était en pause
+      if (this.isVisible && this.isWaiting) {
+        this.isWaiting = false;
+        scramble();
+      }
+    });
+    observer.observe(this.el);
+
     scramble();
   }
 }

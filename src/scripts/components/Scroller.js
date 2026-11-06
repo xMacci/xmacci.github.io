@@ -20,6 +20,10 @@ export default class Scroller {
   }
 
   init() {
+    // Mobile : la barre d'adresse qui apparaît/disparaît change la hauteur
+    // de l'écran ; sans ça, toutes les animations sont recalculées en plein scroll
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
     this.smoother = ScrollSmoother.create({
       wrapper: this.element,
       content:
@@ -27,7 +31,9 @@ export default class Scroller {
         this.element.firstElementChild,
       smooth: 1.5,
       effects: true,
-      smoothTouch: 0.1,
+      // Au toucher : défilement natif du téléphone (beaucoup plus fluide)
+      // au lieu de déplacer toute la page en JS à chaque frame
+      smoothTouch: false,
       onUpdate: (self) => this.onUpdateScroll(self),
       onStop: (self) => this.onStopScroll(self),
       ease: 'expo.out',
