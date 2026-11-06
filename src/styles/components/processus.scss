@@ -84,7 +84,6 @@
             display: block;
             object-fit: cover;
 
-            // Mobile : hauteur limitée pour que titre + images + texte tiennent dans l'écran
             @media screen and (max-width: $breakpoint-sm) {
                 aspect-ratio: auto;
                 height: 22svh;

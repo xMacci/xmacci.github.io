@@ -157,8 +157,8 @@ export default class Scroller {
 
       if (nbPanels === 0) continue;
 
-      // Épingle toute la section (titre inclus) pour que le scroll horizontal démarre plus tôt
-      const pinTarget = sectionHoriz.closest('.analysis-process') || sectionHoriz;
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      const pinTarget = isMobile ? sectionHoriz.closest('.analysis-process') || sectionHoriz : sectionHoriz;
 
       gsap.to(panels, {
         xPercent: -100 * (nbPanels - 1),
