@@ -2479,6 +2479,8 @@ body.is-loading {
 .project-info__title {
   font-weight: 700;
   color: var(--color-white, #ffffff);
+  text-transform: none;
+  margin: 1.33em 0;
   border-bottom: 2px solid var(--color-primary);
   width: 100%;
   white-space: nowrap;
