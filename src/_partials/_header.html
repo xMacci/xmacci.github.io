@@ -3,13 +3,50 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ title }}</title>
+        {#
+            Paramètres possibles dans l'include de chaque page :
+            title, description, page (ex. "boxotel.html") et image (fichier dans assets/images/og/)
+        #}
+        {% set site_url = "https://xmacci.github.io/" %}
+        {% set page_title = title ? title ~ " | Marcos Sosa Silva" : "Marcos Sosa Silva | Designer UI/UX et développeur web" %}
+        {% set page_description = description|default("Portfolio de Marcos Sosa Silva, designer UI/UX et développeur web junior. Interfaces conçues sur Figma et intégrées en HTML, CSS et JavaScript.") %}
+        {% set page_image = site_url ~ "assets/images/og/" ~ image|default("og-default.jpg") %}
+
+        <title>{{ page_title }}</title>
+        <meta name="description" content="{{ page_description }}" />
+        <meta name="author" content="Marcos Sosa Silva" />
+        <meta name="theme-color" content="#090909" />
+        {% if page is defined %}
+        <link rel="canonical" href="{{ site_url ~ page }}" />
+        <meta property="og:url" content="{{ site_url ~ page }}" />
+        {% endif %}
+
+        <!-- Aperçu lors du partage (Facebook, LinkedIn, Discord, iMessage...) -->
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="fr_CA" />
+        <meta property="og:site_name" content="Marcos Sosa Silva | Portfolio" />
+        <meta property="og:title" content="{{ page_title }}" />
+        <meta property="og:description" content="{{ page_description }}" />
+        <meta property="og:image" content="{{ page_image }}" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="{{ page_title }}" />
+
+        <!-- Aperçu sur X / Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{ page_title }}" />
+        <meta name="twitter:description" content="{{ page_description }}" />
+        <meta name="twitter:image" content="{{ page_image }}" />
         <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
         <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Portfolio" />
         <link rel="manifest" href="assets/favicon/site.webmanifest" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sedgwick+Ave+Display&display=swap" />
         <link rel="stylesheet" href="styles/main.css" />
 
         <script src="scripts/main.js" defer></script>
@@ -91,3 +128,6 @@
             <img class="modal-content js-modal-img" src="" alt="" />
             <div class="caption js-modal-caption"></div>
         </div>
+<!-- Fermés dans _footer.html -->
+<div id="smooth-wrapper" data-component="Scroller">
+    <div id="smooth-content">

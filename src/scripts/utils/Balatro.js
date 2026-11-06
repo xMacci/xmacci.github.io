@@ -36,11 +36,16 @@ export default class Balatro {
     this.startTime = performance.now();
     this.frameId = null;
     this.isVisible = !document.hidden;
+    // Respecte le réglage système « réduire les animations » : une seule image fixe
+    this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     this.createShaders();
     this.resize();
 
-    this.resizeObserver = new ResizeObserver(() => this.resize());
+    this.resizeObserver = new ResizeObserver(() => {
+      this.resize();
+      if (this.reducedMotion) this.render(); // redessine l'image fixe
+    });
     this.resizeObserver.observe(this.canvas);
 
     this.handleVisibility = () => {
@@ -300,7 +305,7 @@ export default class Balatro {
 
       gl.drawArrays(gl.TRIANGLES, 0, 3);
 
-      this.render();
+      if (!this.reducedMotion) this.render();
     });
   }
 

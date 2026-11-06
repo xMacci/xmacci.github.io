@@ -11,7 +11,6 @@ import TextAnim from './components/TextAnim.js';
 import Projets from './components/Projets.js';
 import Words from './components/Words.js';
 import Theme from './components/theme.js';
-import Pointer from './components/Pointer.js';
 import GsapAnimate from './components/GsapAnimate.js';
 import TextAnimScramble from './components/TextAnimScramble.js';
 import PageTransition from './components/PageTransition.js';
@@ -33,7 +32,6 @@ export default class ComponentFactory {
       Projets,
       Theme,
       Words,
-      Pointer,
       GsapAnimate,
       TextAnimScramble,
       PageTransition,
@@ -52,7 +50,7 @@ export default class ComponentFactory {
         const instance = new this.componentList[componentName](element);
         this.componentInstances.push(instance);
       } else {
-        console.log(`La composante ${componentName} n'existe pas`);
+        console.warn(`La composante ${componentName} n'existe pas`);
       }
     }
   }

@@ -20,15 +20,11 @@ export default class Form {
   onSubmit(event) {
     event.preventDefault();
     if (this.validate()) {
-      console.log('success'); // envoi ajax du formulaire
       this.showConfirmation();
-    } else {
-      console.log('fail');
     }
   }
 
   validate() {
-    console.log('validate');
     let isValid = true;
 
     for (let i = 0; i < this.formElements.length; i++) {

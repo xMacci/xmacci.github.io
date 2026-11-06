@@ -16,6 +16,11 @@ export default class Modales {
     // Ouverture lors du clic sur l'image
     this.triggerImg.addEventListener('click', () => this.open());
 
+    // La modale est partagée par toutes les images : ses écouteurs de
+    // fermeture ne sont ajoutés qu'une seule fois (et non une fois par image).
+    if (Modales.closeListenersBound) return;
+    Modales.closeListenersBound = true;
+
     // Fermeture via le bouton X
     if (this.closeBtn) {
       this.closeBtn.addEventListener('click', () => this.close());

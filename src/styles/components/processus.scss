@@ -41,9 +41,12 @@
         gap: 1.25rem;
         box-sizing: border-box;
 
+        // Mobile : le panneau fait exactement la hauteur de l'écran et son contenu
+        // est centré, pour que tout soit visible pendant que la section est épinglée.
         @media screen and (max-width: $breakpoint-sm) {
             height: auto;
-            padding: 1.5rem 1.25rem 2rem 1.25rem;
+            min-height: 100vh;
+            padding: 5rem 1.25rem 3rem 1.25rem;
             gap: 1rem;
         }
     }
@@ -66,9 +69,10 @@
         gap: var(--spacing-lg);
         width: 100%;
 
+        // Mobile : images côte à côte pour laisser la place au texte
         @media screen and (max-width: $breakpoint-sm) {
-            grid-template-columns: 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
     }
 

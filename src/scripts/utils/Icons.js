@@ -17,7 +17,7 @@ export default class Icons {
         document.body.appendChild(svg);
       })
       .catch((error) => {
-        console.log(`Une erreur est survenur : ${error.message}`);
+        console.error(`Une erreur est survenue : ${error.message}`);
       });
   }
 }

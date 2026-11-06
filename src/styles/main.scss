@@ -1,6 +1,6 @@
 //FONTS
 // ici sont chargé les fonts
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sedgwick+Ave+Display&display=swap');
+// Les polices Google sont chargées dans le <head> (_header.html et index.html) pour un affichage plus rapide.
 // TOOLS
 // mixins et fonctions utilisés globalement dans le SCSS (Sass)
 @import 'tools/cover';

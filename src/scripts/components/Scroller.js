@@ -134,7 +134,6 @@ export default class Scroller {
     const drawnItems = this.element.querySelectorAll('.textScramble');
     for (let index = 0; index < drawnItems.length; index++) {
       const single = drawnItems[index];
-      console.log(single);
       this.scrambleRepeat = 0;
       if ('scrambleRepeat' in single.dataset) {
         this.scrambleRepeat = single.dataset.scrambleRepeat;
