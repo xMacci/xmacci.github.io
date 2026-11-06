@@ -11,6 +11,7 @@ h6 {
     font-family: var(--font-primary);
     line-height: 1;
     font-weight: bold;
+    text-wrap: balance; // lignes équilibrées, pas de mot seul sur la dernière ligne
 }
 
 h1 {

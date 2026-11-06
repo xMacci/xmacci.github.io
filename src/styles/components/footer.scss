@@ -1,11 +1,29 @@
+.footer {
+    position: relative;
+
+    .scroll-to-top {
+        position: absolute;
+        top: var(--spacing-lg, 2rem);
+        right: var(--spacing-lg, 2rem);
+        z-index: 10;
+        display: inline-flex;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+}
+
 .nav__footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    @media screen and (max-width: $breakpoint-sm) {
+    @media screen and (max-width: $breakpoint-md) {
         flex-direction: column;
         gap: 30px;
         text-align: center;
+        align-items: center;
     }
 
     .footer__links {

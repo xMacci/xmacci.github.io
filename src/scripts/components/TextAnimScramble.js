@@ -1,4 +1,5 @@
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 
 export default class TextAnimScramble {
   constructor(element) {
@@ -12,7 +13,26 @@ export default class TextAnimScramble {
     this.frame = 0;
     this.queue = [];
 
-    this.startLoop();
+    // data-scramble-scroll : scramble lancé au scroll (à chaque entrée
+    // à l'écran) au lieu de la boucle continue
+    if ('scrambleScroll' in this.el.dataset) {
+      this.startOnScroll();
+    } else {
+      this.startLoop();
+    }
+  }
+
+  startOnScroll() {
+    gsap.registerPlugin(ScrollTrigger);
+    const play = () => this.setText(this.text);
+
+    ScrollTrigger.create({
+      trigger: this.el,
+      start: 'top 70%',
+      end: 'bottom 20%',
+      onEnter: play,
+      onEnterBack: play,
+    });
   }
 
   setText(newText) {

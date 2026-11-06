@@ -93,40 +93,54 @@ export default class Scroller {
   }
 
   initPin() {
+    // Pas de pin : la page défile normalement. Chaque mot (avec sa
+    // description et ses lignes) apparaît quand il entre à l'écran
+    // et disparaît quand il en sort, dans les deux sens de scroll.
     const pinTargets = this.element.querySelectorAll('[data-pin-items]');
 
     for (let i = 0; i < pinTargets.length; i++) {
       const target = pinTargets[i];
       const words = target.querySelectorAll('[data-pin-word]');
 
-      if (!words.length) continue;
-
-      gsap.set(words, { opacity: 0, y: 20 });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: target,
-          pin: true,
-          start: 'top top',
-          end: '+=70%',
-          scrub: 0.3,
-          anticipatePin: 1,
-        },
-      });
-
       for (let j = 0; j < words.length; j++) {
         const word = words[j];
+        const desc = word.querySelector('[data-pin-desc]');
+        const wordLines = word.querySelectorAll('.line__inner');
 
-        tl.to(
-          word,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.2,
-            ease: 'power2.out',
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: word,
+            start: 'top 70%', // apparaît une fois bien entré à l'écran
+            end: 'bottom 20%',
+            toggleActions: 'play reverse play reverse',
           },
-          `+=0.15`,
+        });
+
+        tl.fromTo(
+          word,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' },
         );
+
+        // Description : juste après le mot
+        if (desc) {
+          tl.fromTo(
+            desc,
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' },
+            '-=0.25',
+          );
+        }
+
+        // Lignes vertes sous la description : s'étirent une après l'autre
+        if (wordLines.length) {
+          tl.fromTo(
+            wordLines,
+            { scaleX: 0 },
+            { scaleX: 1, duration: 0.4, stagger: 0.08, ease: 'power2.inOut' },
+            '-=0.2',
+          );
+        }
       }
     }
   }

@@ -26,7 +26,8 @@
                 padding 0.4s ease;
         }
 
-        .accordion__icon {
+        // Seul le « + » tourne, la bordure reste droite
+        .accordion__icon .icon {
             transform: rotate(45deg);
         }
     }
@@ -71,26 +72,32 @@
         padding 0.35s ease;
 }
 
+// Le conteneur porte la bordure et ne tourne pas
 .accordion__icon {
-    transform: rotate(0deg) scale(1);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    background-color: var(--color-black);
+    border-radius: 18px;
+    border: 5px solid var(--color-primary);
+    @media screen and (max-width: $breakpoint-sm) {
+        height: 50px;
+        width: 50px;
+        padding: 8px;
+    }
 
+    // Seule l'icône « + » tourne
     .icon {
-        background-color: var(--color-black);
-        border-radius: 36px;
-        border: 5px solid var(--color-primary);
-        padding: 10px;
-        height: 60px;
-        width: 60px;
+        height: 100%;
+        width: 100%;
         fill: var(--color-primary) !important;
         stroke: var(--color-primary) !important;
-        @media screen and (max-width: $breakpoint-sm) {
-            height: 50px;
-            width: 50px;
-            padding: 8px;
-        }
+        transform: rotate(0deg);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 }

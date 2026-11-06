@@ -75,3 +75,11 @@ body {
     width: 100%;
     overflow: visible;
 }
+
+// Évite les orphelins (un mot seul sur la dernière ligne d'un paragraphe)
+p,
+li,
+blockquote,
+figcaption {
+    text-wrap: pretty;
+}
