@@ -602,6 +602,15 @@ body.theme-light .caractere h2 {
   opacity: 0.05;
   pointer-events: none;
 }
+.video::-webkit-media-controls, .video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+@media screen and (max-width: 768px), (pointer: coarse) {
+  .video {
+    display: none;
+  }
+}
 
 .noise {
   display: none;
@@ -616,6 +625,11 @@ body.theme-light .caractere h2 {
   z-index: 15;
   pointer-events: none;
   filter: url(#blackNoise);
+}
+@media screen and (max-width: 768px), (pointer: coarse) {
+  .noise-overlay {
+    display: none;
+  }
 }
 
 #smooth-wrapper {
@@ -662,6 +676,11 @@ h1 {
   -webkit-text-stroke-color: var(--color-white);
   word-spacing: -10px;
   letter-spacing: -2px;
+}
+@media screen and (max-width: 1024px) {
+  h1 {
+    -webkit-text-stroke-width: 1px;
+  }
 }
 
 h2 {
