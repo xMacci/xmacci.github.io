@@ -16,7 +16,11 @@ export default class Balatro {
       return;
     }
 
-    this.init();
+    if (document.readyState === 'complete') {
+      this.init();
+    } else {
+      window.addEventListener('load', () => this.init(), { once: true });
+    }
   }
 
   init() {
@@ -266,7 +270,7 @@ export default class Balatro {
   resize() {
     const gl = this.gl;
     const rect = this.canvas.getBoundingClientRect();
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const dpr = 0.75;
 
     this.canvas.width = Math.max(1, Math.round(rect.width * dpr));
     this.canvas.height = Math.max(1, Math.round(rect.height * dpr));
@@ -286,6 +290,12 @@ export default class Balatro {
 
     this.frameId = requestAnimationFrame((now) => {
       this.frameId = null;
+
+      if (this.lastDraw && now - this.lastDraw < 1000 / 30) {
+        this.render();
+        return;
+      }
+      this.lastDraw = now;
 
       const gl = this.gl;
       const c = this.config;
