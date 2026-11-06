@@ -38,6 +38,7 @@ export default class Textanim {
       mask: 'chars',
       type: 'chars, words, lines',
       autoSplit: true,
+      aria: 'hidden',
     });
     this.initAnim();
     this.initObserver();
