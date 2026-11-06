@@ -84,6 +84,16 @@
             h3 {
                 margin: 0;
             }
+
+            .projet-card__title {
+                font-size: var(--font-size-h1);
+                color: transparent;
+                -webkit-text-stroke-width: 4px;
+                -webkit-text-stroke-color: var(--color-white);
+                word-spacing: -10px;
+                letter-spacing: -2px;
+                text-transform: none;
+            }
         }
 
         .line {
