@@ -93,6 +93,9 @@
                 word-spacing: -10px;
                 letter-spacing: -2px;
                 text-transform: none;
+                @media screen and (max-width: $breakpoint-sm) {
+                    -webkit-text-stroke-width: 2px;
+                }
             }
         }
 
