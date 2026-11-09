@@ -780,7 +780,7 @@ a.logo {
 .custom-cursor .cursor-text {
   font-size: 15px;
   font-weight: 900;
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1462,12 +1462,18 @@ body.is-loading {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  padding-left: 0;
   list-style-type: square;
 }
 @media screen and (max-width: 1024px) {
   .competences__list {
     grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: var(--spacing-md);
+  }
+}
+@media screen and (max-width: 768px) {
+  .competences__list {
+    grid-template-columns: 1fr;
     display: grid;
     gap: var(--spacing-md);
   }
@@ -1732,6 +1738,11 @@ body.is-loading {
   word-spacing: -10px;
   letter-spacing: -2px;
   text-transform: none;
+}
+@media screen and (max-width: 768px) {
+  .projets .projet-card .projet-card__header .projet-card__title {
+    -webkit-text-stroke-width: 2px;
+  }
 }
 .projets .projet-card .line {
   display: flex;
